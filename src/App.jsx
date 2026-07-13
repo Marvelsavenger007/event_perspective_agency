@@ -1,0 +1,28 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "./context/ThemeContext";
+import Layout from "./components/layout/Layout";
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+import Portfolio from "./pages/Portfolio";
+import Events from "./pages/Events";
+import Team from "./pages/Team";
+import Contact from "./pages/Contact";
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
+    </ThemeProvider>
+  );
+}
