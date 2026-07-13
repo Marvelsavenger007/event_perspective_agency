@@ -6,6 +6,8 @@ const services = [
   { title: "Creative Production", desc: "Set design, fabrication, theming, content creation, and ambient media. Our in-house creative team transforms any space into a branded world." },
   { title: "Pan-Nigerian Activations", desc: "Execution capability across 18 Nigerian markets. We handle cross-border logistics, local partnerships, regulatory compliance, and cultural nuance so your brand activates with impact everywhere." },
   { title: "Event Analytics & Reporting", desc: "Data-driven measurement for every activation. Sentiment tracking, footfall analytics, social monitoring, and comprehensive ROI documentation delivered after every event." },
+  { title: "Corporate Celebrations", desc: "Anniversaries, award nights, product launches, and end-of-year galas. We create tailored celebrations that embody your culture and mark your milestones with dignity." },
+  { title: "Experiential Film & Content", desc: "Documentary-style event films, social content packs, highlight reels, and behind-the-scenes production that extends your event's life long after it ends." },
 ];
 
 export default function Services() {

@@ -71,10 +71,10 @@ const processSteps = [
 //   "Hero",
 // ];
 
-const marqueeClients = [  castlelite, flyingfish, samsung, dano, gbfoods, trophy, mrchef, honeywell, hero ];
+const marqueeClients = [  castlelite, flyingfish, samsung, dano, gbfoods, trophy, mrchef, honeywell, hero];
 
 const features = [
-  "Pan-Nigerian execution capability across 18 countries",
+  "Pan-Nigerian execution capability across the country",
   "In-house creative, production, and logistics teams",
   "Data-driven measurement on every activation",
 ];
@@ -127,7 +127,7 @@ export default function Home() {
                 <div className="font-display text-4xl md:text-5xl font-bold text-gold leading-none">
                   {s.num}
                 </div>
-                <div className="text-[0.65rem] tracking-[0.2em] uppercase text-navy-400 dark:text-dark-muted mt-1.5">
+                <div className="text-[0.65rem] tracking-[0.2em] uppercase text-navy-100 dark:text-dark-muted mt-1.5">
                   {s.label}
                 </div>
               </div>
@@ -266,7 +266,7 @@ export default function Home() {
           <h2 className="font-display text-4xl md:text-5xl font-black text-white leading-tight mb-6">
             Let's Build Something Extraordinary Together
           </h2>
-          <p className="text-navy-400 leading-relaxed mb-10">
+          <p className="text-navy-100 leading-relaxed mb-10">
             Tell us about your vision and we'll show you how Event Perspective
             Agency can bring it to life.
           </p>

@@ -43,7 +43,7 @@ export default function Footer() {
                   <FaInstagram size={22} />
                 </a>
 
-                <a href="#" className="hover:text-gold transition duration-300">
+                <a href="https://www.tiktok.com/@event_perspective_agency" className="hover:text-gold transition duration-300">
                   <FaTiktok size={22} />
                 </a>
 

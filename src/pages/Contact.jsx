@@ -5,7 +5,7 @@ import { FaInstagram, FaTiktok, FaLinkedin } from "react-icons/fa";
 const socialIcons = [
   { icon: FaLinkedin, href: "https://www.linkedin.com/company/event-perspective-experiential-agency/" },
   { icon: FaInstagram, href: "#" },
-  { icon: FaTiktok, href: "#" },
+  { icon: FaTiktok, href: "https://www.tiktok.com/@event_perspective_agency" },
 ];
 
 const contactDetails = [

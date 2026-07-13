@@ -1,5 +1,7 @@
 import md from "../images/md.jpg"
 import epa from "../images/epa.jpg"
+import joy from "../images/joy.jpeg"
+import muna from "../images/muna.jpeg"
 
 export const ceo = {
   name: "Shola Obasa",
@@ -25,9 +27,9 @@ export const hods = [
   },
   {
     id: "hod-2",
-    name: "Nneka Obi",
-    role: "Head of Strategy",
-    image: null,
+    name: "Joy Muna",
+    role: "Head of Operations",
+    image: muna,
     tagline: "She sees the insight before the data has finished loading.",
     drive: "With degrees in Consumer Psychology and Marketing, Nneka has an almost instinctive ability to identify what moves people. She joined Vantage in 2018 and immediately transformed how the agency develops event strategies.",
     zeal: "Nneka is passionate about making Nigerian consumer data the foundation of every brief. She built the agency's proprietary Audience Intelligence Framework that now underpins all major pitches.",
