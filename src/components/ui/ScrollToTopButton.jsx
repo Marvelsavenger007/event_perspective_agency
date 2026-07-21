@@ -25,11 +25,11 @@ export default function ScrollToTopButton() {
     visible && (
       <button
         onClick={scrollToTop}
-        className="fixed bottom-7 left-6 z-50 w-12 h-12 rounded-full
-                   bg-gold text-navy-900 shadow-lg
+        className="fixed bottom-7 left-6 z-50 w-12 h-12 rounded-full dark:bg-white dark:text-[#4a74b3]
+                   bg-[#4a74b3] text-white shadow-lg
                    flex items-center justify-center
                    hover:scale-110 transition-transform duration-300"
-        aria-label="Scroll to top"
+                   aria-label="Scroll to top"
       >
         <ChevronUp size={24} />
       </button>

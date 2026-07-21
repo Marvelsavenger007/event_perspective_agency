@@ -1,12 +1,12 @@
 export const featuredEvent = {
   badge: "10th Anniversary",
-  year: "2024",
-  date: "October 18, 2024",
+  year: "2026",
+  date: "October 18, 2026",
   location: "Eko Hotels, Lagos",
   guests: "800 Guests",
   title: "A Decade of Creating the Unforgettable",
   description:
-    "To mark our 10th year, we turned the lens on ourselves. The 'Vantage at 10' gala was an immersive journey through a decade of impact — featuring live performances by top Nigerian artists, a curated exhibition of past activations, and a forward-looking showcase of our next chapter. Attended by 800 industry leaders, clients, and partners, the evening reaffirmed our standing as Nigeria's premier experiential marketing agency.",
+    "To mark our 20th year, we turned the lens on ourselves. The 'Vantage at 20' gala was an immersive journey through a decade of impact — featuring live performances by top Nigerian artists, a curated exhibition of past activations, and a forward-looking showcase of our next chapter. Attended by 800 industry leaders, clients, and partners, the evening reaffirmed our standing as Nigeria's premier experiential marketing agency.",
   stats: [
     { num: "800+", label: "Guests" },
     { num: "12", label: "Performances" },
@@ -24,7 +24,7 @@ export const pastEvents = [
     description:
       "Our 5th anniversary brought together 400 guests for an evening of reflection and ambition — featuring a live brand showcase, keynote by our CEO, and a first-ever client awards night.",
     tag: "Milestone",
-    tagColor: "text-gold border-gold",
+    tagColor: "text-[#4a74b3] border-gold",
   },
   {
     id: 2,

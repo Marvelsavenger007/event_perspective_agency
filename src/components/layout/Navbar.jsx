@@ -6,7 +6,7 @@ import { useTheme } from "../../context/ThemeContext";
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/services", label: "What We Offer" },
-  // { to: "/portfolio", label: "Portfolio" },
+  { to: "/portfolio", label: "Portfolio" },
   // { to: "/events", label: "Events" },
   // { to: "/team", label: "Our People" },
   { to: "/contact", label: "Contact" },
@@ -40,7 +40,7 @@ export default function Navbar() {
       >
         {/* Logo */}
         <NavLink to="/" className="flex flex-col leading-none">
-          <span className="font-display font-black text-xl tracking-widest text-gold">
+          <span className="font-display font-black text-xl tracking-widest text-[#4a74b3]">
             EVENT PERSPECTIVE
           </span>
           <span className="font-sans text-[0.45rem] tracking-[0.35em] uppercase text-navy-600 dark:text-slate-900 mt-0.5">
@@ -72,7 +72,7 @@ export default function Navbar() {
             onClick={toggle}
             aria-label="Toggle theme"
             className="p-2 rounded-full text-navy-500 dark:text-slate-900
-            hover:text-gold dark:hover:text-gold transition-colors duration-200"
+            hover:text-[#4a74b3] dark:hover:text-[#4a74b3] transition-colors duration-200"
           >
             {dark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
@@ -111,7 +111,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
               className={({ isActive }) =>
                 `py-3.5 border-b border-surface-border dark:border-white/5 text-sm font-medium
-                 ${isActive ? "text-gold" : "text-dark-700 dark:text-slate-300"}`
+                 ${isActive ? "text-[#4a74b3]" : "text-dark-700 dark:text-slate-300"}`
               }
             >
               {item.label}

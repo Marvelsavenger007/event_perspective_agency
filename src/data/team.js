@@ -9,7 +9,7 @@ export const ceo = {
   image: md, 
   quote: "We don't sell events. We sell the feeling people carry home long after the lights go down.",
   bio: [
-    "Shola Obasa founded Event Perspective Agency in 2006 with a singular conviction: that Nigerian brands deserved world-class experiential marketing without flying halfway around the world to find it. With a background in architecture and brand strategy, she architected a company that now executes over 50 major events annually across the country.",
+    "Prince Shola Obasa founded Event Perspective Agency in 2006 with a singular conviction: that Nigerian brands deserved world-class experiential marketing without flying halfway around the world to find it. With a background in architecture and brand strategy, she architected a company that now executes over 50 major events annually across the country.",
     "His relentless pursuit of excellence has earned Event Perspective Agency 12 industry awards, including consecutive Best Experiential Agency wins at the Nigeria Marketing Awards (2021–2023). Adaeze sits on the board of the Marketing Association of Nigeria and is a frequent keynote speaker at global marketing forums.",
   ],
 };
@@ -27,13 +27,13 @@ export const hods = [
   },
   {
     id: "hod-2",
-    name: "Joy Muna",
+    name: "Joy Onyemaobi",
     role: "Head of Operations",
     image: muna,
-    tagline: "She sees the insight before the data has finished loading.",
-    drive: "With degrees in Consumer Psychology and Marketing, Nneka has an almost instinctive ability to identify what moves people. She joined Vantage in 2018 and immediately transformed how the agency develops event strategies.",
-    zeal: "Nneka is passionate about making Nigerian consumer data the foundation of every brief. She built the agency's proprietary Audience Intelligence Framework that now underpins all major pitches.",
-    determination: "During a 48-hour turnaround brief, Nneka stayed at the office for 30 consecutive hours to deliver a strategy that ultimately won the agency its most valuable client relationship.",
+    tagline: "Great experiences don't happen by chance, they're built through exceptional operations.",
+    drive: "Joy leads the operational heartbeat of Events Perspective Agency, ensuring every experiential campaign, event, and brand activation is executed with precision. She oversees the systems, people, and processes that transform creative concepts into unforgettable experiences, enabling teams to deliver consistently at the highest level.",
+    zeal: "Joy is committed to building an operational culture where excellence is standard. She thrives on optimizing workflows, coordinating cross-functional teams, and ensuring every project is delivered on time, within scope, and beyond expectations. For her, operational efficiency is the invisible force behind every remarkable brand experience.",
+    determination: "In the fast-paced world of experiential marketing, adaptability is everything. Joy has built a reputation for leading with composure under pressure, solving complex logistical challenges, and ensuring seamless execution regardless of the scale or complexity of the project. Her leadership continues to reinforce Events Perspective Agency's reputation for delivering exceptional experiences that connect brands with people in meaningful ways.",
   },
   {
     id: "hod-3",
@@ -121,9 +121,9 @@ export const teamMembers = [
 ];
 
 export const officeSpaces = [
-  { label: "HQ — Lagos Island", emoji: "🏢", span: true },
+  { label: "Executive Office", emoji: "🏢", span: true },
   { label: "Creative Studio", emoji: "🎨" },
-  { label: "Broadcast Suite", emoji: "📡" },
+  { label: "Receptionist Suite", emoji: "📡" },
   { label: "Client Boardroom", emoji: "🤝" },
   { label: "Production Workshop", emoji: "🏗️" },
 ];

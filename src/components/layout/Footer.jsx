@@ -25,29 +25,29 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <NavLink to="/" className="flex flex-col leading-none mb-5 ">
-              <span className="font-display font-black text-xl tracking-widest text-gold">
+              <span className="font-display font-black text-xl tracking-widest text-[#4a74b3]">
                 EVENT 
               </span>
               <span className="font-sans text-[0.45rem] tracking-[0.35em] uppercase text-navy-500 dark:text-slate-500 mt-0.5">
                 PERSPECTIVE Agency
               </span>
             </NavLink>
-            <p className="text-sm text-navy-500 dark:text-dark-muted leading-relaxed mt-4 max-w-xs">
+            <p className="text-sm text-navy-500 dark:text-white leading-relaxed mt-4 max-w-xs">
               Nigeria's premier experiential marketing agency. We create moments
               that move people and shift markets — one extraordinary event at a
               time.
             </p>
             <div className="flex gap-3 mt-7">
               <div className="flex gap-6 text-navy-900 dark:text-white">
-                <a href="#" className="hover:text-gold transition duration-300">
+                <a href="#" className="hover:text-[#4a74b3] transition duration-300">
                   <FaInstagram size={22} />
                 </a>
 
-                <a href="https://www.tiktok.com/@event_perspective_agency" className="hover:text-gold transition duration-300">
+                <a href="https://www.tiktok.com/@event_perspective_agency" className="hover:text-[#4a74b3] transition duration-300">
                   <FaTiktok size={22} />
                 </a>
 
-                <a href="https://www.linkedin.com/company/event-perspective-experiential-agency/" className="hover:text-gold transition duration-300">
+                <a href="https://www.linkedin.com/company/event-perspective-experiential-agency/" className="hover:text-[#4a74b3] transition duration-300">
                   <FaLinkedin size={22} />
                 </a>
               </div>
@@ -56,7 +56,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-[0.65rem] tracking-[0.25em] uppercase text-gold font-bold mb-5">
+            <h4 className="text-[0.65rem] tracking-[0.25em] uppercase text-[#4a74b3] font-bold mb-5">
               Services
             </h4>
             <ul className="space-y-3">
@@ -64,7 +64,7 @@ export default function Footer() {
                 <li key={s}>
                   <NavLink
                     to="/services"
-                    className="text-sm text-navy-500 dark:text-dark-muted hover:text-gold dark:hover:text-gold transition-colors duration-200"
+                    className="text-sm text-navy-500 dark:text-white hover:text-[#4a74b3] dark:hover:text-[#4a74b3] transition-colors duration-200"
                   >
                     {s}
                   </NavLink>
@@ -75,7 +75,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-[0.65rem] tracking-[0.25em] uppercase text-gold font-bold mb-5">
+            <h4 className="text-[0.65rem] tracking-[0.25em] uppercase text-[#4a74b3] font-bold mb-5">
               Company
             </h4>
             <ul className="space-y-3">
@@ -83,7 +83,7 @@ export default function Footer() {
                 <li key={c.to}>
                   <NavLink
                     to={c.to}
-                    className="text-sm text-navy-500 dark:text-dark-muted hover:text-gold dark:hover:text-gold transition-colors duration-200"
+                    className="text-sm text-navy-500 dark:text-white hover:text-[#4a74b3] dark:hover:text-[#4a74b3] transition-colors duration-200"
                   >
                     {c.label}
                   </NavLink>
@@ -94,17 +94,17 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-[0.65rem] tracking-[0.25em] uppercase text-gold font-bold mb-5">
+            <h4 className="text-[0.65rem] tracking-[0.25em] uppercase text-[#4a74b3] font-bold mb-5">
               Contact
             </h4>
             <ul className="space-y-3">
-              <li className="text-sm text-navy-500 dark:text-dark-muted">
+              <li className="text-sm text-navy-500 dark:text-white">
                 1 Asenuga Street, Ikeja
               </li>
-              <li className="text-sm text-navy-500 dark:text-dark-muted">
+              <li className="text-sm text-navy-500 dark:text-white">
                 +234 (0) 901 234 5678
               </li>
-              <li className="text-sm text-navy-500 dark:text-dark-muted">
+              <li className="text-sm text-navy-500 dark:text-white">
                 eventperspectiveagency@gmail.com
               </li>
               <li>
@@ -112,7 +112,7 @@ export default function Footer() {
                   href="https://wa.me/2349012345678"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-gold hover:text-gold-light transition-colors duration-200"
+                  className="text-sm text-[#4a74b3] hover:text-[#4a74b3]-light transition-colors duration-200"
                 >
                   WhatsApp Us →
                 </a>
@@ -123,12 +123,12 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-surface-border dark:border-white/5 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-xs text-navy-400 dark:text-dark-muted">
+          <p className="text-xs text-navy-400 dark:text-white">
             © {new Date().getFullYear()} {" "}
-            <span className="text-gold">Event Perspective Agency</span>.{" "}
+            <span className="text-[#4a74b3]">Event Perspective Agency</span>.{" "}
             All rights reserved. Lagos, Nigeria.
           </p>
-          <p className="text-xs text-navy-400 dark:text-dark-muted">
+          <p className="text-xs text-navy-400 dark:text-white">
             Crafted with intention. Executed with excellence.
           </p>
         </div>

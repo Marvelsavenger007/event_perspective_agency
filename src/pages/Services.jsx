@@ -24,10 +24,10 @@ export default function Services() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-px">
             {services.map((s) => (
               <div key={s.n} className="service-card bg-surface dark:bg-dark-card group m-2 border-2">
-                <div className="font-display text-5xl font-black text-gold/10 leading-none mb-5">{s.n}</div>
+                <div className="font-display text-5xl font-black text-[#4a74b3]/10 leading-none mb-5">{s.n}</div>
                 <div className="text-3xl mb-4">{s.icon}</div>
                 <h3 className="font-display text-xl font-bold text-navy-900 dark:text-white mb-3">{s.title}</h3>
-                <p className="text-sm text-navy-500 dark:text-dark-muted leading-relaxed">{s.desc}</p>
+                <p className="text-sm text-navy-500 dark:text-[#f0f2f5] leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>

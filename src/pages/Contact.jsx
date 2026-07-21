@@ -43,7 +43,7 @@ export default function Contact() {
           <div className="eyebrow">Get in Touch</div>
           <h1 className="font-display text-4xl md:text-5xl xl:text-6xl font-black text-navy-900 dark:text-white leading-tight mb-7">
             Let's Create Something{" "}
-            <em className="text-gold not-italic">Extraordinary</em>
+            <em className="text-[#4a74b3] not-italic">Extraordinary</em>
           </h1>
           <p className="text-base text-navy-500 dark:text-dark-muted leading-relaxed mb-12">
             Whether you have a fully formed brief or just a bold ambition, we'd
@@ -56,12 +56,12 @@ export default function Contact() {
               <div key={label} className="flex gap-5 items-start">
                 <div
                   className="w-11 h-11 flex-shrink-0 flex items-center justify-center
-                                bg-gold/10 border border-gold/20 text-gold"
+                                bg-gold/10 border border-gold/20 text-[#4a74b3]"
                 >
                   <Icon size={18} />
                 </div>
                 <div>
-                  <span className="block text-[0.62rem] tracking-[0.2em] uppercase text-gold font-semibold mb-1">
+                  <span className="block text-[0.62rem] tracking-[0.2em] uppercase text-[#4a74b3] font-semibold mb-1">
                     {label}
                   </span>
                   <span className="text-sm text-navy-700 dark:text-slate-300">
@@ -73,7 +73,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <p className="text-[0.62rem] tracking-[0.25em] uppercase text-gold font-bold mb-4">
+            <p className="text-[0.62rem] tracking-[0.25em] uppercase text-[#4a74b3] font-bold mb-4">
               Follow Us
             </p>
             <div className="flex gap-3">
@@ -84,7 +84,7 @@ export default function Contact() {
                   className="w-9 h-9 border border-surface-border dark:border-white/10
                  flex items-center justify-center
                  text-navy-400 dark:text-dark-muted
-                 hover:border-gold hover:text-gold
+                 hover:border-gold hover:text-[#4a74b3]
                  transition-all duration-200"
                 >
                   <Icon className="text-lg" />
@@ -160,7 +160,7 @@ export default function Contact() {
               Send Message
             </button>
             {submitted && (
-              <div className="bg-gold/10 border border-gold px-4 py-3 text-center text-gold text-sm animate-[fadeUp_0.4s_ease_forwards]">
+              <div className="bg-gold/10 border border-gold px-4 py-3 text-center text-[#4a74b3] text-sm animate-[fadeUp_0.4s_ease_forwards]">
                 ✦ Thank you! We'll be in touch within 24 hours.
               </div>
             )}

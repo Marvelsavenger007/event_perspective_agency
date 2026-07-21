@@ -43,7 +43,7 @@ export default function TeamModal({ member, onClose }) {
             <h2 className="font-display text-2xl font-bold text-navy-900 dark:text-white mb-1">
               {member.name}
             </h2>
-            <p className="text-[0.68rem] tracking-[0.2em] uppercase text-gold font-semibold mb-4">
+            <p className="text-[0.68rem] tracking-[0.2em] uppercase text-[#4a74b3] font-semibold mb-4">
               {member.role}
             </p>
             <p className="text-sm text-navy-500 dark:text-dark-muted italic leading-relaxed">
@@ -60,7 +60,7 @@ export default function TeamModal({ member, onClose }) {
             { heading: "Their Determination", key: "determination" },
           ].map(({ heading, key }) => (
             <div key={key}>
-              <h4 className="font-display text-base font-bold text-gold mb-2">{heading}</h4>
+              <h4 className="font-display text-base font-bold text-[#4a74b3] mb-2">{heading}</h4>
               <p className="text-sm text-navy-600 dark:text-dark-muted leading-relaxed">
                 {member[key]}
               </p>

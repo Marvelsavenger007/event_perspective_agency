@@ -103,7 +103,7 @@ export default function Home() {
           <div className="eyebrow">Award-Winning Experiential Agency</div>
           <h1 className="font-display font-black text-5xl sm:text-6xl md:text-7xl xl:text-8xl leading-[1.02] text-navy-900 dark:text-white max-w-3xl mb-7">
             We Don't Run Events. We Create{" "}
-            <em className="text-gold not-italic">Moments.</em>
+            <em className="text-[#4a74b3] not-italic">Moments.</em>
           </h1>
           <p className="text-base md:text-lg text-navy-500 dark:text-white/55 leading-relaxed max-w-xl mb-12">
             Event Perspective Agency is where bold strategy meets flawless
@@ -124,10 +124,10 @@ export default function Home() {
           <div className="flex flex-wrap gap-10 md:gap-16">
             {stats.map((s) => (
               <div key={s.label}>
-                <div className="font-display text-4xl md:text-5xl font-bold text-gold leading-none">
+                <div className="font-display text-4xl md:text-5xl font-bold text-[#4a74b3] dark:text-slate-200 leading-none">
                   {s.num}
                 </div>
-                <div className="text-[0.65rem] tracking-[0.2em] uppercase text-navy-100 dark:text-dark-muted mt-1.5">
+                <div className="text-[0.65rem] tracking-[0.2em] uppercase text-navy-800 dark:text-dark-muted mt-1.5">
                   {s.label}
                 </div>
               </div>
@@ -195,7 +195,7 @@ export default function Home() {
                   key={f}
                   className="flex items-center gap-3 py-3 border-b border-surface-border dark:border-white/5 text-sm text-navy-500 dark:text-dark-muted"
                 >
-                  <span className="text-gold text-[0.6rem]">✦</span> {f}
+                  <span className="text-[#4a74b3] text-[0.6rem]">✦</span> {f}
                 </li>
               ))}
             </ul>
@@ -214,7 +214,7 @@ export default function Home() {
                 key={s.n}
                 className="service-card bg-surface dark:bg-dark-card group"
               >
-                <div className="font-display text-5xl font-black text-gold/10 leading-none mb-5">
+                <div className="font-display text-5xl font-black text-[#4a74b3]/10 leading-none mb-5">
                   {s.n}
                 </div>
                 <div className="text-3xl mb-4">{s.icon}</div>
@@ -243,7 +243,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-surface-border dark:divide-white/5">
             {processSteps.map((step) => (
               <div key={step.n} className="px-0 sm:px-7 py-8 sm:py-0">
-                <div className="font-display text-5xl font-black text-gold/10 leading-none mb-5">
+                <div className="font-display text-5xl font-black text-[#4a74b3]/10 leading-none mb-5">
                   {step.n}
                 </div>
                 <h3 className="font-display text-base font-bold text-navy-900 dark:text-white mb-3">

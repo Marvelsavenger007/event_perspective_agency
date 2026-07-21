@@ -6,9 +6,9 @@ export default {
     extend: {
       colors: {
         gold: {
-          DEFAULT: "#C9A84C",
-          light: "#E8C96B",
-          pale: "#F5E9C8",
+          DEFAULT: "#2170e6",
+          light: "#2170e6",
+          pale: "#2170e6",
           dim: "rgba(201,168,76,0.15)",
         },
         navy: {
@@ -37,7 +37,7 @@ export default {
           elevated:  "#111827",
           card:      "#1E2740",
           border:    "rgba(201,168,76,0.15)",
-          muted:     "#8892A4",
+          muted:     "#edf0f5",
         },
       },
       fontFamily: {

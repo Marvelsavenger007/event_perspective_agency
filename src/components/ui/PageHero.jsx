@@ -10,10 +10,10 @@ export default function PageHero({ eyebrow, title, titleEm, description }) {
         <div className="eyebrow">{eyebrow}</div>
         <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-navy-900 dark:text-white">
           {title}{" "}
-          {titleEm && <em className="text-gold not-italic">{titleEm}</em>}
+          {titleEm && <em className="text-[#4a74b3] not-italic">{titleEm}</em>}
         </h1>
         {description && (
-          <p className="mt-5 text-base md:text-lg text-navy-500 dark:text-dark-muted leading-relaxed max-w-xl">
+          <p className="mt-5 text-base md:text-lg text-navy-500 dark:text-[#fafbfc] leading-relaxed max-w-xl">
             {description}
           </p>
         )}

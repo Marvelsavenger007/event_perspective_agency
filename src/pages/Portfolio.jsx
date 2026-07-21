@@ -16,26 +16,26 @@ export default function Portfolio() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {portfolioData.map((item) => (
-              <div key={item.id} className="portfolio-item group">
+              <div key={item.id} className="portfolio-item group rounded-xl">
                 {/* Background gradient */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${item.gradient}`}
-                />
-
-                {/* Logo layer — hidden on mobile, hidden on hover desktop */}
-                <div className="portfolio-logo-layer absolute inset-0 flex flex-col items-center justify-center z-10 transition-opacity duration-400 group-hover:opacity-0">
-                  <span className="text-5xl mb-3">{item.emoji}</span>
-                  <span className="font-display text-lg font-bold text-white text-center px-4">
-                    {item.company}
-                  </span>
+                <div className="portfolio-logo-layer absolute inset-0 z-10 transition-opacity duration-400 group-hover:opacity-0">
+                  <img
+                    src={item.image}
+                    alt={item.company}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0" />
                 </div>
-
                 {/* Overlay */}
                 <div
-                  className="portfolio-overlay absolute inset-0 bg-navy-950/92 flex flex-col justify-end p-7 z-20
-                                opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+                  className={`
+                  portfolio-overlay absolute bottom-0 left-0 right-0 h-[60%]
+                  flex flex-col justify-end p-7 z-20
+                  bg-gradient-to-br ${item.gradient} to-transparent
+                  translate-y-full group-hover:translate-y-0 text-white
+                  transition-transform duration-500 ease-out`}
                 >
-                  <h3 className="font-display text-xl font-bold text-gold mb-2">
+                  <h3 className="font-display text-xl font-bold text-white mb-2">
                     {item.company}
                   </h3>
                   <p className="text-sm text-slate-200 leading-relaxed mb-4">
@@ -43,7 +43,7 @@ export default function Portfolio() {
                   </p>
                   <a
                     href={item.link}
-                    className="text-[0.7rem] tracking-[0.15em] uppercase text-gold font-semibold
+                    className="text-[0.7rem] tracking-[0.15em] uppercase text-[#4a74b3] font-semibold
                                flex items-center gap-2 hover:gap-3.5 transition-all duration-200"
                   >
                     View Project <ExternalLink size={12} />
