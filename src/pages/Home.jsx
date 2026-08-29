@@ -1,17 +1,18 @@
 import { NavLink } from "react-router-dom";
 import castlelite from "../images/castlelite.jpg";
-import dano from "../images/dano.jpg";
+import dano from "../images/dano.png";
 import ekulogroup from "../images/ekulogroup.jpg";
 import flyingfish from "../images/flyingfish.jpg";
-import gbfoods from "../images/gbfoods.jpg";
-import smirnoff from "../images/smirnoff.png";
-import trophy from "../images/trophy.jpg";
+import gbfoods from "../images/gbfoods.png";
+import smirnoff from "../images/smirnoff.webp";
+import trophy from "../images/trophy.webp";
 import samsung from "../images/samsung.png";
 import mrchef from "../images/mrchef.jpg";
 import lushhair from "../images/lushhair.png";
 import honeywell from "../images/honeywell.png";
 import hero from "../images/hero.jpg";
-import epa from "../images/epa.jpg";
+import goldenpenny from "../images/goldenpenny.jpg";
+import epa from "../images/epabackground.jpeg";
 
 const stats = [
   { num: "150+", label: "Events Executed" },
@@ -24,15 +25,17 @@ const services = [
     title: "Brand Activations",
     desc: "We design immersive environments that put your brand at the centre of conversation, creating real emotional connections with your audience.",
   },
-  {
-    title: "Conferences & Summits",
-    desc: "From intimate C-suite gatherings to 10,000-seat industry events, we handle every detail with precision and flair.",
-  },
+  // {
+  //   title: "Conferences & Summits",
+  //   desc: "From intimate C-suite gatherings to 10,000-seat industry events, we handle every detail with precision and flair.",
+  // },
   {
     title: "Corporate Celebrations",
     desc: "Milestones deserve more than a venue. We create tailored celebrations that reflect your organisation's culture and ambitions.",
   },
-  // { title: "Hybrid & Live Streaming", desc: "Seamless broadcast production that extends your event's reach far beyond the room, with studio-quality delivery." },
+  { title: "Experiential Marketing", 
+    desc: "We connect brands with consumers through memorable, interactive experiences that inspire genuine engagement and long-term loyalt" 
+  },
 ];
 
 const processSteps = [
@@ -71,7 +74,7 @@ const processSteps = [
 //   "Hero",
 // ];
 
-const marqueeClients = [  castlelite, flyingfish, samsung, dano, gbfoods, trophy, mrchef, honeywell, hero];
+const marqueeClients = [  castlelite, flyingfish, samsung, dano, gbfoods, trophy, mrchef, honeywell, hero, goldenpenny, lushhair];
 
 const features = [
   "Pan-Nigerian execution capability across the country",
@@ -105,7 +108,7 @@ export default function Home() {
             We Don't Run Events. We Create{" "}
             <em className="text-[#4a74b3] not-italic">Moments.</em>
           </h1>
-          <p className="text-base md:text-lg text-navy-500 dark:text-white/55 leading-relaxed max-w-xl mb-12">
+          <p className="text-base md:text-lg text-navy-500 dark:text-white leading-relaxed max-w-xl mb-12">
             Event Perspective Agency is where bold strategy meets flawless
             execution. From intimate brand activations to large-scale
             spectacles, we craft experiences that move people and shift markets.
@@ -121,7 +124,7 @@ export default function Home() {
           </div>
 
           {/* Stats */}
-          <div className="flex flex-wrap gap-10 md:gap-16">
+          <div className="flex flex-wrap gap-20 md:gap-16">
             {stats.map((s) => (
               <div key={s.label}>
                 <div className="font-display text-4xl md:text-5xl font-bold text-[#4a74b3] dark:text-slate-200 leading-none">

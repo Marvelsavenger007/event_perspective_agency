@@ -2,13 +2,15 @@ import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Menu, X as CloseIcon, Sun, Moon } from "lucide-react";
 import { useTheme } from "../../context/ThemeContext";
+import epalogo from "../../images/epalogo.png"
 
 const navItems = [
   { to: "/", label: "Home" },
-  { to: "/services", label: "What We Offer" },
-  { to: "/portfolio", label: "Portfolio" },
-  // { to: "/events", label: "Events" },
-  // { to: "/team", label: "Our People" },
+  { to: "/services", label: "Services" },
+  // { to: "/portfolio", label: "Portfolio" },
+  { to: "/maintenance", label: "Portfolio" },
+  { to: "/events", label: "Events" },
+  { to: "/team", label: "Team" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -39,13 +41,19 @@ export default function Navbar() {
           border-b border-surface-border dark:border-gold/10`}
       >
         {/* Logo */}
-        <NavLink to="/" className="flex flex-col leading-none">
-          <span className="font-display font-black text-xl tracking-widest text-[#4a74b3]">
+        <NavLink to="/" className="flex flex-col ">
+          {/* <span className="font-display font-black text-xl tracking-widest text-[#4a74b3]">
             EVENT PERSPECTIVE
           </span>
           <span className="font-sans text-[0.45rem] tracking-[0.35em] uppercase text-navy-600 dark:text-slate-900 mt-0.5">
             Agency
-          </span>
+          </span> */}
+            <img
+              src={epalogo}
+              width="170px"
+              height="auto"
+              alt="icon"
+            />
         </NavLink>
 
         {/* Desktop Links */}
@@ -88,7 +96,7 @@ export default function Navbar() {
           {/* Hamburger — mobile */}
           <button
             onClick={() => setMobileOpen((v) => !v)}
-            className="lg:hidden p-1.5 text-navy-700 dark:text-slate-300"
+            className="lg:hidden p-1.5 text-navy-700 dark:text-black"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <CloseIcon size={22} /> : <Menu size={22} />}

@@ -36,7 +36,7 @@ export default function TeamModal({ member, onClose }) {
         <div className="grid grid-cols-[140px_1fr] md:grid-cols-[180px_1fr] min-h-[200px]">
           {/* Photo */}
           <div className="bg-gradient-to-b from-navy-700 to-navy-800 flex items-center justify-center">
-            <img className="text-5xl opacity-40" src={member.image} />
+            <img className="text-4xl opacity-40" src={member.image} />
           </div>
           {/* Info */}
           <div className="p-6 md:p-8 bg-surface-secondary dark:bg-navy-700/40 flex flex-col justify-center">
@@ -47,7 +47,7 @@ export default function TeamModal({ member, onClose }) {
               {member.role}
             </p>
             <p className="text-sm text-navy-500 dark:text-dark-muted italic leading-relaxed">
-              "{member.tagline}"
+              “{member.tagline}”
             </p>
           </div>
         </div>
@@ -66,6 +66,19 @@ export default function TeamModal({ member, onClose }) {
               </p>
             </div>
           ))}
+              <div className="flex flex-row justify-center items-center">
+                {member.socials.map(({ icon: Icon, url }, index) => (
+                  <a
+                    key={index}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition hover:text-gold"
+                  >
+                    <Icon size={22} />
+                  </a>
+                ))}
+              </div>
         </div>
       </div>
     </div>

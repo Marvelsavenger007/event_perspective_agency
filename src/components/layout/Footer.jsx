@@ -3,16 +3,18 @@ import { FaInstagram, FaTiktok, FaLinkedin } from "react-icons/fa";
 
 const services = [
   "Brand Activations",
-  // "Conferences & Summits",
-  // "Corporate Celebrations",
-  // "Hybrid & Live Streaming",
+  "Creative Production",
+  "Corporate Celebrations",
+  "Experiential Marketing",
   "Pan-Nigerian Activations",
 ];
 
 const company = [
   // { label: "Portfolio", to: "/portfolio" },
-  // { label: "Events", to: "/events" },
+  { label: "Portfolio", to: "/maintenance" },
+  { label: "Events", to: "/events" },
   // { label: "Our People", to: "/team" },
+  { label: "Our People", to: "/maintenance" },
   { label: "Contact Us", to: "/contact" },
 ];
 
@@ -39,7 +41,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-3 mt-7">
               <div className="flex gap-6 text-navy-900 dark:text-white">
-                <a href="#" className="hover:text-[#4a74b3] transition duration-300">
+                <a href="https://www.instagram.com/eventperspectiveagency/" className="hover:text-[#4a74b3] transition duration-300">
                   <FaInstagram size={22} />
                 </a>
 
@@ -102,14 +104,14 @@ export default function Footer() {
                 1 Asenuga Street, Ikeja
               </li>
               <li className="text-sm text-navy-500 dark:text-white">
-                +234 (0) 901 234 5678
+                +234 915 264 2452
               </li>
               <li className="text-sm text-navy-500 dark:text-white">
-                eventperspectiveagency@gmail.com
+                info@eventsperspectve.com
               </li>
               <li>
                 <a
-                  href="https://wa.me/2349012345678"
+                  href="https://wa.me/2349152642452"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-[#4a74b3] hover:text-[#4a74b3]-light transition-colors duration-200"

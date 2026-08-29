@@ -4,7 +4,7 @@ import { FaInstagram, FaTiktok, FaLinkedin } from "react-icons/fa";
 
 const socialIcons = [
   { icon: FaLinkedin, href: "https://www.linkedin.com/company/event-perspective-experiential-agency/" },
-  { icon: FaInstagram, href: "#" },
+  { icon: FaInstagram, href: "https://www.instagram.com/eventperspectiveagency/" },
   { icon: FaTiktok, href: "https://www.tiktok.com/@event_perspective_agency" },
 ];
 
@@ -14,8 +14,8 @@ const contactDetails = [
     label: "Our Office",
     value: "1 Asenuga Street, Ikeja, Lagos, Nigeria",
   },
-  { icon: Phone, label: "Phone", value: "+234 (0) 901 234 5678" },
-  { icon: Mail, label: "Email", value: "eventpesperspective@email.com" },
+  { icon: Phone, label: "Phone", value: "+234 915 264 2452" },
+  { icon: Mail, label: "Mail", value: "info@eventsperspectve.com" },
   {
     icon: Clock,
     label: "Business Hours",

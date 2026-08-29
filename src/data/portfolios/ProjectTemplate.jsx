@@ -168,7 +168,7 @@ export default function ProjectTemplate() {
   const { id } = useParams();
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
-  const card    = brandData.find((p) => p.id === id);
+  const card = brandData.find((p) => p.id === id);
   const project = brandDetails[id];
 
   // if (!project || !card) {
@@ -214,7 +214,14 @@ export default function ProjectTemplate() {
               </div>
               {/* Big emoji + title */}
               <div className="flex items-center gap-5 mb-4">
-                <span className="text-5xl">{project.emoji}</span>
+                {/* <span className="text-5xl">{project.emoji}</span> */}
+                <img
+                  src={project.image}
+                  width="50px"
+                  height="50px"
+                  className="mt-5 -mb-2.5 rounded-[10px]"
+                  alt="icon"
+                />
                 <h1 className="font-display text-4xl md:text-6xl xl:text-7xl font-black text-white leading-tight">
                   {project.company}
                 </h1>
@@ -227,10 +234,10 @@ export default function ProjectTemplate() {
             {/* Meta box */}
             <div className="bg-white/5 border border-white/10 backdrop-blur-sm p-6 space-y-4">
               {[
-                { label: "Date",     value: project.date },
+                { label: "Date", value: project.date },
                 { label: "Location", value: project.location },
-                { label: "Client",   value: project.client },
-                { label: "Scope",    value: project.scope },
+                { label: "Client", value: project.client },
+                { label: "Scope", value: project.scope },
               ].map(({ label, value }) => (
                 <div key={label}>
                   <span className="text-[0.6rem] tracking-[0.2em] uppercase text-gold font-bold block mb-0.5">{label}</span>
@@ -261,11 +268,11 @@ export default function ProjectTemplate() {
           <h2 className="section-title mb-12 max-w-3xl">How We Did It</h2>
 
           <div className="divide-y divide-surface-border dark:divide-dark-border">
-            <StoryBlock label="Overview"   body={project.overview} />
-            <StoryBlock label="Challenge"  heading="The Brief" body={project.challenge} />
-            <StoryBlock label="Approach"   heading="Our Solution" body={project.approach} />
-            <StoryBlock label="Execution"  heading="On the Ground" body={project.execution} />
-            <StoryBlock label="Result"     heading="The Outcome" body={project.result} />
+            <StoryBlock label="Overview" body={project.overview} />
+            <StoryBlock label="Challenge" heading="The Brief" body={project.challenge} />
+            <StoryBlock label="Approach" heading="Our Solution" body={project.approach} />
+            <StoryBlock label="Execution" heading="On the Ground" body={project.execution} />
+            <StoryBlock label="Result" heading="The Outcome" body={project.result} />
           </div>
         </div>
       </section>
@@ -359,7 +366,13 @@ export default function ProjectTemplate() {
                   className={`group relative aspect-[4/3] overflow-hidden bg-gradient-to-br ${p.gradient} flex items-end`}
                 >
                   <div className="absolute inset-0 flex flex-col items-center justify-center z-10 transition-opacity duration-300 group-hover:opacity-0">
-                    <span className="text-4xl mb-2 opacity-50">{p.emoji}</span>
+                    {/* <span className="text-4xl mb-2 opacity-50">{p.emoji}</span> */}
+                    <img
+                      src={p.image}
+                      width="auto"
+                      height="auto"
+                      alt="icon"
+                    />
                     <span className="font-display text-lg font-bold text-white text-center px-4">{p.company}</span>
                   </div>
                   <div className="absolute inset-0 bg-navy-950/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 flex flex-col justify-end p-6">

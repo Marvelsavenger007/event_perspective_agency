@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ceo, hods, teamMembers, officeSpaces } from "../data/team";
+import { ceo, hods, clientServices, operations, admin, officeSpaces } from "../data/team";
 import TeamModal from "../components/ui/TeamModal";
 import PageHero from "../components/ui/PageHero";
 import Avatar from "../data/Avatar";
@@ -10,7 +10,8 @@ function TeamCard({ member, onClick }) {
       className="team-card group cursor-pointer"
       onClick={() => onClick(member)}
     >
-      <div className="team-photo-wrap group-hover:brightness-75 transition-all duration-300 relative overflow-hidden aspect-square">
+      <div className="team-photo-wrap group-hover:brightness-75 transition-all duration-300 relative overflow-hidden">
+        {/* <div className="team-photo-wrap group-hover:brightness-75 transition-all duration-300 relative overflow-hidden aspect-square"> */}
         <Avatar name={member.name} image={member.image} />
         <div className="absolute inset-0 bg-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <span className="text-[0.7rem] tracking-[0.15em] uppercase text-black font-bold border border-black px-3 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
@@ -63,7 +64,7 @@ export default function Team() {
                   {ceo.role}
                 </p>
                 <blockquote className="font-display text-lg italic text-navy-700 dark:text-slate-200 leading-relaxed mb-8 pl-5 border-l-2 border-gold">
-                  "{ceo.quote}"
+                  “{ceo.quote}”
                 </blockquote>
                 {ceo.bio.map((para, i) => (
                   <p
@@ -76,14 +77,59 @@ export default function Team() {
               </div>
             </div>
           </div>
+          {/* <div>
+            <h2 className="font-display text-2xl font-bold text-[#4a74b3] dark:text-slate-200 border-b border-surface-border dark:border-gold/20 pb-4 mb-12">
+              Heads of Department
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-8">
+              {hods.map((m) => (
+                <TeamCard key={m.id} member={m} onClick={setSelected} />
+              ))}
+            </div>
+          </div> */}
 
           {/* ── HODs ── */}
           <div>
             <h2 className="font-display text-2xl font-bold text-[#4a74b3] dark:text-slate-200 border-b border-surface-border dark:border-gold/20 pb-4 mb-12">
               Heads of Department
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6">
               {hods.map((m) => (
+                <TeamCard key={m.id} member={m} onClick={setSelected} />
+              ))}
+            </div>
+          </div>
+          {/* ── CLIENT SERVICE ── */}
+          <div>
+            <h2 className="font-display text-2xl font-bold text-[#4a74b3] dark:text-slate-200 border-b border-surface-border dark:border-gold/20 pb-4 mb-12">
+              Admin
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+              {admin.map((m) => (
+                <TeamCard key={m.id} member={m} onClick={setSelected} />
+              ))}
+            </div>
+          </div>
+
+          {/* ── CLIENT SERVICE ── */}
+          <div>
+            <h2 className="font-display text-2xl font-bold text-[#4a74b3] dark:text-slate-200 border-b border-surface-border dark:border-gold/20 pb-4 mb-12">
+              Client Service Team
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+              {clientServices.map((m) => (
+                <TeamCard key={m.id} member={m} onClick={setSelected} />
+              ))}
+            </div>
+          </div>
+
+          {/* ── OPERATIONS ── */}
+          <div>
+            <h2 className="font-display text-2xl font-bold text-[#4a74b3] dark:text-slate-200 border-b border-surface-border dark:border-gold/20 pb-4 mb-12">
+              OPERATIONS TEAM
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+              {operations.map((m) => (
                 <TeamCard key={m.id} member={m} onClick={setSelected} />
               ))}
             </div>
@@ -99,9 +145,25 @@ export default function Team() {
                 <div
                   key={i}
                   className={`relative bg-gradient-to-br from-navy-700 to-navy-800 flex items-center justify-center overflow-hidden
-                               ${space.span ? "md:row-span-2 col-span-2 md:col-span-1" : ""}`}
+                   ${space.span ? "md:row-span-2 col-span-2 md:col-span-1" : ""}`}
                 >
-                  <span className="text-4xl opacity-25">{space.emoji}</span>
+                  {space.video ? (
+                    <video
+                      src={space.video}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <img
+                      src={space.image}
+                      alt={space.label}
+                      className="w-full h-[90%] object-cover"
+                    />
+                  )}
+
                   <span className="absolute bottom-3 left-3 text-[0.62rem] tracking-[0.15em] uppercase text-[#4a74b3] font-semibold">
                     {space.label}
                   </span>
