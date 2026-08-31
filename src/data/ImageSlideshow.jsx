@@ -25,7 +25,6 @@ export default function ImageSlideshow({ images, startIndex = 0, title, onClose 
     setImageKey((k) => k + 1);
   }, []);
 
-  // Mount → trigger enter transition on the next frame
   useEffect(() => {
     const raf = requestAnimationFrame(() => setVisible(true));
     return () => cancelAnimationFrame(raf);

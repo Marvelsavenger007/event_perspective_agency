@@ -1,5 +1,3 @@
-// ─── Snap to Stardom — page data ────────────────────────────────────────────
-
 import model1 from "../images/s2s/model1.jpg"
 import model2 from "../images/s2s/model2.jpg";
 import model3 from "../images/s2s/model3.jpg";
@@ -66,9 +64,6 @@ export const S2S_FAQS = [
   { q: "What if I encounter issues during registration?", a: "Reach out via the WhatsApp chat icon on this page or email us directly and our support team will assist you." },
   { q: "How can I stay updated?", a: "Follow our social media channels and enable notifications for announcements, event dates, and results." },
 ];
-
-// Placeholder gallery images — replace src values with real image paths
-// e.g. import img1 from "../assets/s2s/photo1.jpg"; then src: img1
 
 export const S2S_IMAGE = [
   { id: 0, src: model2, alt: "S2S contestant in a white dress on stage", color: "from-rose-900 to-pink-950" },
