@@ -36,11 +36,10 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between
           transition-all duration-300
-          ${scrolled ? "py-3 md:px-12 px-5" : "py-5 md:px-12 px-5"}
+          ${scrolled ? "py-3 md:px-12 px-3" : "py-5 md:px-12 px-5"}
           bg-white/90 dark:bg-navy-900/92 backdrop-blur-md
           border-b border-surface-border dark:border-gold/10`}
       >
-        {/* Logo */}
         <NavLink to="/" className="flex flex-col ">
           {/* <span className="font-display font-black text-xl tracking-widest text-[#4a74b3]">
             EVENT PERSPECTIVE
@@ -50,13 +49,11 @@ export default function Navbar() {
           </span> */}
             <img
               src={epalogo}
-              width="170px"
+              width="150px"
               height="auto"
               alt="icon"
             />
         </NavLink>
-
-        {/* Desktop Links */}
         <ul className="hidden lg:flex items-center gap-8 list-none">
           {navItems.map((item) => (
             <li key={item.to}>
@@ -72,10 +69,7 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-
-        {/* Right controls */}
         <div className="flex items-center gap-3">
-          {/* Theme Toggle */}
           <button
             onClick={toggle}
             aria-label="Toggle theme"
@@ -84,16 +78,12 @@ export default function Navbar() {
           >
             {dark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
-
-          {/* CTA — desktop */}
           <NavLink
             to="/contact"
             className="hidden lg:block btn-primary text-xs px-5 py-2.5"
           >
             Let's Talk
           </NavLink>
-
-          {/* Hamburger — mobile */}
           <button
             onClick={() => setMobileOpen((v) => !v)}
             className="lg:hidden p-1.5 text-navy-700 dark:text-black"
@@ -103,8 +93,6 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
-
-      {/* Mobile Menu */}
       <div
         className={`lg:hidden fixed top-[61px] left-0 right-0 z-40 transition-all duration-300
           bg-white dark:bg-navy-800 border-b border-surface-border dark:border-gold/10

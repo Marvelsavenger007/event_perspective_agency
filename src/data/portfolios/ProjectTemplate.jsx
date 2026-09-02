@@ -3,11 +3,10 @@ import { useState } from "react";
 import { ArrowLeft, Play, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { brandData, brandDetails } from "../brandportfolio";
 
-// ── Lightbox ──────────────────────────────────────────────────────────────
+
 function Lightbox({ media, index, onClose }) {
   const [current, setCurrent] = useState(index);
   const item = media[current];
-
   function prev() { setCurrent((c) => (c - 1 + media.length) % media.length); }
   function next() { setCurrent((c) => (c + 1) % media.length); }
 
@@ -22,18 +21,13 @@ function Lightbox({ media, index, onClose }) {
       >
         <X size={26} />
       </button>
-
-      {/* Counter */}
       <p className="absolute top-6 left-1/2 -translate-x-1/2 text-[0.65rem] tracking-[0.25em] uppercase text-white/40 font-semibold">
         {current + 1} / {media.length}
       </p>
-
-      {/* Main content */}
       <div
         className="w-full max-w-4xl mx-auto animate-[modalIn_0.2s_ease_forwards] relative"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Media panel */}
         <div className={`w-full aspect-video bg-gradient-to-br ${item.color} flex items-center justify-center relative overflow-hidden rounded-sm`}>
           {item.type === "video" ? (
             <>
@@ -64,11 +58,7 @@ function Lightbox({ media, index, onClose }) {
             </span>
           </div>
         </div>
-
-        {/* Caption */}
         <p className="mt-4 text-center text-sm text-white/60 leading-relaxed px-4">{item.caption}</p>
-
-        {/* Nav arrows */}
         <button
           onClick={prev}
           className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 w-10 h-10
@@ -86,8 +76,6 @@ function Lightbox({ media, index, onClose }) {
           <ChevronRight size={18} />
         </button>
       </div>
-
-      {/* Thumbnail strip */}
       <div className="flex gap-2 mt-6 overflow-x-auto pb-1 max-w-2xl px-2" onClick={(e) => e.stopPropagation()}>
         {media.map((m, i) => (
           <button
@@ -105,7 +93,6 @@ function Lightbox({ media, index, onClose }) {
   );
 }
 
-// ── Media card ────────────────────────────────────────────────────────────
 function MediaCard({ item, index, onClick }) {
   return (
     <div
@@ -116,8 +103,6 @@ function MediaCard({ item, index, onClick }) {
         <span className="text-6xl opacity-20 transition-transform duration-500 group-hover:scale-110 select-none">
           {item.icon}
         </span>
-
-        {/* Video play overlay */}
         {item.type === "video" && (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-14 h-14 rounded-full bg-black/40 border border-white/30 flex items-center justify-center
@@ -126,8 +111,6 @@ function MediaCard({ item, index, onClick }) {
             </div>
           </div>
         )}
-
-        {/* Hover overlay */}
         <div className="absolute inset-0 bg-navy-950/0 group-hover:bg-navy-950/50 transition-all duration-300 flex items-end">
           <div className="p-4 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 w-full">
             <span className={`text-[0.6rem] tracking-[0.2em] uppercase font-bold px-2 py-0.5 mr-2
@@ -137,8 +120,6 @@ function MediaCard({ item, index, onClick }) {
           </div>
         </div>
       </div>
-
-      {/* Caption */}
       <div className="pt-3 pb-1">
         <p className="text-xs text-navy-500 dark:text-dark-muted leading-relaxed">{item.caption}</p>
       </div>
@@ -146,7 +127,6 @@ function MediaCard({ item, index, onClick }) {
   );
 }
 
-// ── Story section block ───────────────────────────────────────────────────
 function StoryBlock({ label, heading, body }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6 md:gap-12 py-10 border-b border-surface-border dark:border-dark-border last:border-0">
@@ -163,58 +143,34 @@ function StoryBlock({ label, heading, body }) {
   );
 }
 
-// ── Main page ─────────────────────────────────────────────────────────────
 export default function ProjectTemplate() {
   const { id } = useParams();
   const [lightboxIndex, setLightboxIndex] = useState(null);
-
   const card = brandData.find((p) => p.id === id);
   const project = brandDetails[id];
-
-  // if (!project || !card) {
-  //   return (
-  //     <div className="min-h-screen flex items-center justify-center bg-surface dark:bg-navy-900 pt-24">
-  //       <div className="text-center">
-  //         <div className="text-6xl mb-6">🔍</div>
-  //         <h2 className="font-display text-3xl font-bold text-navy-900 dark:text-white mb-4">Project Not Found</h2>
-  //         <p className="text-navy-500 dark:text-dark-muted mb-8">We couldn't find that project.</p>
-  //         <NavLink to="/portfolio" className="btn-primary">Back to Portfolio</NavLink>
-  //       </div>
-  //     </div>
-  //   );
-  // }
 
   const images = project.media.filter((m) => m.type === "image");
   const videos = project.media.filter((m) => m.type === "video");
 
   return (
     <>
-      {/* ── Hero ── */}
       <section className={`relative pt-36 pb-0 overflow-hidden bg-gradient-to-br ${project.gradient} min-h-[70vh] flex flex-col justify-end`}>
-        {/* Grid texture */}
         <div className="absolute inset-0 pointer-events-none"
           style={{ backgroundImage: "repeating-linear-gradient(90deg,rgba(255,255,255,0.025) 0,transparent 1px,transparent 100px),repeating-linear-gradient(0deg,rgba(255,255,255,0.025) 0,transparent 1px,transparent 100px)" }} />
-        {/* Gold top bar */}
         <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-gold to-transparent" />
-
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full pb-16">
-          {/* Back link */}
           <NavLink
             to="/portfolio"
             className="inline-flex items-center gap-2 text-white/50 hover:text-gold transition-colors duration-200 text-xs tracking-[0.15em] uppercase font-semibold mb-10"
           >
             <ArrowLeft size={14} /> Back to Portfolio
           </NavLink>
-
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-10 items-end">
             <div>
-              {/* Tag */}
               <div className="flex items-center gap-3 mb-5">
                 <span className="text-[0.62rem] tracking-[0.3em] uppercase text-gold font-bold">{project.tag}</span>
               </div>
-              {/* Big emoji + title */}
               <div className="flex items-center gap-5 mb-4">
-                {/* <span className="text-5xl">{project.emoji}</span> */}
                 <img
                   src={project.image}
                   width="50px"
@@ -230,8 +186,6 @@ export default function ProjectTemplate() {
                 "{project.tagline}"
               </p>
             </div>
-
-            {/* Meta box */}
             <div className="bg-white/5 border border-white/10 backdrop-blur-sm p-6 space-y-4">
               {[
                 { label: "Date", value: project.date },
@@ -248,8 +202,6 @@ export default function ProjectTemplate() {
           </div>
         </div>
       </section>
-
-      {/* ── Stats bar ── */}
       <div className="bg-navy-950 dark:bg-navy-950 border-b border-gold/10">
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 divide-x-0 md:divide-x divide-white/5">
           {project.stats.map((s) => (
@@ -260,13 +212,10 @@ export default function ProjectTemplate() {
           ))}
         </div>
       </div>
-
-      {/* ── Story ── */}
       <section className="py-20 px-6 md:px-12 bg-surface dark:bg-navy-900">
         <div className="max-w-7xl mx-auto">
           <div className="eyebrow">The Story</div>
           <h2 className="section-title mb-12 max-w-3xl">How We Did It</h2>
-
           <div className="divide-y divide-surface-border dark:divide-dark-border">
             <StoryBlock label="Overview" body={project.overview} />
             <StoryBlock label="Challenge" heading="The Brief" body={project.challenge} />
@@ -276,8 +225,6 @@ export default function ProjectTemplate() {
           </div>
         </div>
       </section>
-
-      {/* ── Photography section ── */}
       {images.length > 0 && (
         <section className="py-20 px-6 md:px-12 bg-surface-secondary dark:bg-navy-800">
           <div className="max-w-7xl mx-auto">
@@ -287,8 +234,6 @@ export default function ProjectTemplate() {
               A visual record of the experience — from setup to the final curtain.
               Click any image to view in full.
             </p>
-
-            {/* Masonry-style grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {images.map((item) => {
                 const globalIndex = project.media.indexOf(item);
@@ -305,8 +250,6 @@ export default function ProjectTemplate() {
           </div>
         </section>
       )}
-
-      {/* ── Video section ── */}
       {videos.length > 0 && (
         <section className="py-20 px-6 md:px-12 bg-surface dark:bg-navy-900">
           <div className="max-w-7xl mx-auto">
@@ -332,8 +275,6 @@ export default function ProjectTemplate() {
           </div>
         </section>
       )}
-
-      {/* ── Testimonial ── */}
       {project.testimonial && (
         <section className={`py-24 px-6 md:px-12 relative overflow-hidden bg-navy-950 dark:bg-navy-950`}>
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(201,168,76,0.06),transparent_70%)] pointer-events-none" />
@@ -348,8 +289,6 @@ export default function ProjectTemplate() {
           </div>
         </section>
       )}
-
-      {/* ── Related projects ── */}
       <section className="py-20 px-6 md:px-12 bg-surface dark:bg-navy-900">
         <div className="max-w-7xl mx-auto">
           <div className="eyebrow">More Work</div>
@@ -385,14 +324,11 @@ export default function ProjectTemplate() {
                 </NavLink>
               ))}
           </div>
-
           <div className="mt-10 text-center">
             <NavLink to="/portfolio" className="btn-outline">View All Projects</NavLink>
           </div>
         </div>
       </section>
-
-      {/* Lightbox */}
       {lightboxIndex !== null && (
         <Lightbox
           media={project.media}

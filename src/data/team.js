@@ -1,8 +1,9 @@
-import md from "../images/md.jpg";
+import shola from "../images/shola.jpg";
 import epa from "../images/epa.jpg";
 import joy from "../images/joy.webp";
 import muna from "../images/muna.webp";
 import omotayo from "../images/omotayo.jpeg";
+import bayo from "../images/bayo.jpeg";
 import deji from "../images/deji.webp";
 import fadekemi from "../images/fadekemi.png";
 import bola from "../images/bola.jpg";
@@ -26,7 +27,7 @@ import toyor from "../images/toyor.jpg";
 export const ceo = {
   name: "Shola Obasa",
   role: "Managing Director & Chief Executive Officer",
-  image: md,
+  image: shola,
   quote: "Transforming brands through strategic thinking, meaningful experiences, and measurable impact.",
   bio: [
     "A seasoned marketing and advertising expert with over 25 years of experience, Shola has spearheaded numerous high-impact campaigns, including social responsibility initiatives, retail promotions, product launches, and large-scale events. He is the founder of Event Perspective Agency.",
@@ -39,38 +40,6 @@ export const ceo = {
 export const hods = [
   {
     id: "hod-1",
-    name: "Kanbi Owolabi",
-    role: "Head of PR/Client Service/Admin",
-    image: kanbi,
-    tagline: "Driving corporate reputation through strategic communication and operational excellence.",
-    drive: "Kanbi is driven by a commitment to strengthening the organization's reputation through strategic communication, operational excellence, and meaningful stakeholder engagement. He ensures that internal processes and external messaging remain aligned, supporting sustainable growth, organizational integrity, and long-term corporate success.",
-    zeal: "Passionate about shaping a credible corporate image backed by administrative discipline ensuring every public message reflects the company's true values and real operational strength.",
-    determination: "Relentless about consistency. He maintains strict standards in both external communications and internal workflows so the brand’s reputation remains rock solid, disciplined, and dependable.",
-    socials: [
-      {
-        icon: FaLinkedin,
-        url: "https://www.linkedin.com/in/kanbi-owolabi-447a3846/",
-      },
-    ],
-  },
-  {
-    id: "hod-2",
-    name: "Emmanuel Udoro",
-    role: "Head of Strategy & Planning",
-    image: emmanuel,
-    tagline: "Turning strategic insight into purposeful action and measurable results.",
-    drive: "Emmanuel is driven by the pursuit of strategic excellence, measurable results, and sustainable business growth. He is motivated by the opportunity to develop effective strategies, build strong partnerships, and transform ideas into well-executed campaigns that create lasting value for brands and their audiences.",
-    zeal: "Emmanuel is passionate about developing strategic marketing solutions that create meaningful impact and deliver measurable business results. His enthusiasm for strategy, communication, and project execution drives him to transform complex objectives into clear, actionable plans.",
-    determination: "Emmanuel is determined to achieve excellence through disciplined planning, effective execution, and continuous improvement. With extensive experience managing complex projects, campaigns, media relationships, and cross-functional teams, he remains focused on delivering results that advance both client and organizational objectives.",
-    socials: [
-      {
-        icon: FaLinkedin,
-        url: "https://www.linkedin.com/in/kanbi-owolabi-447a3846/",
-      },
-    ],
-  },
-  {
-    id: "hod-3",
     name: "Fadekemi Olasinmibo Obasa",
     role: "General Manager",
     image: fadekemi,
@@ -86,7 +55,55 @@ export const hods = [
     ],
   },
   {
+    id: "hod-2",
+    name: "Kanbi Owolabi",
+    role: "Head of PR/Client Service/Admin",
+    image: kanbi,
+    tagline: "Driving corporate reputation through strategic communication and operational excellence.",
+    drive: "Kanbi is driven by a commitment to strengthening the organization's reputation through strategic communication, operational excellence, and meaningful stakeholder engagement. He ensures that internal processes and external messaging remain aligned, supporting sustainable growth, organizational integrity, and long-term corporate success.",
+    zeal: "Passionate about shaping a credible corporate image backed by administrative discipline ensuring every public message reflects the company's true values and real operational strength.",
+    determination: "Relentless about consistency. He maintains strict standards in both external communications and internal workflows so the brand’s reputation remains rock solid, disciplined, and dependable.",
+    socials: [
+      {
+        icon: FaLinkedin,
+        url: "https://www.linkedin.com/in/kanbi-owolabi-447a3846/",
+      },
+    ],
+  },
+  {
+    id: "hod-3",
+    name: "Emmanuel Udoro",
+    role: "Head of Strategy & Planning",
+    image: emmanuel,
+    tagline: "Turning strategic insight into purposeful action and measurable results.",
+    drive: "Emmanuel is driven by the pursuit of strategic excellence, measurable results, and sustainable business growth. He is motivated by the opportunity to develop effective strategies, build strong partnerships, and transform ideas into well-executed campaigns that create lasting value for brands and their audiences.",
+    zeal: "Emmanuel is passionate about developing strategic marketing solutions that create meaningful impact and deliver measurable business results. His enthusiasm for strategy, communication, and project execution drives him to transform complex objectives into clear, actionable plans.",
+    determination: "Emmanuel is determined to achieve excellence through disciplined planning, effective execution, and continuous improvement. With extensive experience managing complex projects, campaigns, media relationships, and cross-functional teams, he remains focused on delivering results that advance both client and organizational objectives.",
+    socials: [
+      {
+        icon: FaLinkedin,
+        url: "https://www.linkedin.com/in/kanbi-owolabi-447a3846/",
+      },
+    ],
+  },
+  {
     id: "hod-4",
+    name: "Deji Apata",
+    role: "Head of Operations",
+    image: deji,
+    tagline: "Where strategic brand insight meets unshakeable delivery.",
+    drive: "Bringing structure, speed, and precision to the client journey so every project runs like clockwork and the drive to take big, ambitious brand concepts and translate them into seamless, real world results.",
+    zeal: "Deji brings a dynamic, hands on passion to client management. For him, a client brief isn't just a list of requirements it's an opportunity to build a high impact brand experience. He channels his deep background in brand activation and marketing strategy into every interaction, ensuring clients feel champion level advocacy and complete alignment from day one.",
+    determination: "Unshakable under high pressure, Deji treats client goals and deadlines as non-negotiable. Where others see tight timelines or complex obstacles, his operational background kicks in: he adapts, streamlines, and solves problems on the fly. He simply refuses to compromise on quality or execution, no matter how tough the challenge.",
+    socials: [
+      {
+        icon: FaLinkedin,
+        url: "https://www.linkedin.com/in/deji-apata-69229916/",
+      },
+    ],
+  },
+  {
+    id: "hod-5",
     name: " Omotayo Afolabi",
     role: " Head of Accounting/Admin",
     image: omotayo,
@@ -102,9 +119,9 @@ export const hods = [
     ],
   },
   {
-    id: "hod-5",
+    id: "hod-6",
     name: "Mariam Olaleye",
-    role: "Business Development & Client Service Leader",
+    role: "Head of Client Service",
     image: mariam,
     tagline: "She turns client brief into a plan the room can see before it's even built.",
     drive: "With a background in Biochemsitry and deep expertise in brand management, Mariam brings an analytical, detail-first mindset to experiential marketing. She joined EPA and quickly became the bridge between client vision and flawless execution - turning briefs into activation plans the operations team can run with.",
@@ -118,7 +135,7 @@ export const hods = [
     ],
   },
   {
-    id: "hod-6",
+    id: "hod-7",
     name: "Joy Onyemaobi",
     role: "lead of Operations",
     image: muna,
@@ -130,22 +147,6 @@ export const hods = [
       {
         icon: FaLinkedin,
         url: "https://www.linkedin.com/in/joy-onyemaobi-5b5594263",
-      },
-    ],
-  },
-  {
-    id: "hod-7",
-    name: "Deji Apata",
-    role: "lead of Client Service",
-    image: deji,
-    tagline: "Where strategic brand insight meets unshakeable delivery.",
-    drive: "Bringing structure, speed, and precision to the client journey so every project runs like clockwork and the drive to take big, ambitious brand concepts and translate them into seamless, real world results.",
-    zeal: "Deji brings a dynamic, hands on passion to client management. For him, a client brief isn't just a list of requirements it's an opportunity to build a high impact brand experience. He channels his deep background in brand activation and marketing strategy into every interaction, ensuring clients feel champion level advocacy and complete alignment from day one.",
-    determination: "Unshakable under high pressure, Deji treats client goals and deadlines as non-negotiable. Where others see tight timelines or complex obstacles, his operational background kicks in: he adapts, streamlines, and solves problems on the fly. He simply refuses to compromise on quality or execution, no matter how tough the challenge.",
-    socials: [
-      {
-        icon: FaLinkedin,
-        url: "https://www.linkedin.com/in/deji-apata-69229916/",
       },
     ],
   },
@@ -226,8 +227,8 @@ export const operations = [
   {
     id: "tm-1",
     name: "Bayo Oyelaran",
-    role: "AV & Broadcast Engineer",
-    image: null,
+    role: "Operations Officer",
+    image: bayo,
     tagline: "Perfect sound and light is the invisible art of events.",
     drive: "Bayo manages all technical infrastructure across events. He trained in London and returned to Nigeria with a mission to raise technical standards in Nigerian events.",
     zeal: "He built the agency's in-house broadcast studio and has trained 6 junior engineers who now lead technical delivery on independent events.",

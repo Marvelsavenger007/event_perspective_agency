@@ -13,8 +13,7 @@ const company = [
   // { label: "Portfolio", to: "/portfolio" },
   { label: "Portfolio", to: "/maintenance" },
   { label: "Events", to: "/events" },
-  // { label: "Our People", to: "/team" },
-  { label: "Our People", to: "/maintenance" },
+  { label: "Our People", to: "/team" },
   { label: "Contact Us", to: "/contact" },
 ];
 
@@ -44,19 +43,15 @@ export default function Footer() {
                 <a href="https://www.instagram.com/eventperspectiveagency/" className="hover:text-[#4a74b3] transition duration-300">
                   <FaInstagram size={22} />
                 </a>
-
                 <a href="https://www.tiktok.com/@event_perspective_agency" className="hover:text-[#4a74b3] transition duration-300">
                   <FaTiktok size={22} />
                 </a>
-
                 <a href="https://www.linkedin.com/company/event-perspective-experiential-agency/" className="hover:text-[#4a74b3] transition duration-300">
                   <FaLinkedin size={22} />
                 </a>
               </div>
             </div>
           </div>
-
-          {/* Services */}
           <div>
             <h4 className="text-[0.65rem] tracking-[0.25em] uppercase text-[#4a74b3] font-bold mb-5">
               Services
@@ -74,8 +69,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Company */}
           <div>
             <h4 className="text-[0.65rem] tracking-[0.25em] uppercase text-[#4a74b3] font-bold mb-5">
               Company
@@ -93,8 +86,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Contact */}
           <div>
             <h4 className="text-[0.65rem] tracking-[0.25em] uppercase text-[#4a74b3] font-bold mb-5">
               Contact
@@ -122,8 +113,6 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
-        {/* Bottom bar */}
         <div className="pt-8 border-t border-surface-border dark:border-white/5 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-xs text-navy-400 dark:text-white">
             © {new Date().getFullYear()} {" "}

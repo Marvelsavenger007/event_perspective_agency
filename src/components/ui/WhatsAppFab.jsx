@@ -5,9 +5,8 @@ export default function WhatsAppFab() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
-      className="fixed bottom-8 right-8 z-[9999] group"
+      className="fixed bottom-4 right-8 z-[9999] group"
     >
-      {/* Tooltip */}
       <span
         className="absolute right-[70px] top-1/2 -translate-y-1/2 whitespace-nowrap
                    bg-white dark:bg-navy-800 text-navy-800 dark:text-slate-200
@@ -17,10 +16,8 @@ export default function WhatsAppFab() {
       >
         Chat on WhatsApp
       </span>
-
-      {/* Button */}
       <div
-        className="w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center
+        className="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center
                    shadow-[0_4px_20px_rgba(37,211,102,0.45)]
                    hover:scale-110 hover:shadow-[0_8px_32px_rgba(37,211,102,0.55)]
                    transition-all duration-200 active:scale-100"

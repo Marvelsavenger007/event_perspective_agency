@@ -23,7 +23,7 @@ export default function App() {
             <Route path="/events" element={<Events />} />
             <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
-                  <Route path="*" element={<Maintenance />} />
+            <Route path="*" element={<Maintenance />} />
             <Route path="/portfolio/:id" element={<ProjectTemplate />} />
             <Route path="/event/snaptostardom" element={<SnapToStardom />} />
           </Routes>

@@ -74,7 +74,7 @@ const processSteps = [
 //   "Hero",
 // ];
 
-const marqueeClients = [  castlelite, flyingfish, samsung, dano, gbfoods, trophy, mrchef, honeywell, hero, goldenpenny, lushhair];
+const marqueeClients = [  castlelite, flyingfish, samsung, dano, gbfoods, trophy, mrchef, honeywell, hero, goldenpenny, lushhair, ekulogroup, smirnoff];
 
 const features = [
   "Pan-Nigerian execution capability across the country",

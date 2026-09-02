@@ -31,14 +31,10 @@ export default function TeamModal({ member, onClose }) {
         >
           <X size={18} />
         </button>
-
-        {/* Header */}
         <div className="grid grid-cols-[140px_1fr] md:grid-cols-[180px_1fr] min-h-[200px]">
-          {/* Photo */}
           <div className="bg-gradient-to-b from-navy-700 to-navy-800 flex items-center justify-center">
             <img className="text-4xl opacity-40" src={member.image} />
           </div>
-          {/* Info */}
           <div className="p-6 md:p-8 bg-surface-secondary dark:bg-navy-700/40 flex flex-col justify-center">
             <h2 className="font-display text-2xl font-bold text-navy-900 dark:text-white mb-1">
               {member.name}
@@ -51,8 +47,6 @@ export default function TeamModal({ member, onClose }) {
             </p>
           </div>
         </div>
-
-        {/* Body */}
         <div className="p-6 md:p-8 space-y-5">
           {[
             { heading: "What Drives Them", key: "drive" },
