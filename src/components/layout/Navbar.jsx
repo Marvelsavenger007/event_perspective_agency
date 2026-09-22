@@ -6,7 +6,9 @@ import epalogo from "../../images/epalogo.png"
 
 const navItems = [
   { to: "/", label: "Home" },
-  { to: "/services", label: "Services" },
+  { to: "/about", label: "About" },
+  { to: "/maintenance", label: "Services" },
+  // { to: "/services", label: "Services" },
   // { to: "/portfolio", label: "Portfolio" },
   { to: "/maintenance", label: "Portfolio" },
   { to: "/events", label: "Events" },

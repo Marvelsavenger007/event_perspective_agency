@@ -1,25 +1,26 @@
-import shola from "../images/shola.jpg";
+import shola from "../images/teamop/shola.jpg";
 import epa from "../images/epa.jpg";
-import joy from "../images/joy.webp";
-import muna from "../images/muna.webp";
-import omotayo from "../images/omotayo.jpeg";
-import bayo from "../images/bayo.jpeg";
-import deji from "../images/deji.webp";
-import fadekemi from "../images/fadekemi.png";
-import bola from "../images/bola.jpg";
-import emmanuel from "../images/emmanuel.jpg";
-import mariam from "../images/mariam1.jpeg";
-import kanbi from "../images/kanbi.jpeg";
-import idris from "../images/idris.jpeg";
-import space1 from "../images/space1.jpeg";
-import space2 from "../images/space2.jpeg";
-import space3 from "../images/space3.jpeg";
-import space4 from "../images/space4.png";
-import office from "../images/office.png";
-import tohrea from "../images/tohrea.jpeg";
-import grace from "../images/grace.jpg";
+import joy from "../images/teamop/joy.webp";
+import muna from "../images/teamop/muna.webp";
+import omotayo from "../images/teamop/omotayo.jpeg";
+import bayo from "../images/teamop/bayo.jpeg";
+import deji from "../images/teamop/deji.webp";
+import fadekemi from "../images/teamop/fadekemi.png";
+import bola from "../images/teamop/bola.jpg";
+import emmanuel from "../images/teamop/emmanuel.jpg";
+import mariam from "../images/teamop/mariam1.jpeg";
+import kanbi from "../images/teamop/kanbi.jpeg";
+import idris from "../images/teamop/idris.jpeg";
+import space1 from "../images/teamop/space1.jpeg";
+import space2 from "../images/teamop/space2.jpeg";
+import space3 from "../images/teamop/space3.jpeg";
+import space4 from "../images/teamop/space4.png";
+import office from "../images/teamop/office.png";
+import tohrea from "../images/teamop/tohrea.jpeg";
+import akin from "../images/teamop/akin.jpeg";
+import grace from "../images/teamop/grace.jpg";
 import { FaLinkedin } from "react-icons/fa6";
-import toyor from "../images/toyor.jpg";
+import toyor from "../images/teamop/toyor.jpg";
 
 
 
@@ -28,12 +29,12 @@ export const ceo = {
   name: "Shola Obasa",
   role: "Managing Director & Chief Executive Officer",
   image: shola,
-  quote: "Transforming brands through strategic thinking, meaningful experiences, and measurable impact.",
+  quote: "Transforming brands through strategic thinking, meaningful es, and measurable impact.",
   bio: [
-    "A seasoned marketing and advertising expert with over 25 years of experience, Shola has spearheaded numerous high-impact campaigns, including social responsibility initiatives, retail promotions, product launches, and large-scale events. He is the founder of Event Perspective Agency.",
+    "A seasoned marketing and advertising expert with over 25 years of experience, Shola has spearheaded numerous high-impact campaigns, including social responsibility initiatives, retail promotions, product launches, and large-scale events. He is the founder of Event Perspective Agency. ",
     "Recognizing a gap in the corporate event market, Shola established Event Perspective Agency, focusing on crafting immersive brand experiences and product launches. By leveraging entertainment to connect brands with their audiences, Shola pioneered a more experiential approach to events. Core Competencies; Shola's expertise spans: Business Development and Brand Strategy.",
     "Under Shola's leadership, Event Perspective Agency continues to expand its offerings through strategic partnerships, incorporating innovative experiential marketing elements to deliver exceptional ROI for clients.",
-    "Shola's dedication to meticulous service, innovative experience, and entertainment has redefined the events landscape, ensuring that clients and consumers alike are educated, entertained, and appreciated.",
+    "Shola's dedication to meticulous service, innovative e, and entertainment has redefined the events landscape, ensuring that clients and consumers alike are educated, entertained, and appreciated.",
   ],
 };
 
@@ -43,10 +44,10 @@ export const hods = [
     name: "Fadekemi Olasinmibo Obasa",
     role: "General Manager",
     image: fadekemi,
-    tagline: "Great experiences don't happen by chance, they're built through exceptional operations.",
+    tagline: "Great es don't happen by chance, they're built through exceptional operations.",
     drive: "Olasinmibo is driven by brand growth, effective communication, and lasting audience engagement. She is motivated by the opportunity to transform ideas into compelling campaigns, strengthen corporate visibility, and create communication strategies that deliver meaningful value for both brands and their audiences.",
     zeal: "Olasinmibo is passionate about strengthening brands through strategic communication, compelling content, and innovative marketing initiatives. Her expertise in branding, media relations, technology communications, and digital marketing enables her to create strategies that connect organizations with their audiences and advance their business objectives.",
-    determination: "She is committed to delivering excellence across every stage of a project, from strategic planning and content development to media engagement and execution. Her experience as a writer, project manager, and communications professional reflects her ability to manage complex initiatives while maintaining a strong focus on quality, clarity, and results.",
+    determination: "She is committed to delivering excellence across every stage of a project, from strategic planning and content development to media engagement and execution. Her e as a writer, project manager, and communications professional reflects her ability to manage complex initiatives while maintaining a strong focus on quality, clarity, and results.",
     socials: [
       {
         icon: FaLinkedin,
@@ -78,7 +79,7 @@ export const hods = [
     tagline: "Turning strategic insight into purposeful action and measurable results.",
     drive: "Emmanuel is driven by the pursuit of strategic excellence, measurable results, and sustainable business growth. He is motivated by the opportunity to develop effective strategies, build strong partnerships, and transform ideas into well-executed campaigns that create lasting value for brands and their audiences.",
     zeal: "Emmanuel is passionate about developing strategic marketing solutions that create meaningful impact and deliver measurable business results. His enthusiasm for strategy, communication, and project execution drives him to transform complex objectives into clear, actionable plans.",
-    determination: "Emmanuel is determined to achieve excellence through disciplined planning, effective execution, and continuous improvement. With extensive experience managing complex projects, campaigns, media relationships, and cross-functional teams, he remains focused on delivering results that advance both client and organizational objectives.",
+    determination: "Emmanuel is determined to achieve excellence through disciplined planning, effective execution, and continuous improvement. With extensive e managing complex projects, campaigns, media relationships, and cross-functional teams, he remains focused on delivering results that advance both client and organizational objectives.",
     socials: [
       {
         icon: FaLinkedin,
@@ -93,7 +94,7 @@ export const hods = [
     image: deji,
     tagline: "Where strategic brand insight meets unshakeable delivery.",
     drive: "Bringing structure, speed, and precision to the client journey so every project runs like clockwork and the drive to take big, ambitious brand concepts and translate them into seamless, real world results.",
-    zeal: "Deji brings a dynamic, hands on passion to client management. For him, a client brief isn't just a list of requirements it's an opportunity to build a high impact brand experience. He channels his deep background in brand activation and marketing strategy into every interaction, ensuring clients feel champion level advocacy and complete alignment from day one.",
+    zeal: "Deji brings a dynamic, hands on passion to client management. For him, a client brief isn't just a list of requirements it's an opportunity to build a high impact brand e. He channels his deep background in brand activation and marketing strategy into every interaction, ensuring clients feel champion level advocacy and complete alignment from day one.",
     determination: "Unshakable under high pressure, Deji treats client goals and deadlines as non-negotiable. Where others see tight timelines or complex obstacles, his operational background kicks in: he adapts, streamlines, and solves problems on the fly. He simply refuses to compromise on quality or execution, no matter how tough the challenge.",
     socials: [
       {
@@ -139,10 +140,10 @@ export const hods = [
     name: "Joy Onyemaobi",
     role: "lead of Operations",
     image: muna,
-    tagline: "Great experiences don't happen by chance, they're built through exceptional operations.",
-    drive: "Joy leads the operational heartbeat of Events Perspective Agency, ensuring every experiential campaign, event, and brand activation is executed with precision. She oversees the systems, people, and processes that transform creative concepts into unforgettable experiences, enabling teams to deliver consistently at the highest level.",
-    zeal: "Joy is committed to building an operational culture where excellence is standard. She thrives on optimizing workflows, coordinating cross-functional teams, and ensuring every project is delivered on time, within scope, and beyond expectations. For her, operational efficiency is the invisible force behind every remarkable brand experience.",
-    determination: "In the fast-paced world of experiential marketing, adaptability is everything. Joy has built a reputation for leading with composure under pressure, solving complex logistical challenges, and ensuring seamless execution regardless of the scale or complexity of the project. Her leadership continues to reinforce Events Perspective Agency's reputation for delivering exceptional experiences that connect brands with people in meaningful ways.",
+    tagline: "Great es don't happen by chance, they're built through exceptional operations.",
+    drive: "Joy leads the operational heartbeat of Events Perspective Agency, ensuring every experiential campaign, event, and brand activation is executed with precision. She oversees the systems, people, and processes that transform creative concepts into unforgettable es, enabling teams to deliver consistently at the highest level.",
+    zeal: "Joy is committed to building an operational culture where excellence is standard. She thrives on optimizing workflows, coordinating cross-functional teams, and ensuring every project is delivered on time, within scope, and beyond expectations. For her, operational efficiency is the invisible force behind every remarkable brand e.",
+    determination: "In the fast-paced world of experiential marketing, adaptability is everything. Joy has built a reputation for leading with composure under pressure, solving complex logistical challenges, and ensuring seamless execution regardless of the scale or complexity of the project. Her leadership continues to reinforce Events Perspective Agency's reputation for delivering exceptional es that connect brands with people in meaningful ways.",
     socials: [
       {
         icon: FaLinkedin,
@@ -194,8 +195,8 @@ export const clientServices = [
     name: "Toyosi Odutola",
     role: "Client Service",
     image: toyor,
-    tagline: "Creating exceptional client experiences through precision, commitment, and seamless execution",
-    drive: "Toyosi is driven by a commitment to delivering outstanding client experiences and ensuring every project meets the highest standards of quality and execution. She is focused on building strong client relationships, strengthening brand visibility, and turning project objectives into successful outcomes.",
+    tagline: "Creating exceptional client es through precision, commitment, and seamless execution",
+    drive: "Toyosi is driven by a commitment to delivering outstanding client es and ensuring every project meets the highest standards of quality and execution. She is focused on building strong client relationships, strengthening brand visibility, and turning project objectives into successful outcomes.",
     zeal: "Toyosi brings enthusiasm, professionalism, and a strong service-oriented mindset to every engagement. Her passion for client service, operational coordination, and teamwork enables her to contribute effectively across multiple aspects of project delivery while consistently seeking opportunities to exceed expectations.",
     determination: "Toyosi is determined to deliver every project with precision, efficiency, and attention to detail. She approaches operational challenges with confidence and a solutions-driven mindset, coordinating teams and resources effectively to ensure timely delivery and lasting client satisfaction.",
     socials: [
@@ -212,7 +213,7 @@ export const clientServices = [
     image: bola,
     tagline: "Building lasting client relationships through trust, responsiveness, and excellence.",
     drive: "Driven by the commitment to understand client needs, deliver exceptional service, and build relationships that create lasting value.",
-    zeal: "Passionate about creating positive client experiences through effective communication, collaboration, and a genuine commitment to meeting client expectations.",
+    zeal: "Passionate about creating positive client es through effective communication, collaboration, and a genuine commitment to meeting client expectations.",
     determination: "Determined to ensure every client interaction is handled with professionalism, attention to detail, and a solutions-focused approach from engagement to delivery.",
     socials: [
       {
@@ -261,9 +262,25 @@ export const operations = [
     name: "Akinpeju Olamilekan Idris",
     role: "Operations Officer",
     image: idris,
-    tagline: "With an open mind and a positive spirit, every experience is an opportunity to grow.",
-    drive: "Idris desire to keep learning, improve himself and become a better version of who he is every day. he is motivated by growth, new experiences and hte opportunity to make a positive impact.",
+    tagline: "With an open mind and a positive spirit, every e is an opportunity to grow.",
+    drive: "Idris desire to keep learning, improve himself and become a better version of who he is every day. he is motivated by growth, new es and hte opportunity to make a positive impact.",
     zeal: "My passion for learning, taking on new challenges and giving my best in everything I do. I am always eager to grow, improve and make meaningful progress",
+    determination: "Idris strong desire to be successful in life and achieve excellence in everything he set his mind to. He remains focused, persistent and committed even when faced with challenges",
+    socials: [
+      {
+        icon: FaLinkedin,
+        url: "https://www.linkedin.com/in/idswitz800/",
+      },
+    ],
+  },
+  {
+    id: "tm-4",
+    name: "Akinola Fayemi",
+    role: "Creative & Designs Officer",
+    image: akin,
+    tagline: "Transforming brand stories into intuitive, visually striking realities that drive real results.",
+    drive: "Designing memorable visual es that significantly boost brand recognition and customer engagement.",
+    zeal: "Akinola brings a passionate, results-driven approach to visual storytelling. He thrives on taking raw concepts and translating them into functional, compelling designs across both digital and print platforms—ensuring every visual element serves a purpose and elevates the brand's presence.",
     determination: "Idris strong desire to be successful in life and achieve excellence in everything he set his mind to. He remains focused, persistent and committed even when faced with challenges",
     socials: [
       {

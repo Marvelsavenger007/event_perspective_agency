@@ -3,15 +3,15 @@ import { FaInstagram, FaTiktok, FaLinkedin } from "react-icons/fa";
 
 const services = [
   "Brand Activations",
-  "Creative Production",
+  "Event Management",
   "Corporate Celebrations",
   "Experiential Marketing",
   "Pan-Nigerian Activations",
 ];
 
 const company = [
-  // { label: "Portfolio", to: "/portfolio" },
-  { label: "Portfolio", to: "/maintenance" },
+  { label: "About Us", to: "/about" },
+  { label: "Portfolio", to: "/portfolio" },
   { label: "Events", to: "/events" },
   { label: "Our People", to: "/team" },
   { label: "Contact Us", to: "/contact" },

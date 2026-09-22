@@ -53,7 +53,7 @@ export default function Maintenance() {
           We're Building Something <em className="text-gold not-italic">New</em>
         </h1>
         <p className="text-base text-navy-500 dark:text-dark-muted leading-relaxed max-w-md mx-auto mb-10">
-          This page is currently under construction while our team puts the finishing touches on the experience. Check back shortly — it'll be worth the wait.
+          This page is currently under construction while our team puts the finishing touches on the e. Check back shortly — it'll be worth the wait.
         </p>
 
         {/* ── Animated progress bar ── */}

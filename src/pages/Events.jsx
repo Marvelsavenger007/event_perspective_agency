@@ -22,7 +22,7 @@ export default function Events() {
             Our <em className="text-[#4a74b3] not-italic">Story</em> in Moments
           </h1>
           <p className="mt-5 text-base md:text-lg text-navy-500 dark:text-dark-muted max-w-xl leading-relaxed">
-            From our founding celebrations to landmark productions for clients, every event shapes who we are. A living record of experiences that define Event Perspective Agency.
+            From our founding celebrations to landmark productions for clients, every event shapes who we are. A living record of es that define Event Perspective Agency.
           </p>
         </div>
       </section>
@@ -78,7 +78,7 @@ export default function Events() {
       <section className="py-20 px-6 md:px-12 bg-surface-secondary dark:bg-navy-800">
         <div className="max-w-7xl mx-auto">
           <div className="eyebrow">Past Events</div>
-          <h2 className="section-title mb-12">More Moments We're Proud Of</h2>
+          <h2 className="section-title mb-12">Concerts & Live Shows</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {pastEvents.map((ev) => (
               <div key={ev.id}

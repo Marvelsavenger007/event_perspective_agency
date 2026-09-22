@@ -77,18 +77,6 @@ export default function Team() {
               </div>
             </div>
           </div>
-          {/* <div>
-            <h2 className="font-display text-2xl font-bold text-[#4a74b3] dark:text-slate-200 border-b border-surface-border dark:border-gold/20 pb-4 mb-12">
-              Heads of Department
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-8">
-              {hods.map((m) => (
-                <TeamCard key={m.id} member={m} onClick={setSelected} />
-              ))}
-            </div>
-          </div> */}
-
-          {/* ── HODs ── */}
           <div>
             <h2 className="font-display text-2xl font-bold text-[#4a74b3] dark:text-slate-200 border-b border-surface-border dark:border-gold/20 pb-4 mb-12">
               Heads of Department
@@ -99,10 +87,9 @@ export default function Team() {
               ))}
             </div>
           </div>
-          {/* ── CLIENT SERVICE ── */}
           <div>
             <h2 className="font-display text-2xl font-bold text-[#4a74b3] dark:text-slate-200 border-b border-surface-border dark:border-gold/20 pb-4 mb-12">
-              Admin
+              Finance & Admin
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
               {admin.map((m) => (
@@ -126,7 +113,7 @@ export default function Team() {
           {/* ── OPERATIONS ── */}
           <div>
             <h2 className="font-display text-2xl font-bold text-[#4a74b3] dark:text-slate-200 border-b border-surface-border dark:border-gold/20 pb-4 mb-12">
-              OPERATIONS TEAM
+              Operations & Creative Team
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
               {operations.map((m) => (

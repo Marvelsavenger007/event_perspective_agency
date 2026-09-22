@@ -3,7 +3,7 @@ import castlelite from "../images/castlelite.jpg";
 import dano from "../images/dano.png";
 import ekulo from "../images/ekulogroup.jpg";
 import flyingfish from "../images/flyingfish.jpg";
-import gbfoods from "../images/gbfoods.png";
+import fmn from "../images/fmn.png";
 import smirnoff from "../images/smirnoff.webp";
 import trophy from "../images/trophy.jpg";
 import samsung from "../images/samsung.png";
@@ -14,41 +14,39 @@ import hero from "../images/hero.jpg";
 
 // ─── Portfolio grid cards ──────────────────────────────────────────────────
 export const brandData = [
-  { id: "gbfoods", company: "gbfoods Nigeria", image: gbfoods, gradient: "from-green-950 to-emerald-900", brief: "Nationwide 5G Launch Roadshow across 6 cities, reaching 2M+ consumers through immersive technology demonstration zones." },
-  { id: "gbfoods", company: "gbfoods Nigeria", image: gbfoods, gradient: "from-green-950 to-emerald-900", brief: "Nationwide 5G Launch Roadshow across 6 cities, reaching 2M+ consumers through immersive technology demonstration zones." },
-  { id: "gbfoods", company: "gbfoods Nigeria", image: gbfoods, gradient: "from-green-950 to-emerald-900", brief: "Nationwide 5G Launch Roadshow across 6 cities, reaching 2M+ consumers through immersive technology demonstration zones." },
-  { id: "castlelite", company: "castlelite", image: castlelite, gradient: "from-navy-900 to-navy-700", brief: "Production management for the annual Food & Drink Festival — Nigeria's largest lifestyle event, drawing 80,000 visitors over 3 days." },
-  { id: "dano", company: "dano Group", image: dano, gradient: "from-orange-950 to-amber-900", brief: "60th anniversary gala for 700 executives featuring custom set fabrication, live entertainment, and a global broadcast package." },
-  { id: "samsung", company: "samsungwave", image: samsung, gradient: "from-indigo-950 to-violet-900", brief: "West Africa's first large-scale virtual summit — 14,000 attendees across 35 countries, pioneering hybrid event production." },
-  { id: "honeywell", company: "honeywell Energies", image: honeywell, gradient: "from-yellow-950 to-amber-950", brief: "Black-tie gala for 600 guests in Port Harcourt celebrating 60 years of operations, with live orchestra and HQ broadcast." },
-  { id: "hero", company: "Nestlé Nigeria", image: hero, gradient: "from-teal-950 to-green-950", brief: "Pan-Nigeria brand activation across 12 states — 240 pop-up installations driving direct consumer engagement for a product relaunch." },
-  { id: "flyingfish", company: "Flying Fish Africa", image: flyingfish, gradient: "from-red-950 to-rose-900", brief: "Annual Africa Leadership Conference for 500 senior executives from Flying Fish's 14 African markets — a 2-day strategy summit." },
-  { id: "smirnoff", company: "smirnoff Bank", image: smirnoff, gradient: "from-cyan-950 to-sky-900", brief: "30th anniversary rebrand launch event — 400-person celebration introducing smirnoff's new visual identity to media and investors." },
-  { id: "ekulogroup", company: "ekulogroup Bank", image: ekulo, gradient: "from-slate-900 to-navy-800", brief: "ekulogroup Tech Fair — a 3-day fintech showcase at the Lagos Continental Hotel hosting 50 startups and 3,000 industry visitors." },
+  { id: "gbfoods", company: "gbfoods Nigeria", image: fmn, gradient: "from-green-950 to-emerald-900", brief: "Natzxcvzxcvzxcionwide 5G Launch Roadshow across 6 cities, reaching 2M+ consumers through immersive technology demonstration zones.", link: "/portfolio/:id", },
+  { id: "castlelite", company: "castlelite", image: castlelite, gradient: "from-navy-900 to-navy-700", brief: "Production management for the annual Food & Drink Festival — Nigeria's largest lifestyle event, drawing 80,000 visitors over 3 days.", link: "/portfolio/:id", },
+  { id: "dano", company: "dano Group", image: dano, gradient: "from-orange-950 to-amber-900", brief: "60th anniversary gala for 700 executives featuring custom set fabrication, live entertainment, and a global broadcast package.", link: "/portfolio/:id", },
+  { id: "samsung", company: "samsungwave", image: samsung, gradient: "from-indigo-950 to-violet-900", brief: "West Africa's first large-scale virtual summit — 14,000 attendees across 35 countries, pioneering hybrid event production.", link: "/portfolio/:id", },
+  { id: "honeywell", company: "honeywell Energies", image: honeywell, gradient: "from-yellow-950 to-amber-950", brief: "Black-tie gala for 600 guests in Port Harcourt celebrating 60 years of operations, with live orchestra and HQ broadcast.", link: "/portfolio/:id", },
+  { id: "hero", company: "Nestlé Nigeria", image: hero, gradient: "from-teal-950 to-green-950", brief: "Pan-Nigeria brand activation across 12 states — 240 pop-up installations driving direct consumer engagement for a product relaunch.", link: "/portfolio/:id", },
+  { id: "flyingfish", company: "Flying Fish Africa", image: flyingfish, gradient: "from-red-950 to-rose-900", brief: "Annual Africa Leadership Conference for 500 senior executives from Flying Fish's 14 African markets — a 2-day strategy summit.", link: "/portfolio/:id", },
+  { id: "smirnoff", company: "smirnoff Bank", image: smirnoff, gradient: "from-cyan-950 to-sky-900", brief: "30th anniversary rebrand launch event — 400-person celebration introducing smirnoff's new visual identity to media and investors.", link: "/portfolio/:id", },
+  { id: "ekulogroup", company: "ekulogroup Bank", image: ekulo, gradient: "from-slate-900 to-navy-800", brief: "ekulogroup Tech Fair — a 3-day fintech showcase at the Lagos Continental Hotel hosting 50 startups and 3,000 industry visitors.", link: "/portfolio/:id", },
 ];
 
 // ─── Full project detail pages ─────────────────────────────────────────────
 export const brandDetails = {
   gbfoods: {
-    company: "gbfoods Nigeria",
-    image: gbfoods,
-    gradient: "from-green-950 via-emerald-900 to-green-950",
+    company: "Flour Mills of Nigeria",
+    image: fmn,
+    gradient: "from-[#064E3B] via-[#0F6B4A] to-[#064E3B]",
     accentBg: "bg-emerald-950",
     tag: "Brand Activation · Roadshow",
     tagline: "Taking 5G to the streets — and the hearts — of Nigeria.",
-    date: "June 2022",
-    location: "Lagos · Abuja · Kano · Port Harcourt · Ibadan · Enugu",
-    client: "gbfoods Nigeria Communications Plc",
-    scope: "Experiential Roadshow · Set Design · Technical Production · Consumer Engagement",
+    date: "August 2026",
+    location: "Ekiti · NYSC Camp",
+    client: "Flour Mills of Nigeria",
+    scope: "Product sampling, direct sales & consumer engagement",
     stats: [
-      { num: "6", label: "Cities" },
+      { num: "1", label: "City" },
       { num: "14", label: "Days" },
       { num: "2M+", label: "Consumers Reached" },
       { num: "98%", label: "Brand Recall Score" },
     ],
-    overview: "When gbfoods Nigeria was ready to launch its 5G network to the public, they needed more than a press release. They needed the streets of Nigeria to feel it. EPA Xperience was brought in to design and execute a 14-day nationwide roadshow that would turn the abstract promise of 5G into something every Nigerian could touch, see, and believe in.",
-    challenge: "The central challenge was translating a purely technical product — network speed and latency that most consumers had never experienced — into something emotionally resonant. We needed activations that felt exciting rather than corporate, accessible rather than intimidating, and locally rooted rather than imported. Each of the six cities also had distinct demographic and cultural profiles that required tailored approaches within a consistent brand framework.",
-    approach: "We designed a modular activation 'pod' system — striking chrome-and-green branded structures that could be rapidly assembled and disassembled across venues. Each pod housed a dedicated experience zone: a 5G gaming arena running real-time cloud games with zero lag, a 4K live-stream booth where consumers could go live to their family in another city with no buffering, and a VR showcase transporting guests into gbfoods's vision of a 5G-powered Nigeria. Local brand ambassadors, recruited from each city, guided visitors through the zones in Pidgin, Hausa, Yoruba, and Igbo.",
+    overview: "Golden Penny Foods executed a 16-day TOMA brand activation at the NYSC Ekiti Orientation Camp from August 10–25, 2026, combining direct product sampling with on-ground sales to build brand trust among Nigerian corps members.",
+    challenge: "The central challenge was translating a purely technical product — network speed and latency that most consumers had never ed — into something emotionally resonant. We needed activations that felt exciting rather than corporate, accessible rather than intimidating, and locally rooted rather than imported. Each of the six cities also had distinct demographic and cultural profiles that required tailored approaches within a consistent brand framework.",
+    approach: "We designed a modular activation 'pod' system — striking chrome-and-green branded structures that could be rapidly assembled and disassembled across venues. Each pod housed a dedicated e zone: a 5G gaming arena running real-time cloud games with zero lag, a 4K live-stream booth where consumers could go live to their family in another city with no buffering, and a VR showcase transporting guests into gbfoods's vision of a 5G-powered Nigeria. Local brand ambassadors, recruited from each city, guided visitors through the zones in Pidgin, Hausa, Yoruba, and Igbo.",
     execution: "The logistics operation behind the roadshow was as complex as the creative. Our production team moved 34 vehicles of equipment across the country on a rolling 48-hour advance schedule — breaking down each city's installation within hours of close and rebuilding in the next location before dawn. A dedicated technical crew of 18 managed power infrastructure, network connectivity, and AV in each city, maintaining performance standards that matched gbfoods's own 5G benchmark.",
     result: "The roadshow reached over 2 million Nigerians directly and generated 186 million social media impressions over 14 days. Post-activation research commissioned by gbfoods recorded a 98% brand recall score among participants and a 73% increase in declared intent to upgrade to a 5G device within 6 months. It was named the Best Brand Activation of 2022 at the Nigeria Marketing Excellence Awards.",
     media: [
@@ -59,7 +57,7 @@ export const brandDetails = {
       { type: "image", src: null, caption: "VR showcase zone — Port Harcourt activation", color: "from-green-950 to-teal-900", icon: "🥽" },
       { type: "video", src: null, caption: "Behind the scenes — overnight setup in Enugu", color: "from-teal-950 to-green-900", icon: "▶" },
     ],
-    testimonial: { quote: "EPA didn't just execute an event — they built an experience that made 5G real for millions of Nigerians overnight. The energy, the precision, the storytelling — it was exactly what we needed.", author: "Kunle Elebute", title: "Chief Marketing Officer, gbfoods Nigeria" },
+    testimonial: { quote: "EPA didn't just execute an event — they built an e that made 5G real for millions of Nigerians overnight. The energy, the precision, the storytelling — it was exactly what we needed.", author: "Kunle Elebute", title: "Chief Marketing Officer, gbfoods Nigeria" },
   },
 
   castlelite: {
@@ -79,7 +77,7 @@ export const brandDetails = {
       { num: "₦1.2B", label: "Vendor Transactions" },
       { num: "220+", label: "Food & Drink Stalls" },
     ],
-    overview: "The castlelite Food & Drink Festival is Nigeria's most beloved lifestyle event — a three-day celebration of food, culture, music, and community that draws tens of thousands of Lagos residents every December. As the sole production partner for the 2022 edition, EPA Xperience was responsible for every aspect of the event's physical execution, from site construction to live entertainment and brand activation management.",
+    overview: "The castlelite Food & Drink Festival is Nigeria's most beloved lifestyle event — a three-day celebration of food, culture, music, and community that draws tens of thousands of Lagos residents every December. As the sole production partner for the 2022 edition, EPA  was responsible for every aspect of the event's physical execution, from site construction to live entertainment and brand activation management.",
     challenge: "The sheer scale of the 2022 festival created layered logistical complexity: 220 vendor stalls across a 15,000 sqm outdoor site, four live performance stages running simultaneously, seven branded sponsor activation zones, and a peak attendance projection of over 27,000 visitors on the final day. All of this had to operate safely, seamlessly, and in line with castlelite's premium brand standards.",
     approach: "We structured the festival around a 'village' concept — grouping vendors into themed food districts (West African, Continental, Street Food, Artisan Beverages) to create intuitive wayfinding and reduce congestion. Each district had its own visual identity within the overarching castlelite brand framework. Our production team designed bespoke stall structures that could be personalized by vendors while maintaining a cohesive aesthetic across the entire site.",
     execution: "The build phase took 11 days, with a crew of 340 workers on site simultaneously at peak. We installed 4km of fencing, 18 temporary structures, 6 generators honeywellling 2.4MW of power, and a custom drainage system to manage the December rain risk. Our traffic and crowd management plan — developed in partnership with the Lagos State Traffic Management Authority — reduced queue times at entry gates by 62% compared to the 2021 edition.",
@@ -92,7 +90,7 @@ export const brandDetails = {
       { type: "image", src: null, caption: "castlelite activation zone — digital banking demos", color: "from-blue-900 to-slate-950", icon: "💳" },
       { type: "video", src: null, caption: "Setup time-lapse — 11 days in 90 seconds", color: "from-slate-900 to-blue-950", icon: "▶" },
     ],
-    testimonial: { quote: "Year after year, the castlelite Food & Drink Festival raises the bar for what a Nigerian lifestyle event can be. This year, EPA Xperience helped us set a benchmark we're still proud of.", author: "Segun Agbaje", title: "Group CEO, Guaranty Trust Holding Company" },
+    testimonial: { quote: "Year after year, the castlelite Food & Drink Festival raises the bar for what a Nigerian lifestyle event can be. This year, EPA  helped us set a benchmark we're still proud of.", author: "Segun Agbaje", title: "Group CEO, Guaranty Trust Holding Company" },
   },
 
   dano: {
@@ -112,7 +110,7 @@ export const brandDetails = {
       { num: "4", label: "Hours Runtime" },
       { num: "12", label: "Countries on Broadcast" },
     ],
-    overview: "dano Industries Limited commissioned EPA Xperience to produce a black-tie gala marking the conglomerate's 60th anniversary — a landmark evening for 700 of Nigeria's most senior business, government, and diplomatic figures, broadcast live to audiences across 12 countries.",
+    overview: "dano Industries Limited commissioned EPA  to produce a black-tie gala marking the conglomerate's 60th anniversary — a landmark evening for 700 of Nigeria's most senior business, government, and diplomatic figures, broadcast live to audiences across 12 countries.",
     challenge: "The brief demanded an evening that honoured six decades of legacy without feeling nostalgic or static. The dano Group is one of Africa's most forward-looking organisations, and the gala needed to simultaneously celebrate the past and embody the future. It also needed to be flawlessly broadcast — with a production quality that would reflect the Group's standing on a global stage.",
     approach: "We built the concept around the theme 'Foundation to Future' — visually represented by a custom stage set that transitioned from warm terracotta and bronze tones representing the group's origins, to sleek chrome and white for its future direction. The 18-metre stage was our most technically ambitious fabrication to date, incorporating 320 metres of programmable LED strip, eight motorised scenic panels, and a 28-metre curved rear-projection surface.",
     execution: "The broadcast operation ran in parallel with the live event — with a 14-camera multicam setup feeding a dedicated director's suite that produced a broadcast stream in real-time for the 12-country international audience. A full live orchestra of 24 musicians, three headline performers, and a specially commissioned anniversary film were woven into a running order timed to the minute across a four-hour programme.",
@@ -145,7 +143,7 @@ export const brandDetails = {
       { num: "6", label: "Hours Broadcast" },
       { num: "99.9%", label: "Uptime" },
     ],
-    overview: "In September 2020, with the world in the grip of the pandemic, samsungwave needed to host its annual payments summit — and the concept of a physical gathering was impossible. EPA Xperience was challenged to produce West Africa's most ambitious virtual event ever attempted: a six-hour live broadcast summit connecting 14,000 fintech professionals across 35 countries.",
+    overview: "In September 2020, with the world in the grip of the pandemic, samsungwave needed to host its annual payments summit — and the concept of a physical gathering was impossible. EPA  was challenged to produce West Africa's most ambitious virtual event ever attempted: a six-hour live broadcast summit connecting 14,000 fintech professionals across 35 countries.",
     challenge: "No comparable event had been attempted at this scale from Nigeria. The technical infrastructure, the broadcast quality, the speaker management across 8 time zones, the engagement tools for a virtual audience of thousands — none of this had an established playbook in the West African context. We were, in many respects, inventing the process as we built it.",
     approach: "We constructed a purpose-built broadcast studio inside a Lagos facility in just 18 days — a four-set environment with independent camera rigs, a graphics engine running real-time brand overlays, and a dedicated fibre connection backed by a satellite uplink failover. The virtual event platform was custom-integrated with samsungwave's existing CRM so that session registrations, Q&A submissions, and networking matchmaking all ran within a single seamless environment.",
     execution: "On summit day, our broadcast team of 22 managed a 6-hour continuous live production — cutting between studio presenters, remote speakers dialling in from San Francisco, London, and Nairobi, and pre-produced case study films. A dedicated technical producer monitored stream quality in real-time, and our contingency protocols (including the satellite uplink) meant the broadcast ran at 99.9% uptime across the entire six hours.",
@@ -178,7 +176,7 @@ export const brandDetails = {
       { num: "24", label: "Orchestra Musicians" },
       { num: "8", label: "Broadcast Countries" },
     ],
-    overview: "honeywellEnergies Marketing Nigeria engaged EPA Xperience to produce a black-tie gala in Port Harcourt celebrating 60 years of operations in Nigeria — a landmark evening for 600 of the energy sector's most senior leaders, accompanied by a live broadcast for audiences at honeywellEnergies offices across 8 countries.",
+    overview: "honeywellEnergies Marketing Nigeria engaged EPA  to produce a black-tie gala in Port Harcourt celebrating 60 years of operations in Nigeria — a landmark evening for 600 of the energy sector's most senior leaders, accompanied by a live broadcast for audiences at honeywellEnergies offices across 8 countries.",
     challenge: "Port Harcourt presents unique production challenges: limited specialist vendor infrastructure, extreme heat and humidity, and the logistical complexity of transporting high-end production equipment from Lagos while maintaining international quality standards. The international broadcast requirement added a further layer of technical and diplomatic complexity, as the stream needed to serve audiences from Paris to Johannesburg simultaneously.",
     approach: "We designed an opulent yet understated set aesthetic — drawing on the dual identity of the oil industry's precision and Nigeria's rich cultural heritage. Deep navy velvet draping, brass accents, and custom floral installations in honeywellEnergies' red and white palette created an environment that felt both globally premium and unmistakably Nigerian. A 24-piece live orchestra provided the musical foundation throughout the evening.",
     execution: "Our Lagos team transported 18 tonnes of equipment by road to Port Harcourt across 72 hours, including the full orchestra risers, a custom 14-metre stage, broadcast cameras, and a satellite uplink unit. The on-ground crew of 120 assembled the entire environment in 36 hours — the tightest build window of any comparable event we had produced.",
@@ -187,7 +185,7 @@ export const brandDetails = {
       { type: "image", src: null, caption: "Gala room reveal — full set dressed and lit", color: "from-amber-900 to-yellow-950", icon: "✨" },
       { type: "image", src: null, caption: "Live orchestra performance — anniversary tribute", color: "from-yellow-900 to-amber-950", icon: "🎻" },
       { type: "video", src: null, caption: "Gala evening highlights — official film", color: "from-amber-950 to-orange-900", icon: "▶" },
-      { type: "image", src: null, caption: "Guest arrival experience — red carpet sequence", color: "from-orange-950 to-amber-900", icon: "🎩" },
+      { type: "image", src: null, caption: "Guest arrival e — red carpet sequence", color: "from-orange-950 to-amber-900", icon: "🎩" },
       { type: "image", src: null, caption: "Equipment convoy — Lagos to Port Harcourt", color: "from-yellow-950 to-orange-950", icon: "🚛" },
       { type: "video", src: null, caption: "36-hour build — condensed setup footage", color: "from-orange-900 to-yellow-950", icon: "▶" },
     ],
@@ -211,7 +209,7 @@ export const brandDetails = {
       { num: "3", label: "Months Duration" },
       { num: "1.4M", label: "Consumers Engaged" },
     ],
-    overview: "Nestlé Nigeria tasked EPA Xperience with producing the national launch activation for a reformulated product line — a programme that needed to create genuine consumer trial and emotional connection at scale, reaching shoppers across both urban and semi-urban markets in 12 Nigerian states simultaneously over three months.",
+    overview: "Nestlé Nigeria tasked EPA  with producing the national launch activation for a reformulated product line — a programme that needed to create genuine consumer trial and emotional connection at scale, reaching shoppers across both urban and semi-urban markets in 12 Nigerian states simultaneously over three months.",
     challenge: "The product relaunch targeted a broad demographic spanning age, income, and geography. Creating a single activation concept powerful enough to resonate in Lekki and Kano, in an Abuja mall and an Onitsha open market, required a flexible design language that maintained consistency of brand message while allowing for deep local adaptation. The sheer logistics of 240 simultaneous installations also demanded a coordination infrastructure unlike anything we had built before.",
     approach: "We developed a modular pop-up structure — the 'Nestlé Tasting Pavilion' — engineered in four panel sections that could be assembled by two people in under 45 minutes without tools. Each pavilion was finished in Nestlé's brand colours with digital screens displaying locally sourced cooking content, and staffed by trained brand ambassadors who guided consumers through a sampling and discovery journey in the dominant local language.",
     execution: "EPA deployed 6 regional field supervisors, each managing a fleet of 40 pavilions across assigned states. A real-time dashboard — built by our technology team — tracked daily footfall, sample distribution, and consumer feedback from every pavilion, allowing the Nestlé marketing team to see live performance data across the entire programme. Underperforming locations were identified and re-briefed within 48 hours.",
@@ -224,7 +222,7 @@ export const brandDetails = {
       { type: "image", src: null, caption: "Pavilion modular build — 45-minute assembly sequence", color: "from-emerald-950 to-teal-900", icon: "⚙️" },
       { type: "video", src: null, caption: "Consumer reactions — sampler feedback compilation", color: "from-teal-900 to-green-900", icon: "▶" },
     ],
-    testimonial: { quote: "The scale of what EPA delivered — 240 locations, live data, consistent brand experience — was extraordinary. They didn't just activate our product; they built us a real-time consumer intelligence system.", author: "Wassim Elhusseini", title: "Managing Director, Nestlé Nigeria Plc" },
+    testimonial: { quote: "The scale of what EPA delivered — 240 locations, live data, consistent brand e — was extraordinary. They didn't just activate our product; they built us a real-time consumer intelligence system.", author: "Wassim Elhusseini", title: "Managing Director, Nestlé Nigeria Plc" },
   },
 
   flyingfish: {
@@ -237,18 +235,18 @@ export const brandDetails = {
     date: "October 2023",
     location: "Eko Hotels & Suites, Lagos",
     client: "Flying Fish Africa Plc",
-    scope: "Conference Production · Stage Design · Content Production · Delegate Experience",
+    scope: "Conference Production · Stage Design · Content Production · Delegate E",
     stats: [
       { num: "500", label: "Executives" },
       { num: "14", label: "African Markets" },
       { num: "2", label: "Days" },
       { num: "48", label: "Speakers & Panellists" },
     ],
-    overview: "Flying Fish Africa brought together the senior leadership of all 14 of its African market operations for its annual Leadership Conference — a two-day strategic summit focused on the company's next growth phase across the continent. EPA Xperience produced the full conference experience, from stage design and technical direction to delegate journey and entertainment.",
+    overview: "Flying Fish Africa brought together the senior leadership of all 14 of its African market operations for its annual Leadership Conference — a two-day strategic summit focused on the company's next growth phase across the continent. EPA  produced the full conference e, from stage design and technical direction to delegate journey and entertainment.",
     challenge: "A gathering of 500 senior executives representing markets as diverse as Nigeria, Uganda, Madagascar, and Tanzania required a conference environment that felt simultaneously relevant to all and dominated by none. The programme — which included a keynote from the Group CEO, 12 breakout sessions, four panel discussions, and a gala dinner — demanded flawless production across an extremely dense two-day schedule.",
     approach: "We designed the conference around the metaphor of a continent in motion: a curved stage set suggesting the arc of Africa's geography, with a 24-metre panoramic LED backdrop displaying data-driven content visualisations custom-built for each session. The breakout environment was structured as a 'marketplace of ideas' — open-plan pods with modular seating that could be reconfigured between sessions in under 8 minutes.",
     execution: "Our content team produced 34 bespoke session graphics packages in the six weeks before the event, working with Flying Fish's strategy, marketing, and regional teams across 5 countries. On the conference days, a dedicated producer was embedded with each of the four breakout streams, running real-time content and AV to ensure every session began and ended precisely on schedule across the entire programme.",
-    result: "Post-conference surveys from Flying Fish delegates recorded an average experience rating of 4.8 / 5.0. The gala dinner on Day 2 — themed around 'The African Table' — was singled out by 76% of respondents as a highlight of the conference experience. Flying Fish Africa retained EPA for a 3-year conference production partnership following the event.",
+    result: "Post-conference surveys from Flying Fish delegates recorded an average e rating of 4.8 / 5.0. The gala dinner on Day 2 — themed around 'The African Table' — was singled out by 76% of respondents as a highlight of the conference e. Flying Fish Africa retained EPA for a 3-year conference production partnership following the event.",
     media: [
       { type: "image", src: null, caption: "Main stage — Group CEO keynote opening", color: "from-red-900 to-rose-950", icon: "🎤" },
       { type: "image", src: null, caption: "Panoramic LED backdrop — continental data visualisation", color: "from-rose-900 to-red-950", icon: "📺" },
@@ -257,7 +255,7 @@ export const brandDetails = {
       { type: "image", src: null, caption: "African Table gala dinner — 500-guest setup", color: "from-red-900 to-rose-900", icon: "🍽️" },
       { type: "video", src: null, caption: "Behind the scenes — 34-package content production sprint", color: "from-rose-900 to-red-950", icon: "▶" },
     ],
-    testimonial: { quote: "The quality of production, the delegate experience, the storytelling on that stage — it set a new standard for what a pan-African executive conference should feel like. EPA have become a true strategic partner for us.", author: "Segun Oguike", title: "Group Chief People Officer, Flying Fish Africa" },
+    testimonial: { quote: "The quality of production, the delegate e, the storytelling on that stage — it set a new standard for what a pan-African executive conference should feel like. EPA have become a true strategic partner for us.", author: "Segun Oguike", title: "Group Chief People Officer, Flying Fish Africa" },
   },
 
   smirnoff: {
@@ -270,15 +268,15 @@ export const brandDetails = {
     date: "January 2023",
     location: "Federal Palace Hotel, Victoria Island, Lagos",
     client: "smirnoff Financial Holdings Company Plc",
-    scope: "Launch Event Production · Identity Reveal · Media Experience · Broadcast",
+    scope: "Launch Event Production · Identity Reveal · Media E · Broadcast",
     stats: [
       { num: "400", label: "Guests" },
       { num: "30", label: "Years Celebrated" },
       { num: "62", label: "Media Outlets in Attendance" },
       { num: "18M", label: "Launch Day Impressions" },
     ],
-    overview: "smirnoff Bank marked its 30th anniversary with a complete rebrand — a new name, new visual identity, and a new strategic positioning as a financial holding company. EPA Xperience was commissioned to produce the brand launch event: a 400-person evening for investors, media, regulators, and staff that would serve as the unveiling moment for smirnoff's next chapter.",
-    challenge: "A rebrand launch is one of the most technically and emotionally demanding events in the corporate calendar. The identity reveal is a single, unrepeatable moment — and the entire event builds to it. Every element of the room, the programme, and the guest experience needed to hold the secret while building anticipation, then deliver a reveal powerful enough to be remembered by 62 media organisations and shared across the country.",
+    overview: "smirnoff Bank marked its 30th anniversary with a complete rebrand — a new name, new visual identity, and a new strategic positioning as a financial holding company. EPA  was commissioned to produce the brand launch event: a 400-person evening for investors, media, regulators, and staff that would serve as the unveiling moment for smirnoff's next chapter.",
+    challenge: "A rebrand launch is one of the most technically and emotionally demanding events in the corporate calendar. The identity reveal is a single, unrepeatable moment — and the entire event builds to it. Every element of the room, the programme, and the guest e needed to hold the secret while building anticipation, then deliver a reveal powerful enough to be remembered by 62 media organisations and shared across the country.",
     approach: "We built the entire event around the tension of transformation — the old identity present in the room's opening state, gradually yielding to the new as the evening progressed. The stage set featured a physical curtain structure 16 metres wide that served as the literal reveal mechanism. The room's colour palette shifted through theatrical lighting from smirnoff's old burgundy tones to the new identity's vibrancy over the first hour, before the full reveal landed.",
     execution: "The reveal sequence — a three-minute multimedia moment combining film, live narration, practical lighting transitions, and the physical curtain drop — was rehearsed 11 times across two days. Our technical director operated the sequence from a custom cue sheet with 43 individual timed cues. The moment the new identity appeared on the 20-metre reveal surface, the room responded with a standing ovation that lasted over two minutes.",
     result: "The launch generated 18 million social media impressions on launch day alone — a record for a Nigerian financial sector rebrand. 62 media outlets covered the event, including Channels TV, TechCabal, BusinessDay, and the Financial Times Africa. smirnoff Financial Holdings confirmed that investor enquiries increased by 43% in the four weeks following the launch event.",
@@ -303,14 +301,14 @@ export const brandDetails = {
     date: "July 2023",
     location: "Lagos Continental Hotel, Victoria Island",
     client: "ekulogroup Bank Plc",
-    scope: "Expo Production · Startup Curation · Investment Forum · Digital Experience",
+    scope: "Expo Production · Startup Curation · Investment Forum · Digital E",
     stats: [
       { num: "50", label: "Startups Showcased" },
       { num: "3", label: "Days" },
       { num: "3,000", label: "Industry Visitors" },
       { num: "₦2.3B", label: "Investment Discussions Facilitated" },
     ],
-    overview: "The ekulogroup Bank Tech Fair is Nigeria's premier fintech and technology showcase — a three-day event designed to connect Nigeria's most promising technology startups with the investors, regulators, and corporate partners who can accelerate them. EPA Xperience was engaged to produce the 2023 edition in its entirety, from startup selection support to physical expo design and the investment forum programme.",
+    overview: "The ekulogroup Bank Tech Fair is Nigeria's premier fintech and technology showcase — a three-day event designed to connect Nigeria's most promising technology startups with the investors, regulators, and corporate partners who can accelerate them. EPA  was engaged to produce the 2023 edition in its entirety, from startup selection support to physical expo design and the investment forum programme.",
     challenge: "A technology fair presents different creative challenges from most events: the primary 'content' is the 50 companies on the floor, and the event design must showcase them rather than overshadow them. At the same time, ekulogroup Bank's brand needed to be meaningfully present without the fair feeling like a pure bank advertisement. Balancing the startup energy with the gravitas of a tier-one financial institution is a genuinely difficult creative problem.",
     approach: "We designed the fair around an open-plan 'startup street' concept — 50 custom-built booth units of equal scale and format, ensuring no startup felt disadEPAd by their location or budget. The booths were pure white, allowing each startup's own brand identity to dominate, while ekulogroup Bank's presence was felt through premium shared infrastructure: a gold-accented central bar, a floating main stage, and a curated investor lounge.",
     execution: "The investor lounge — a dedicated 200-seat private environment within the wider fair — hosted 14 structured matchmaking sessions over the three days, connecting 50 startups with 38 pre-qualified investors. Our events team coordinated the scheduling, documentation, and facilitation of every session. A live demo theatre running on the hour showcased selected startups to wider audiences, with professional filming for post-event distribution.",
@@ -321,7 +319,7 @@ export const brandDetails = {
       { type: "video", src: null, caption: "Tech Fair 2023 — official highlights film", color: "from-slate-900 to-navy-800", icon: "▶" },
       { type: "image", src: null, caption: "Main stage — keynote by ekulogroup Bank Group CEO", color: "from-navy-900 to-slate-800", icon: "🎤" },
       { type: "image", src: null, caption: "Live demo theatre — startup pitch showcase", color: "from-slate-800 to-navy-950", icon: "💻" },
-      { type: "video", src: null, caption: "Startup stories — 6 founders share their Fair experience", color: "from-navy-950 to-slate-900", icon: "▶" },
+      { type: "video", src: null, caption: "Startup stories — 6 founders share their Fair e", color: "from-navy-950 to-slate-900", icon: "▶" },
     ],
     testimonial: { quote: "The Tech Fair has become a genuine launchpad for Nigerian fintech. EPA have been instrumental in giving it the production quality that makes investors and startups take it seriously.", author: "Ebenezer Onyeagwu", title: "Group Managing Director & CEO, ekulogroup Bank Plc" },
   },
