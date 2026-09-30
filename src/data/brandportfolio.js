@@ -5,25 +5,31 @@ import ekulo from "../images/ekulogroup.jpg";
 import flyingfish from "../images/flyingfish.jpg";
 import fmn from "../images/fmn.png";
 import smirnoff from "../images/smirnoff.webp";
-import trophy from "../images/trophy.jpg";
 import samsung from "../images/samsung.png";
-import mrchef from "../images/mrchef.jpg";
-import lushhair from "../images/lushhair.png";
 import honeywell from "../images/honeywell.png";
 import hero from "../images/hero.jpg";
+import picture1 from "../images/portfolio/fmnportfolio/picture1.jpg";
+import picture3 from "../images/portfolio/fmnportfolio/picture3.jpg";
+import picture4 from "../images/portfolio/fmnportfolio/picture4.jpg";
+import picture5 from "../images/portfolio/fmnportfolio/picture5.jpg";
+
+import media1 from "../images/portfolio/fmnportfolio/media1.mp4";
+import media3 from "../images/portfolio/fmnportfolio/media3.mp4";
 
 // ─── Portfolio grid cards ──────────────────────────────────────────────────
-export const brandData = [
-  { id: "gbfoods", company: "gbfoods Nigeria", image: fmn, gradient: "from-green-950 to-emerald-900", brief: "Natzxcvzxcvzxcionwide 5G Launch Roadshow across 6 cities, reaching 2M+ consumers through immersive technology demonstration zones.", link: "/portfolio/:id", },
-  { id: "castlelite", company: "castlelite", image: castlelite, gradient: "from-navy-900 to-navy-700", brief: "Production management for the annual Food & Drink Festival — Nigeria's largest lifestyle event, drawing 80,000 visitors over 3 days.", link: "/portfolio/:id", },
-  { id: "dano", company: "dano Group", image: dano, gradient: "from-orange-950 to-amber-900", brief: "60th anniversary gala for 700 executives featuring custom set fabrication, live entertainment, and a global broadcast package.", link: "/portfolio/:id", },
-  { id: "samsung", company: "samsungwave", image: samsung, gradient: "from-indigo-950 to-violet-900", brief: "West Africa's first large-scale virtual summit — 14,000 attendees across 35 countries, pioneering hybrid event production.", link: "/portfolio/:id", },
-  { id: "honeywell", company: "honeywell Energies", image: honeywell, gradient: "from-yellow-950 to-amber-950", brief: "Black-tie gala for 600 guests in Port Harcourt celebrating 60 years of operations, with live orchestra and HQ broadcast.", link: "/portfolio/:id", },
-  { id: "hero", company: "Nestlé Nigeria", image: hero, gradient: "from-teal-950 to-green-950", brief: "Pan-Nigeria brand activation across 12 states — 240 pop-up installations driving direct consumer engagement for a product relaunch.", link: "/portfolio/:id", },
-  { id: "flyingfish", company: "Flying Fish Africa", image: flyingfish, gradient: "from-red-950 to-rose-900", brief: "Annual Africa Leadership Conference for 500 senior executives from Flying Fish's 14 African markets — a 2-day strategy summit.", link: "/portfolio/:id", },
-  { id: "smirnoff", company: "smirnoff Bank", image: smirnoff, gradient: "from-cyan-950 to-sky-900", brief: "30th anniversary rebrand launch event — 400-person celebration introducing smirnoff's new visual identity to media and investors.", link: "/portfolio/:id", },
-  { id: "ekulogroup", company: "ekulogroup Bank", image: ekulo, gradient: "from-slate-900 to-navy-800", brief: "ekulogroup Tech Fair — a 3-day fintech showcase at the Lagos Continental Hotel hosting 50 startups and 3,000 industry visitors.", link: "/portfolio/:id", },
+const rawBrandData = [
+  { id: "gbfoods", company: "Flour Mills of Nigeria", image: fmn, gradient: "from-green-950 to-emerald-900", brief: "16-day TOMA brand activation at the NYSC Ekiti Orientation Camp — direct sampling, Mami Market trade merchandising and on-ground sales to build lasting brand trust.", link: "", },
+  { id: "castlelite", company: "castlelite", image: castlelite, gradient: "from-navy-900 to-navy-700", brief: "Production management for the annual Food & Drink Festival — Nigeria's largest lifestyle event, drawing 80,000 visitors over 3 days.", link: "", },
+  { id: "dano", company: "dano Group", image: dano, gradient: "from-orange-950 to-amber-900", brief: "60th anniversary gala for 700 executives featuring custom set fabrication, live entertainment, and a global broadcast package.", link: "", },
+  { id: "samsung", company: "samsungwave", image: samsung, gradient: "from-indigo-950 to-violet-900", brief: "West Africa's first large-scale virtual summit — 14,000 attendees across 35 countries, pioneering hybrid event production.", link: "", },
+  { id: "honeywell", company: "honeywell Energies", image: honeywell, gradient: "from-yellow-950 to-amber-950", brief: "Black-tie gala for 600 guests in Port Harcourt celebrating 60 years of operations, with live orchestra and HQ broadcast.", link: "", },
+  { id: "hero", company: "Nestlé Nigeria", image: hero, gradient: "from-teal-950 to-green-950", brief: "Pan-Nigeria brand activation across 12 states — 240 pop-up installations driving direct consumer engagement for a product relaunch.", link: "", },
+  { id: "flyingfish", company: "Flying Fish Africa", image: flyingfish, gradient: "from-red-950 to-rose-900", brief: "Annual Africa Leadership Conference for 500 senior executives from Flying Fish's 14 African markets — a 2-day strategy summit.", link: "", },
+  { id: "smirnoff", company: "smirnoff Bank", image: smirnoff, gradient: "from-cyan-950 to-sky-900", brief: "30th anniversary rebrand launch event — 400-person celebration introducing smirnoff's new visual identity to media and investors.", link: "", },
+  { id: "ekulogroup", company: "ekulogroup Bank", image: ekulo, gradient: "from-slate-900 to-navy-800", brief: "ekulogroup Tech Fair — a 3-day fintech showcase at the Lagos Continental Hotel hosting 50 startups and 3,000 industry visitors.", link: "", },
 ];
+
+export const brandData = rawBrandData.map((b) => ({ ...b, link: `/portfolio/${b.id}` }));
 
 // ─── Full project detail pages ─────────────────────────────────────────────
 export const brandDetails = {
@@ -33,29 +39,29 @@ export const brandDetails = {
     gradient: "from-[#064E3B] via-[#0F6B4A] to-[#064E3B]",
     accentBg: "bg-emerald-950",
     tag: "Brand Activation · Roadshow",
-    tagline: "Taking 5G to the streets — and the hearts — of Nigeria.",
+    tagline: "Winning the hearts of Nigeria's youth corps members, one sample at a time.",
     date: "August 2026",
     location: "Ekiti · NYSC Camp",
     client: "Flour Mills of Nigeria",
     scope: "Product sampling, direct sales & consumer engagement",
     stats: [
       { num: "1", label: "City" },
-      { num: "14", label: "Days" },
+      { num: "16", label: "Days" },
       { num: "2M+", label: "Consumers Reached" },
       { num: "98%", label: "Brand Recall Score" },
     ],
-    overview: "Golden Penny Foods executed a 16-day TOMA brand activation at the NYSC Ekiti Orientation Camp from August 10–25, 2026, combining direct product sampling with on-ground sales to build brand trust among Nigerian corps members.",
-    challenge: "The central challenge was translating a purely technical product — network speed and latency that most consumers had never ed — into something emotionally resonant. We needed activations that felt exciting rather than corporate, accessible rather than intimidating, and locally rooted rather than imported. Each of the six cities also had distinct demographic and cultural profiles that required tailored approaches within a consistent brand framework.",
-    approach: "We designed a modular activation 'pod' system — striking chrome-and-green branded structures that could be rapidly assembled and disassembled across venues. Each pod housed a dedicated e zone: a 5G gaming arena running real-time cloud games with zero lag, a 4K live-stream booth where consumers could go live to their family in another city with no buffering, and a VR showcase transporting guests into gbfoods's vision of a 5G-powered Nigeria. Local brand ambassadors, recruited from each city, guided visitors through the zones in Pidgin, Hausa, Yoruba, and Igbo.",
-    execution: "The logistics operation behind the roadshow was as complex as the creative. Our production team moved 34 vehicles of equipment across the country on a rolling 48-hour advance schedule — breaking down each city's installation within hours of close and rebuilding in the next location before dawn. A dedicated technical crew of 18 managed power infrastructure, network connectivity, and AV in each city, maintaining performance standards that matched gbfoods's own 5G benchmark.",
-    result: "The roadshow reached over 2 million Nigerians directly and generated 186 million social media impressions over 14 days. Post-activation research commissioned by gbfoods recorded a 98% brand recall score among participants and a 73% increase in declared intent to upgrade to a 5G device within 6 months. It was named the Best Brand Activation of 2022 at the Nigeria Marketing Excellence Awards.",
+    overview: "Golden Penny Foods delivered a TOMA (Top-of-Mind Awareness) brand activation during the NYSC orientation period, running from August 10th to August 25th, 2026. Through sales and direct sampling, the activation built lasting impressions on Nigerian youth corps members — aligning every Golden Penny brand with excitement and product quality to build lasting consumer trust.",
+    challenge: "During the activation, Golden Penny Noodles faced significant visibility and supply-chain hurdles that limited full sales conversion. In the Mami Market, Indomie’s established sales and display dominance created a high competitive bar, emphasizing the need for Golden Penny to strengthen its retail engagement and physical presence. This challenge was compounded by key availability gaps: despite strong consumer interest generated by sampling, Choco could not fully capitalize on demand due to limited retail stock, while high vendor demand for the Golden Penny Chicken variant went unfulfilled, leading to directly missed sales opportunities.",
+    approach: "To counter Indomie’s established dominance in the Mami Market and bridge availability gaps, we executed a trade-focused strategy centered on high-impact retail merchandising and streamlined stock replenishment. We partnered directly with Mami Market vendors by equipping them with branded POS displays and trade incentives to secure prime shelf positioning over the competition. To resolve stockouts, we optimized daily supply routes to ensure high-demand SKUs—specifically Golden Penny Chicken Noodles—and newly sampled products like Choco were continuously stocked and immediately accessible at vendor points of sale, seamlessly turning consumer interest from sampling into direct purchases.",
+    execution: "Golden Penny Foods executed a 16-day TOMA brand activation at the NYSC Ekiti Orientation Camp from August 10–25, 2026, combining direct product sampling with on-ground sales to build brand trust among Nigerian corps members. The activation delivered strong product trial, sustained consumer engagement and measurable sales conversion — while surfacing clear, actionable opportunities for future camp partnerships.",
+    result: "The strategy successfully established Golden Penny as a dominant brand within the NYSC Ekiti camp, effectively transforming competitive friction into measurable retail traction. By securing high-visibility display space across key Mami Market vendors, we successfully challenged Indomie’s market presence and drove continuous brand engagement throughout the 16-day period. Furthermore, resolving the supply chain bottlenecks eliminated missed sales opportunities, driving a high conversion rate from direct product sampling to immediate retail purchase, generating thousands of product trials, and building lasting Top-of-Mind Awareness (TOMA) among the young consumer demographic.",
     media: [
-      { type: "image", src: null, caption: "5G activation pod at Lagos Marina — Day 1 setup", color: "from-emerald-900 to-green-950", icon: "🏙️" },
-      { type: "image", src: null, caption: "Gaming arena zone drawing crowds in Abuja", color: "from-green-900 to-teal-950", icon: "🎮" },
-      { type: "video", src: null, caption: "Roadshow highlight reel — all six cities", color: "from-teal-900 to-emerald-950", icon: "▶" },
-      { type: "image", src: null, caption: "Local brand ambassadors engaging consumers in Kano", color: "from-emerald-950 to-green-900", icon: "🤝" },
-      { type: "image", src: null, caption: "VR showcase zone — Port Harcourt activation", color: "from-green-950 to-teal-900", icon: "🥽" },
-      { type: "video", src: null, caption: "Behind the scenes — overnight setup in Enugu", color: "from-teal-950 to-green-900", icon: "▶" },
+      { type: "image", src: picture1, caption: "Corps members with Golden Penny sachets at the NYSC Ekiti Orientation Camp", color: "from-emerald-900 to-green-950", icon: "🏕️" },
+      { type: "image", src: picture4, caption: "Photo-frame engagement — corps member with a Golden Penny sample", color: "from-green-900 to-teal-950", icon: "🍜" },
+      { type: "video", src: media1, caption: "Golden Penny Noodles display — improved-taste range on the stand", color: "from-teal-900 to-emerald-950", icon: "▶" },
+      { type: "image", src: picture5, caption: "Corps member enjoying Golden Penny at the branded photo frame", color: "from-emerald-950 to-green-900", icon: "🤝" },
+      { type: "image", src: picture3, caption: "Sampling in action — corps member with a Golden Penny drink cup", color: "from-green-950 to-teal-900", icon: "🛒" },
+      { type: "video", src: media3, caption: "Choco sampling on display at the Golden Penny stand", color: "from-teal-950 to-green-900", icon: "▶" },
     ],
     testimonial: { quote: "EPA didn't just execute an event — they built an e that made 5G real for millions of Nigerians overnight. The energy, the precision, the storytelling — it was exactly what we needed.", author: "Kunle Elebute", title: "Chief Marketing Officer, gbfoods Nigeria" },
   },

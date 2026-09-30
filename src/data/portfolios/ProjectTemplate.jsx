@@ -29,7 +29,25 @@ function Lightbox({ media, index, onClose }) {
         onClick={(e) => e.stopPropagation()}
       >
         <div className={`w-full aspect-video bg-gradient-to-br ${item.color} flex items-center justify-center relative overflow-hidden rounded-sm`}>
-          {item.type === "video" ? (
+          {item.src ? (
+            item.type === "video" ? (
+              <video
+                key={item.src}
+                src={item.src}
+                controls
+                autoPlay
+                playsInline
+                className="absolute inset-0 w-full h-full object-contain bg-black"
+              />
+            ) : (
+              <img
+                key={item.src}
+                src={item.src}
+                alt={item.caption}
+                className="absolute inset-0 w-full h-full object-contain bg-black"
+              />
+            )
+          ) : item.type === "video" ? (
             <>
               <div className="text-8xl opacity-20 select-none">{item.icon}</div>
               <div className="absolute inset-0 flex items-center justify-center">
@@ -49,7 +67,7 @@ function Lightbox({ media, index, onClose }) {
               </div>
             </>
           )}
-          <div className="absolute top-3 right-3">
+          <div className="absolute top-3 right-3 z-10">
             <span className={`text-[0.6rem] tracking-[0.2em] uppercase font-bold px-2.5 py-1
               ${item.type === "video"
                 ? "bg-gold text-navy-900"
@@ -100,18 +118,37 @@ function MediaCard({ item, index, onClick }) {
       onClick={() => onClick(index)}
     >
       <div className={`aspect-video bg-gradient-to-br ${item.color} flex items-center justify-center relative overflow-hidden`}>
-        <span className="text-6xl opacity-20 transition-transform duration-500 group-hover:scale-110 select-none">
-          {item.icon}
-        </span>
+        {item.src && item.type === "video" && (
+          <video
+            src={`${item.src}#t=0.1`}
+            muted
+            playsInline
+            preload="metadata"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        )}
+        {item.src && item.type !== "video" && (
+          <img
+            src={item.src}
+            alt={item.caption}
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          />
+        )}
+        {!item.src && (
+          <span className="text-6xl opacity-20 transition-transform duration-500 group-hover:scale-110 select-none">
+            {item.icon}
+          </span>
+        )}
         {item.type === "video" && (
-          <div className="absolute inset-0 flex items-center justify-center">
+          <div className="absolute inset-0 flex items-center justify-center z-10">
             <div className="w-14 h-14 rounded-full bg-black/40 border border-white/30 flex items-center justify-center
                             group-hover:bg-gold group-hover:border-gold transition-all duration-300">
               <Play size={20} className="text-white ml-0.5" fill="white" />
             </div>
           </div>
         )}
-        <div className="absolute inset-0 bg-navy-950/0 group-hover:bg-navy-950/50 transition-all duration-300 flex items-end">
+        <div className="absolute inset-0 z-10 bg-navy-950/0 group-hover:bg-navy-950/50 transition-all duration-300 flex items-end">
           <div className="p-4 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 w-full">
             <span className={`text-[0.6rem] tracking-[0.2em] uppercase font-bold px-2 py-0.5 mr-2
               ${item.type === "video" ? "bg-gold text-navy-900" : "bg-white/20 text-white"}`}>
@@ -148,6 +185,15 @@ export default function ProjectTemplate() {
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const card = brandData.find((p) => p.id === id);
   const project = brandDetails[id];
+
+  if (!project) {
+    return (
+      <section className="pt-40 pb-24 px-6 md:px-12 bg-surface dark:bg-navy-900 text-center">
+        <h1 className="font-display text-3xl font-bold text-navy-900 dark:text-white mb-4">Project not found</h1>
+        <NavLink to="/portfolio" className="btn-outline">Back to Portfolio</NavLink>
+      </section>
+    );
+  }
 
   const images = project.media.filter((m) => m.type === "image");
   const videos = project.media.filter((m) => m.type === "video");
