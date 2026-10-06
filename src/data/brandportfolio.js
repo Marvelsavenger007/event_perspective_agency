@@ -26,6 +26,28 @@ import adc7 from "../images/portfolio/adc/adc7.jpg";
 import adc8 from "../images/portfolio/adc/adc8.jpg";
 import adc9 from "../images/portfolio/adc/adc9.jpg";
 
+import tbs1 from "../images/portfolio/tbsevent/tbs1.webp"
+import tbs2 from "../images/portfolio/tbsevent/tbs2.webp"
+import tbs3 from "../images/portfolio/tbsevent/tbs3.webp"
+import tbs4 from "../images/portfolio/tbsevent/tbs4.webp"
+import tbs5 from "../images/portfolio/tbsevent/tbs5.webp"
+import tbs6 from "../images/portfolio/tbsevent/tbs6.webp"
+import tbs7 from "../images/portfolio/tbsevent/tbs7.webp"
+import tbs8 from "../images/portfolio/tbsevent/tbs8.webp"
+import tbs9 from "../images/portfolio/tbsevent/tbs9.webp"
+import tbs10 from "../images/portfolio/tbsevent/tbs10.webp"
+import tbs11 from "../images/portfolio/tbsevent/tbs11.webp"
+import tbs12 from "../images/portfolio/tbsevent/tbs12.webp"
+import tbs13 from "../images/portfolio/tbsevent/tbs13.webp"
+import tbs14 from "../images/portfolio/tbsevent/tbs14.webp"
+import tbs15 from "../images/portfolio/tbsevent/tbs15.webp"
+import tbs16 from "../images/portfolio/tbsevent/tbs16.webp"
+import tbs17 from "../images/portfolio/tbsevent/tbs17.webp"
+import tbs18 from "../images/portfolio/tbsevent/tbs18.webp"
+import tbs19 from "../images/portfolio/tbsevent/tbs19.webp"
+import tbs20 from "../images/portfolio/tbsevent/tbs20.webp"
+import tbsvid1 from "../images/portfolio/tbsevent/tbsvid1.mp4"
+
 const rawBrandData = [
   { id: "nyscgpn", company: "Golden Penny Noodles", image: goldenpenny, gradient: "from-green-950 to-emerald-900", brief: "16-day TOMA brand activation at the NYSC Ekiti Orientation Camp — direct sampling, Mami Market trade merchandising and on-ground sales to build lasting brand trust.", link: "", },
   { id: "adc", company: "Amazing Day Cereal", image: adc, gradient: "from-[#2F5416] via-[#486F1B] to-[#1F350E]", brief: "Production management for the annual Food & Drink Festival — Nigeria's largest lifestyle event, drawing 80,000 visitors over 3 days.", link: "", },
@@ -136,12 +158,27 @@ export const brandDetails = {
     execution: "The activation successfully elevated Golden Penny's positioning by linking the brand to Nigerian pride, excellence, and a landmark cultural moment combining a Guinness World Record attempt with a major film premiere. Operational execution was seamless, with kitchen and sampling stations running strictly on schedule, serving warm noodles in premium packaging that reinforced the brand's high-quality image. High-impact branding assets—including the Experience Center, cube boxes, lightboxes, and backdrops—drove strong visual recall throughout the event. Crucially, VIP engagement was a major highlight: attendance among senior dignitaries, including the Deputy Governor, was robust, and the Tier 1 package presentation to the Governor was delivered with complete respect and zero protocol breaches.",
     result: "The activation achieved strong, measurable brand outcomes by establishing Golden Penny as a high-quality, premium product through seamless Tier 1 VIP engagement, flawless dignitary presentations with zero protocol breaches, and high-recall visual immersion across custom event assets. Operational success was further demonstrated through strict adherence to kitchen and sampling schedules, though field performance faced notable friction from unmitigated rainy weather exposure, severe crowd congestion due to ticket fee misperceptions, VIP perimeter leaks, and entry access delays.",
     media: [
-      { type: "image", src: null, caption: "Stage reveal — the 'Foundation to Future' set at full light", color: "from-orange-900 to-amber-950", icon: "🎭" },
-      { type: "image", src: null, caption: "Arrival gallery — guests entering the gala space", color: "from-amber-900 to-orange-950", icon: "🎩" },
-      { type: "video", src: null, caption: "Full gala highlight film — 4 min cut", color: "from-orange-950 to-red-900", icon: "▶" },
-      { type: "image", src: null, caption: "Live orchestra performance — anniversary tribute set", color: "from-red-950 to-orange-900", icon: "🎻" },
-      { type: "image", src: null, caption: "Custom LED stage fabrication — final test before doors open", color: "from-amber-950 to-yellow-900", icon: "⚙️" },
-      { type: "video", src: null, caption: "Broadcast director's suite — live production footage", color: "from-yellow-950 to-amber-900", icon: "▶" },
+      { type: "image", src: tbs1, },
+      { type: "image", src: tbs2, },
+      { type: "video", src: tbsvid1, },
+      { type: "image", src: tbs3, },
+      { type: "image", src: tbs4, },
+      { type: "image", src: tbs5, },
+      { type: "image", src: tbs6, },
+      { type: "image", src: tbs7, },
+      { type: "image", src: tbs8, },
+      { type: "image", src: tbs9, },
+      { type: "image", src: tbs10, },
+      { type: "image", src: tbs11, },
+      { type: "image", src: tbs12, },
+      { type: "image", src: tbs13, },
+      { type: "image", src: tbs14, },
+      { type: "image", src: tbs15, },
+      { type: "image", src: tbs16, },
+      { type: "image", src: tbs17, },
+      { type: "image", src: tbs18, },
+      { type: "image", src: tbs19, },
+      { type: "image", src: tbs20, },
     ],
     testimonial: { quote: "EPA delivered a night that 60 years of dano history deserved. The production quality, the storytelling, the precision — it was world-class in every dimension.", author: "Aliko dano", title: "President & CEO, dano Industries Limited" },
   },
