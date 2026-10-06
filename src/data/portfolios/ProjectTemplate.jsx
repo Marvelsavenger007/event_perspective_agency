@@ -224,7 +224,7 @@ export default function ProjectTemplate() {
                   className="mt-5 -mb-2.5 rounded-[7px]"
                   alt="icon"
                 />
-                <h1 className="font-display text-4xl md:text-6xl xl:text-7xl font-black text-white leading-tight">
+                <h1 className="font-display text-4xl md:text-6xl xl:text-6xl font-black text-white leading-tight">
                   {project.company}
                 </h1>
               </div>
