@@ -1,12 +1,12 @@
-import { featuredEvent, pastEvents } from "../data/events";
+// src/pages/Events.jsx
 import { useState } from "react";
-import ImageSlideshow from "../data/ImageSlideshow";
 import { Link } from "react-router-dom";
-import s2s from "../images/s2s/s2slogo.jpeg"
-
+import { featuredEvent, pastEvents } from "../data/events";
+import { eventPages } from "../data/eventPages";
+import ImageSlideshow from "../data/ImageSlideshow";
+import s2s from "../images/s2s/s2slogo.jpeg";
 
 export default function Events() {
-  // inside your component:
   const [activeSlideshow, setActiveSlideshow] = useState(null); // holds the event object, or null
 
   return (
@@ -27,22 +27,14 @@ export default function Events() {
         </div>
       </section>
 
-      {/* Featured Event */}
+      {/* Flagship Event */}
       <section className="py-20 px-6 md:px-12 bg-surface dark:bg-navy-900">
         <div className="max-w-7xl mx-auto">
           <div className="eyebrow">Flagship Event</div>
           <h2 className="section-title mb-10">Snap To Stardom — Phototainment</h2>
-
           <div className="grid grid-cols-1 md:grid-cols-2 overflow-hidden border border-surface-border dark:border-dark-border">
             <div className="relative bg-slate-100 dark:bg-[#111827] flex items-center justify-center min-h-[280px] md:min-h-[420px]">
-              {/* <span className="absolute top-5 left-5 bg-gold text-navy-900 text-[0.62rem] font-bold tracking-[0.15em] uppercase px-3.5 py-1.5">
-                {featuredEvent.badge}
-              </span> */}
-              <img
-                src={s2s}
-                className="w-full h-full object-cover"
-                alt="s2s"
-              />
+              <img src={s2s} className="w-full h-full object-cover" alt="Snap To Stardom" />
             </div>
             <div className="p-10 md:p-14 bg-gray-50 dark:bg-dark-card flex flex-col justify-center">
               <div className="flex flex-wrap gap-5 mb-6">
@@ -66,25 +58,68 @@ export default function Events() {
                   </div>
                 ))}
               </div>
-              <Link to="/event/snaptostardom">
-                <button className="btn-primary self-start">View Full Story</button>
+              <Link to="/event/snaptostardom" className="self-start">
+                <button className="btn-primary">View Full Story</button>
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Past Events Grid */}
-      <section className="py-20 px-6 md:px-12 bg-surface-secondary dark:bg-navy-800">
+      {/* Awards & Recognition — driven by data/eventPages.js */}
+      {eventPages.length > 0 && (
+        <section className="py-20 px-6 md:px-12 bg-surface-secondary dark:bg-navy-800">
+          <div className="max-w-7xl mx-auto">
+            <div className="eyebrow">Awards & Recognition</div>
+            <h2 className="section-title mb-12">Moments That Made Headlines</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {eventPages.map((e) => (
+                <Link
+                  key={e.slug}
+                  to={`/event/${e.slug}`}
+                  className="card group overflow-hidden hover:-translate-y-1.5 hover:shadow-xl dark:hover:shadow-navy-950/60 transition-all duration-300"
+                >
+                  <div className={`h-48 relative flex items-center justify-center overflow-hidden bg-gradient-to-br ${e.images?.[0]?.color || "from-navy-700 to-navy-800"}`}>
+                    <span className="absolute top-4 left-4 bg-gold text-navy-900 text-[0.6rem] font-bold tracking-[0.15em] uppercase px-3 py-1 z-10">
+                      {e.badge}
+                    </span>
+                    {e.images?.[0]?.src && (
+                      <img
+                        src={e.images[0].src}
+                        alt={e.images[0].alt}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    )}
+                  </div>
+                  <div className="p-7">
+                    <h3 className="font-display text-lg font-bold text-navy-900 dark:text-white mb-3 leading-snug">
+                      {e.cardTitle || `${e.headline} ${e.headlineAccent || ""}`}
+                    </h3>
+                    <p className="text-sm text-navy-500 dark:text-dark-muted leading-relaxed mb-5 line-clamp-3">
+                      {e.intro}
+                    </p>
+                    <span className="text-[0.68rem] tracking-[0.15em] uppercase font-semibold text-gold">
+                      View Full Story →
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Past Events */}
+      <section className="py-20 px-6 md:px-12 bg-surface dark:bg-navy-900">
         <div className="max-w-7xl mx-auto">
           <div className="eyebrow">Past Events</div>
           <h2 className="section-title mb-12">Concerts & Live Shows</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {pastEvents.map((ev) => (
-              <div key={ev.id}
-                className="card group overflow-hidden hover:-translate-y-1.5 hover:shadow-xl dark:hover:shadow-navy-950/60 transition-all duration-300">
-
-                {/* Card image — now clickable, and fills the container properly */}
+              <div
+                key={ev.id}
+                className="card group overflow-hidden hover:-translate-y-1.5 hover:shadow-xl dark:hover:shadow-navy-950/60 transition-all duration-300"
+              >
                 <div
                   className="h-48 bg-gradient-to-br from-navy-700 to-navy-800 relative flex items-center justify-center overflow-hidden cursor-pointer"
                   onClick={() => setActiveSlideshow(ev)}
@@ -100,7 +135,6 @@ export default function Events() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-
                 <div className="p-7">
                   <p className="text-[0.68rem] tracking-[0.12em] uppercase text-[#4a74b3] font-semibold mb-3">{ev.meta}</p>
                   <h3 className="font-display text-lg font-bold text-navy-900 dark:text-white mb-3 leading-snug">{ev.title}</h3>
@@ -113,7 +147,6 @@ export default function Events() {
             ))}
           </div>
 
-          {/* Render the slideshow at the bottom of the component, outside the grid */}
           {activeSlideshow && (
             <ImageSlideshow
               images={activeSlideshow.images || [activeSlideshow.image]}
@@ -121,34 +154,6 @@ export default function Events() {
               onClose={() => setActiveSlideshow(null)}
             />
           )}
-          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {pastEvents.map((ev) => (
-              <div key={ev.id}
-                className="card group overflow-hidden hover:-translate-y-1.5 hover:shadow-xl dark:hover:shadow-navy-950/60 transition-all duration-300">
-                <div className="h-48 bg-gradient-to-br from-navy-700 to-navy-800 relative flex items-center justify-center overflow-hidden">
-                  {ev.badge && (
-                    <span className="absolute top-4 left-4 bg-gold text-navy-900 text-[0.6rem] font-bold tracking-[0.15em] uppercase px-3 py-1">
-                      {ev.badge}
-                    </span>
-                  )}
-                  <img
-                    src={ev.image}
-                    width="120rem"
-                    height="auto"
-                    alt="icon"
-                  />
-                </div>
-                <div className="p-7">
-                  <p className="text-[0.68rem] tracking-[0.12em] uppercase text-[#4a74b3] font-semibold mb-3">{ev.meta}</p>
-                  <h3 className="font-display text-lg font-bold text-navy-900 dark:text-white mb-3 leading-snug">{ev.title}</h3>
-                  <p className="text-sm text-navy-500 dark:text-dark-muted leading-relaxed mb-5">{ev.description}</p>
-                  <span className={`inline-block text-[0.62rem] tracking-[0.15em] uppercase font-semibold border px-2.5 py-1 ${ev.tagColor}`}>
-                    {ev.tag}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div> */}
         </div>
       </section>
     </>

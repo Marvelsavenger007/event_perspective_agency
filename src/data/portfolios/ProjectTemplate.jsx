@@ -81,7 +81,7 @@ function Lightbox({ media, index, onClose }) {
           onClick={prev}
           className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 w-10 h-10
                      border border-white/15 flex items-center justify-center text-white/50
-                     hover:border-gold hover:text-gold transition-all duration-200 hidden md:flex"
+                     hover:border-gold hover:text-[#F5F1E8] transition-all duration-200 hidden md:flex"
         >
           <ChevronLeft size={18} />
         </button>
@@ -89,7 +89,7 @@ function Lightbox({ media, index, onClose }) {
           onClick={next}
           className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 w-10 h-10
                      border border-white/15 flex items-center justify-center text-white/50
-                     hover:border-gold hover:text-gold transition-all duration-200 hidden md:flex"
+                     hover:border-gold hover:text-[#F5F1E8] transition-all duration-200 hidden md:flex"
         >
           <ChevronRight size={18} />
         </button>
@@ -207,21 +207,21 @@ export default function ProjectTemplate() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full pb-16">
           <NavLink
             to="/portfolio"
-            className="inline-flex items-center gap-2 text-white/50 hover:text-gold transition-colors duration-200 text-xs tracking-[0.15em] uppercase font-semibold mb-10"
+            className="inline-flex items-center gap-2 text-white/50 hover:text-[#F5F1E8] transition-colors duration-200 text-xs tracking-[0.15em] uppercase font-semibold mb-10"
           >
             <ArrowLeft size={14} /> Back to Portfolio
           </NavLink>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-10 items-end">
             <div>
               <div className="flex items-center gap-3 mb-5">
-                <span className="text-[0.62rem] tracking-[0.3em] uppercase text-gold font-bold">{project.tag}</span>
+                <span className="text-[0.62rem] tracking-[0.3em] uppercase text-[#F5F1E8] font-bold">{project.tag}</span>
               </div>
               <div className="flex items-center gap-5 mb-4">
                 <img
                   src={project.image}
-                  width="50px"
-                  height="50px"
-                  className="mt-5 -mb-2.5 rounded-[10px]"
+                  width="80px"
+                  height="80px"
+                  className="mt-5 -mb-2.5 rounded-[7px]"
                   alt="icon"
                 />
                 <h1 className="font-display text-4xl md:text-6xl xl:text-7xl font-black text-white leading-tight">
@@ -240,7 +240,7 @@ export default function ProjectTemplate() {
                 { label: "Scope", value: project.scope },
               ].map(({ label, value }) => (
                 <div key={label}>
-                  <span className="text-[0.6rem] tracking-[0.2em] uppercase text-gold font-bold block mb-0.5">{label}</span>
+                  <span className="text-[0.6rem] tracking-[0.2em] uppercase text-[#F5F1E8] font-bold block mb-0.5">{label}</span>
                   <span className="text-sm text-white/70 leading-relaxed">{value}</span>
                 </div>
               ))}
@@ -252,7 +252,7 @@ export default function ProjectTemplate() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 divide-x-0 md:divide-x divide-white/5">
           {project.stats.map((s) => (
             <div key={s.label} className="text-center md:first:pl-0 md:pl-6">
-              <div className="font-display text-3xl md:text-4xl font-black text-gold leading-none mb-1">{s.num}</div>
+              <div className="font-display text-3xl md:text-4xl font-black text-[#F5F1E8] leading-none mb-1">{s.num}</div>
               <div className="text-[0.62rem] tracking-[0.2em] uppercase text-white/40 font-semibold">{s.label}</div>
             </div>
           ))}
@@ -325,7 +325,7 @@ export default function ProjectTemplate() {
         <section className={`py-24 px-6 md:px-12 relative overflow-hidden bg-navy-950 dark:bg-navy-950`}>
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(201,168,76,0.06),transparent_70%)] pointer-events-none" />
           <div className="max-w-3xl mx-auto text-center relative">
-            <div className="text-5xl mb-8 opacity-30 font-display text-gold font-black select-none">"</div>
+            <div className="text-5xl mb-8 opacity-30 font-display text-[#F5F1E8] font-black select-none">"</div>
             <blockquote className="font-display text-xl md:text-2xl italic text-white leading-relaxed mb-8">
               {project.testimonial.quote}
             </blockquote>
@@ -361,9 +361,9 @@ export default function ProjectTemplate() {
                     <span className="font-display text-lg font-bold text-white text-center px-4">{p.company}</span>
                   </div>
                   <div className="absolute inset-0 bg-navy-950/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 flex flex-col justify-end p-6">
-                    <h3 className="font-display text-lg font-bold text-gold mb-2">{p.company}</h3>
+                    <h3 className="font-display text-lg font-bold text-[#F5F1E8] mb-2">{p.company}</h3>
                     <p className="text-xs text-slate-300 leading-relaxed mb-4 line-clamp-2">{p.brief}</p>
-                    <span className="text-[0.68rem] tracking-[0.15em] uppercase text-gold font-semibold flex items-center gap-1.5">
+                    <span className="text-[0.68rem] tracking-[0.15em] uppercase text-[#F5F1E8] font-semibold flex items-center gap-1.5">
                       View Project →
                     </span>
                   </div>

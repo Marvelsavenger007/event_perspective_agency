@@ -1,25 +1,34 @@
-
-import castlelite from "../images/castlelite.jpg";
+import adc from "../images/portfolio/adc/adc.jpg";
+import goldenpenny from "../images/portfolio/fmnportfolio/gpnlogo.jpg";
 import dano from "../images/dano.png";
 import ekulo from "../images/ekulogroup.jpg";
 import flyingfish from "../images/flyingfish.jpg";
-import fmn from "../images/fmn.png";
+// import goldenpenny from "../images/goldenpenny.png";
 import smirnoff from "../images/smirnoff.webp";
 import samsung from "../images/samsung.png";
 import honeywell from "../images/honeywell.png";
 import hero from "../images/hero.jpg";
-import picture1 from "../images/portfolio/fmnportfolio/picture1.jpg";
-import picture3 from "../images/portfolio/fmnportfolio/picture3.jpg";
-import picture4 from "../images/portfolio/fmnportfolio/picture4.jpg";
-import picture5 from "../images/portfolio/fmnportfolio/picture5.jpg";
+import image1 from "../images/portfolio/fmnportfolio/image1.jpg";
+import image2 from "../images/portfolio/fmnportfolio/image2.jpg";
+import image5 from "../images/portfolio/fmnportfolio/image5.jpg";
+import image6 from "../images/portfolio/fmnportfolio/image6.jpeg";
+import video4 from "../images/portfolio/fmnportfolio/video4.mp4";
+import video2 from "../images/portfolio/fmnportfolio/video2.mp4";
+import video3 from "../images/portfolio/fmnportfolio/video3.mp4";
 
-import media1 from "../images/portfolio/fmnportfolio/media1.mp4";
-import media3 from "../images/portfolio/fmnportfolio/media3.mp4";
+import adc1 from "../images/portfolio/adc/adc1.jpg";
+import adc2 from "../images/portfolio/adc/adc2.jpg";
+import adc3 from "../images/portfolio/adc/adc3.jpg";
+import adc4 from "../images/portfolio/adc/adc4.jpg";
+import adc5 from "../images/portfolio/adc/adc5.jpg";
+import adc6 from "../images/portfolio/adc/adc6.jpg";
+import adc7 from "../images/portfolio/adc/adc7.jpg";
+import adc8 from "../images/portfolio/adc/adc8.jpg";
+import adc9 from "../images/portfolio/adc/adc9.jpg";
 
-// ─── Portfolio grid cards ──────────────────────────────────────────────────
 const rawBrandData = [
-  { id: "gbfoods", company: "Flour Mills of Nigeria", image: fmn, gradient: "from-green-950 to-emerald-900", brief: "16-day TOMA brand activation at the NYSC Ekiti Orientation Camp — direct sampling, Mami Market trade merchandising and on-ground sales to build lasting brand trust.", link: "", },
-  { id: "castlelite", company: "castlelite", image: castlelite, gradient: "from-navy-900 to-navy-700", brief: "Production management for the annual Food & Drink Festival — Nigeria's largest lifestyle event, drawing 80,000 visitors over 3 days.", link: "", },
+  { id: "nyscgpn", company: "Golden Penny Noodles", image: goldenpenny, gradient: "from-green-950 to-emerald-900", brief: "16-day TOMA brand activation at the NYSC Ekiti Orientation Camp — direct sampling, Mami Market trade merchandising and on-ground sales to build lasting brand trust.", link: "", },
+  { id: "adc", company: "Amazing Day Cereal", image: adc, gradient: "from-[#2F5416] via-[#486F1B] to-[#1F350E]", brief: "Production management for the annual Food & Drink Festival — Nigeria's largest lifestyle event, drawing 80,000 visitors over 3 days.", link: "", },
   { id: "dano", company: "dano Group", image: dano, gradient: "from-orange-950 to-amber-900", brief: "60th anniversary gala for 700 executives featuring custom set fabrication, live entertainment, and a global broadcast package.", link: "", },
   { id: "samsung", company: "samsungwave", image: samsung, gradient: "from-indigo-950 to-violet-900", brief: "West Africa's first large-scale virtual summit — 14,000 attendees across 35 countries, pioneering hybrid event production.", link: "", },
   { id: "honeywell", company: "honeywell Energies", image: honeywell, gradient: "from-yellow-950 to-amber-950", brief: "Black-tie gala for 600 guests in Port Harcourt celebrating 60 years of operations, with live orchestra and HQ broadcast.", link: "", },
@@ -31,11 +40,10 @@ const rawBrandData = [
 
 export const brandData = rawBrandData.map((b) => ({ ...b, link: `/portfolio/${b.id}` }));
 
-// ─── Full project detail pages ─────────────────────────────────────────────
 export const brandDetails = {
-  gbfoods: {
-    company: "Flour Mills of Nigeria",
-    image: fmn,
+  nyscgpn: {
+    company: "Golden Penny Noodles",
+    image: goldenpenny,
     gradient: "from-[#064E3B] via-[#0F6B4A] to-[#064E3B]",
     accentBg: "bg-emerald-950",
     tag: "Brand Activation · Roadshow",
@@ -56,32 +64,33 @@ export const brandDetails = {
     execution: "Golden Penny Foods executed a 16-day TOMA brand activation at the NYSC Ekiti Orientation Camp from August 10–25, 2026, combining direct product sampling with on-ground sales to build brand trust among Nigerian corps members. The activation delivered strong product trial, sustained consumer engagement and measurable sales conversion — while surfacing clear, actionable opportunities for future camp partnerships.",
     result: "The strategy successfully established Golden Penny as a dominant brand within the NYSC Ekiti camp, effectively transforming competitive friction into measurable retail traction. By securing high-visibility display space across key Mami Market vendors, we successfully challenged Indomie’s market presence and drove continuous brand engagement throughout the 16-day period. Furthermore, resolving the supply chain bottlenecks eliminated missed sales opportunities, driving a high conversion rate from direct product sampling to immediate retail purchase, generating thousands of product trials, and building lasting Top-of-Mind Awareness (TOMA) among the young consumer demographic.",
     media: [
-      { type: "image", src: picture1, caption: "Corps members with Golden Penny sachets at the NYSC Ekiti Orientation Camp", color: "from-emerald-900 to-green-950", icon: "🏕️" },
-      { type: "image", src: picture4, caption: "Photo-frame engagement — corps member with a Golden Penny sample", color: "from-green-900 to-teal-950", icon: "🍜" },
-      { type: "video", src: media1, caption: "Golden Penny Noodles display — improved-taste range on the stand", color: "from-teal-900 to-emerald-950", icon: "▶" },
-      { type: "image", src: picture5, caption: "Corps member enjoying Golden Penny at the branded photo frame", color: "from-emerald-950 to-green-900", icon: "🤝" },
-      { type: "image", src: picture3, caption: "Sampling in action — corps member with a Golden Penny drink cup", color: "from-green-950 to-teal-900", icon: "🛒" },
-      { type: "video", src: media3, caption: "Choco sampling on display at the Golden Penny stand", color: "from-teal-950 to-green-900", icon: "▶" },
+      { type: "image", src: image1, caption: "Corps members with Golden Penny sachets at the NYSC Ekiti Orientation Camp", color: "from-emerald-900 to-green-950", icon: "🏕️" },
+      { type: "image", src: image5, caption: "Photo-frame engagement — corps member with a Golden Penny sample", color: "from-green-900 to-teal-950", icon: "🍜" },
+      { type: "video", src: video2, caption: "Golden Penny Noodles display — improved-taste range on the stand", color: "from-teal-900 to-emerald-950", icon: "▶" },
+      { type: "image", src: image6, caption: "Corps member enjoying Golden Penny at the branded photo frame", color: "from-emerald-950 to-green-900", icon: "🤝" },
+      { type: "image", src: image2, caption: "Sampling in action — corps member with a Golden Penny drink cup", color: "from-green-950 to-teal-900", icon: "🛒" },
+      { type: "video", src: video3, caption: "Choco sampling on display at the Golden Penny stand", color: "from-teal-950 to-green-900", icon: "▶" },
+      { type: "video", src: video4, caption: "Golden Penny Products display", color: "from-teal-950 to-green-900", icon: "▶" },
     ],
     testimonial: { quote: "EPA didn't just execute an event — they built an e that made 5G real for millions of Nigerians overnight. The energy, the precision, the storytelling — it was exactly what we needed.", author: "Kunle Elebute", title: "Chief Marketing Officer, gbfoods Nigeria" },
   },
 
-  castlelite: {
-    company: "castlelite",
-    image: castlelite,
-    gradient: "from-[#002060] via-[#003090] to-[#001040]",
+  adc: {
+    company: "Amazing Day cereal",
+    image: adc,
+    gradient: "from-[#2F5416] via-[#486F1B] to-[#1F350E]",
     accentBg: "bg-blue-950",
-    tag: "Festival Production · Brand Management",
+    tag: " Brand Activation · Product Management",
     tagline: "Three days. 80,000 guests. One unforgettable festival.",
     date: "December 2022",
-    location: "GTCrea8 Amphitheatre, Victoria Island, Lagos",
-    client: "Guaranty Trust Holding Company Plc",
-    scope: "Event Production · Vendor Management · Brand Activations · Media Operations",
+    location: "Pan-Nigerian",
+    client: "Flour Mills Nigeri Plc",
+    scope: " Vendor Management · Brand Activations · Operations",
     stats: [
-      { num: "3", label: "Days" },
-      { num: "80,000", label: "Visitors" },
-      { num: "₦1.2B", label: "Vendor Transactions" },
-      { num: "220+", label: "Food & Drink Stalls" },
+      { num: "7", label: "Months" },
+      { num: "30", label: "Outlets" },
+      // { num: "₦1.2B", label: "Vendor Transactions" },
+      // { num: "220+", label: "Food & Drink Stalls" },
     ],
     overview: "The castlelite Food & Drink Festival is Nigeria's most beloved lifestyle event — a three-day celebration of food, culture, music, and community that draws tens of thousands of Lagos residents every December. As the sole production partner for the 2022 edition, EPA  was responsible for every aspect of the event's physical execution, from site construction to live entertainment and brand activation management.",
     challenge: "The sheer scale of the 2022 festival created layered logistical complexity: 220 vendor stalls across a 15,000 sqm outdoor site, four live performance stages running simultaneously, seven branded sponsor activation zones, and a peak attendance projection of over 27,000 visitors on the final day. All of this had to operate safely, seamlessly, and in line with castlelite's premium brand standards.",
@@ -89,12 +98,17 @@ export const brandDetails = {
     execution: "The build phase took 11 days, with a crew of 340 workers on site simultaneously at peak. We installed 4km of fencing, 18 temporary structures, 6 generators honeywellling 2.4MW of power, and a custom drainage system to manage the December rain risk. Our traffic and crowd management plan — developed in partnership with the Lagos State Traffic Management Authority — reduced queue times at entry gates by 62% compared to the 2021 edition.",
     result: "The 2022 edition set every record in the festival's history: 80,000 cumulative visitors, ₦1.2 billion in vendor transactions, and a net promoter score of 91 among attendees. castlelite's social media team recorded 14 million event-related impressions over the three days, and the festival trended nationally on Twitter for all three consecutive evenings.",
     media: [
-      { type: "image", src: null, caption: "Aerial view of the festival site — Day 2 peak hours", color: "from-blue-900 to-indigo-950", icon: "🎪" },
-      { type: "image", src: null, caption: "West African Food District — vendor stall row", color: "from-indigo-900 to-blue-950", icon: "🍽️" },
-      { type: "video", src: null, caption: "Festival highlights — all three days", color: "from-blue-950 to-indigo-900", icon: "▶" },
-      { type: "image", src: null, caption: "Main stage performance — Saturday evening", color: "from-indigo-950 to-blue-900", icon: "🎵" },
-      { type: "image", src: null, caption: "castlelite activation zone — digital banking demos", color: "from-blue-900 to-slate-950", icon: "💳" },
-      { type: "video", src: null, caption: "Setup time-lapse — 11 days in 90 seconds", color: "from-slate-900 to-blue-950", icon: "▶" },
+      { type: "image", src: adc1,  },
+      { type: "image", src: adc2,  },
+      { type: "image", src: adc3,  },
+      { type: "image", src: adc4,  },
+      { type: "image", src: adc5,  },
+      { type: "image", src: adc6,  },
+      { type: "video", src: null,  },
+      { type: "image", src: adc7,  },
+      { type: "image", src: adc8,  },
+      { type: "image", src: adc9,  },
+      { type: "video", src: null,  },
     ],
     testimonial: { quote: "Year after year, the castlelite Food & Drink Festival raises the bar for what a Nigerian lifestyle event can be. This year, EPA  helped us set a benchmark we're still proud of.", author: "Segun Agbaje", title: "Group CEO, Guaranty Trust Holding Company" },
   },
