@@ -6,7 +6,7 @@ export default function PageHero({ eyebrow, title, titleEm, description }) {
       <div className="max-w-7xl mx-auto relative">
         <div className="eyebrow">{eyebrow}</div>
         <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-navy-900 dark:text-white">
-          {title}{" "}s
+          {title}{" "}
           {titleEm && <em className="text-[#4a74b3] not-italic">{titleEm}</em>}
         </h1>
         {description && (

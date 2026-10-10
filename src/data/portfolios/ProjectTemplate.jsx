@@ -207,7 +207,7 @@ export default function ProjectTemplate() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full pb-16">
           <NavLink
             to="/portfolio"
-            className="inline-flex items-center gap-2 text-white/50 hover:text-[#F5F1E8] transition-colors duration-200 text-xs tracking-[0.15em] uppercase font-semibold mb-10"
+            className="inline-flex items-center gap-2 text-white hover:text-[#F5F1E8] transition-colors duration-200 text-xs tracking-[0.15em] uppercase font-semibold mb-10"
           >
             <ArrowLeft size={14} /> Back to Portfolio
           </NavLink>
@@ -228,7 +228,7 @@ export default function ProjectTemplate() {
                   {project.company}
                 </h1>
               </div>
-              <p className="font-display text-xl md:text-2xl italic text-white/70 leading-relaxed max-w-2xl">
+              <p className="font-display text-xl md:text-2xl italic text-white leading-relaxed max-w-2xl">
                 "{project.tagline}"
               </p>
             </div>
@@ -241,7 +241,7 @@ export default function ProjectTemplate() {
               ].map(({ label, value }) => (
                 <div key={label}>
                   <span className="text-[0.6rem] tracking-[0.2em] uppercase text-[#F5F1E8] font-bold block mb-0.5">{label}</span>
-                  <span className="text-sm text-white/70 leading-relaxed">{value}</span>
+                  <span className="text-sm text-white leading-relaxed">{value}</span>
                 </div>
               ))}
             </div>
@@ -253,7 +253,7 @@ export default function ProjectTemplate() {
           {project.stats.map((s) => (
             <div key={s.label} className="text-center md:first:pl-0 md:pl-6">
               <div className="font-display text-3xl md:text-4xl font-black text-[#F5F1E8] leading-none mb-1">{s.num}</div>
-              <div className="text-[0.62rem] tracking-[0.2em] uppercase text-white/40 font-semibold">{s.label}</div>
+              <div className="text-[0.62rem] tracking-[0.2em] uppercase text-white font-semibold">{s.label}</div>
             </div>
           ))}
         </div>
