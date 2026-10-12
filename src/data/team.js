@@ -12,7 +12,8 @@ import mariam from "../images/teamop/mariam1.jpeg";
 import kanbi from "../images/teamop/kanbi.jpeg";
 import idris from "../images/teamop/idris.jpeg";
 import space1 from "../images/teamop/space1.jpeg";
-import space2 from "../images/teamop/space2.jpeg";
+import teamspace1 from "../images/teamop/teamspace1.jpg";
+import teamspace2 from "../images/teamop/teamspace2.jpg";
 import space3 from "../images/teamop/space3.jpeg";
 import space4 from "../images/teamop/space4.png";
 import office from "../images/teamop/office.png";
@@ -21,8 +22,6 @@ import akin from "../images/teamop/akin.jpeg";
 import grace from "../images/teamop/grace.jpg";
 import { FaLinkedin } from "react-icons/fa6";
 import toyor from "../images/teamop/toyor.jpg";
-
-
 
 
 export const ceo = {
@@ -152,7 +151,6 @@ export const hods = [
     ],
   },
 ];
-
 
 export const admin = [
   {
@@ -293,9 +291,9 @@ export const operations = [
 
 
 export const officeSpaces = [
-  { label: "Executive Office", image: space1, span: true },
-  { label: "Creative Studio", image: space1, },
-  { label: "Receptionist Suite", image: space2, },
-  { label: "Client Boardroom", image: space4, },
+  { label: "Receptionist Suite", image: space1, span: true },
+  { label: "Creative Studio", image: teamspace1, },
+  { label: "Receptionist Suite", image: teamspace2, },
+  { label: "Executive Office", image: space4, },
   { label: "Production Workshop", image: office, },
 ];
