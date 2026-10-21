@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import PageHero from "../components/ui/PageHero";
-import epa from "../images/epabackground.jpeg";
+import epa from "../images/epabackground1.jpeg";
 import {
   FaGlobe,
   FaBullseye,
@@ -109,7 +109,7 @@ export default function About() {
           </div>
           <div>
             <div className="eyebrow">About Us in a Glance</div>
-            <h2 className="section-title mb-6">
+            <h2 className="section-title mb-  6">
               Local Roots, National Reach
             </h2>
             <p className="text-navy-500 dark:text-dark-muted leading-relaxed text-base mb-10">

@@ -262,39 +262,39 @@ const originalActivations = [
     tag: "Festival Branding",
     tagColor: "text-fuchsia-400 border-fuchsia-400",
   },
-  // {
-  //   id: 11,
-  //   folder: "golden-penny-semovita-horeca",
-  //   brand: "Golden Penny Semovita",
-  //   title: "HORECA Campaign",
-  //   meta: "Hotels · Restaurants · Canteens",
-  //   description:
-  //     "Outlets were required to purchase a specified volume of Golden Penny products, with sales representatives stationed on-site to drive both purchase and sell-through — delivering a remarkable sales push.",
-  //   tag: "HORECA Activation",
-  //   tagColor: "text-green-400 border-green-400",
-  // },
-  // {
-  //   id: 13,
-  //   folder: "golden-penny-semovita-merchandising",
-  //   brand: "Golden Penny Semovita",
-  //   title: "Sales & Merchandising",
-  //   meta: "Retail Point-of-Sale",
-  //   description:
-  //     "A sales and merchandising concept designed to encourage purchases, backed by a team of dedicated sales representatives driving consistent, excellent results for the brand.",
-  //   tag: "Merchandising",
-  //   tagColor: "text-green-400 border-green-400",
-  // },
-  // {
-  //   id: 14,
-  //   folder: "golden-penny-semovita-rewarding",
-  //   brand: "Golden Penny Semovita",
-  //   title: "Consumer Rewarding Scheme",
-  //   meta: "Loyalty & Redemption",
-  //   description:
-  //     "An on-ground rewarding initiative that recognised and incentivised Golden Penny Semovita shoppers, strengthening brand loyalty at the point of purchase.",
-  //   tag: "Rewarding Scheme",
-  //   tagColor: "text-green-400 border-green-400",
-  // },
+  {
+    id: 11,
+    folder: "golden-penny-semovita-horeca",
+    brand: "Golden Penny Semovita",
+    title: "HORECA Campaign",
+    meta: "Hotels · Restaurants · Canteens",
+    description:
+      "Outlets were required to purchase a specified volume of Golden Penny products, with sales representatives stationed on-site to drive both purchase and sell-through — delivering a remarkable sales push.",
+    tag: "HORECA Activation",
+    tagColor: "text-green-400 border-green-400",
+  },
+  {
+    id: 13,
+    folder: "golden-penny-semovita-merchandising",
+    brand: "Golden Penny Semovita",
+    title: "Sales & Merchandising",
+    meta: "Retail Point-of-Sale",
+    description:
+      "A sales and merchandising concept designed to encourage purchases, backed by a team of dedicated sales representatives driving consistent, excellent results for the brand.",
+    tag: "Merchandising",
+    tagColor: "text-green-400 border-green-400",
+  },
+  {
+    id: 14,
+    folder: "golden-penny-semovita-rewarding",
+    brand: "Golden Penny Semovita",
+    title: "Consumer Rewarding Scheme",
+    meta: "Loyalty & Redemption",
+    description:
+      "An on-ground rewarding initiative that recognised and incentivised Golden Penny Semovita shoppers, strengthening brand loyalty at the point of purchase.",
+    tag: "Rewarding Scheme",
+    tagColor: "text-green-400 border-green-400",
+  },
   {
     id: 15,
     folder: "trophy-stout-in-bar",
@@ -317,17 +317,17 @@ const originalActivations = [
     tag: "Nutrition Education",
     tagColor: "text-green-400 border-green-400",
   },
-  // {
-  //   id: 20,
-  //   folder: "honeywell-wheatmeal-horeca-loyalty",
-  //   brand: "Honeywell Wheat Meal",
-  //   title: "HORECA Loyalty Scheme",
-  //   meta: "Hotels · Restaurants · Canteens",
-  //   description:
-  //     "A loyalty scheme built for Honeywell Wheat Meal's HORECA partners — rewarding hotels, restaurants, and canteens for consistent purchase and brand advocacy.",
-  //   tag: "HORECA Loyalty",
-  //   tagColor: "text-green-400 border-green-400",
-  // },
+  {
+    id: 20,
+    folder: "honeywell-wheatmeal-horeca-loyalty",
+    brand: "Honeywell Wheat Meal",
+    title: "HORECA Loyalty Scheme",
+    meta: "Hotels · Restaurants · Canteens",
+    description:
+      "A loyalty scheme built for Honeywell Wheat Meal's HORECA partners — rewarding hotels, restaurants, and canteens for consistent purchase and brand advocacy.",
+    tag: "HORECA Loyalty",
+    tagColor: "text-green-400 border-green-400",
+  },
   {
     id: 21,
     folder: "honeywell-noodles-childrens-day",
@@ -339,72 +339,72 @@ const originalActivations = [
     tag: "Children's Day",
     tagColor: "text-teal-400 border-teal-400",
   },
-  // {
-  //   id: 22,
-  //   folder: "mr-chef",
-  //   brand: "Mr. Chef",
-  //   title: "Market Display and Win Activation",
-  //   meta: "Open-Market Merchandising",
-  //   description:
-  //     "A market-wide display-and-win activation that transformed open-market stalls into eye-catching Mr. Chef branded showcases, rewarding vendors for standout displays.",
-  //   tag: "Market Display",
-  //   tagColor: "text-purple-400 border-purple-400",
-  // },
-  // {
-  //   id: 23,
-  //   folder: "cowbell-chocolate-drink-rural",
-  //   brand: "Cowbell Chocolate Drink",
-  //   title: "Reward for Excellence — Rural Market Road Show",
-  //   meta: "2008",
-  //   description:
-  //     "A rural market roadshow and reward-for-excellence programme that took Cowbell Chocolate Drink into schools and communities with mascots, performances, and prizes.",
-  //   tag: "Rural Roadshow",
-  //   tagColor: "text-rose-400 border-rose-400",
-  // },
-  // {
-  //   id: 24,
-  //   folder: "onga-roadshow-cooking-contest",
-  //   brand: "Onga",
-  //   title: "Road Show / Cooking Contest",
-  //   meta: "Community Engagement",
-  //   description:
-  //     "A roadshow and live cooking contest that brought the Onga seasoning brand into communities, blending entertainment with hands-on culinary engagement.",
-  //   tag: "Cooking Contest",
-  //   tagColor: "text-yellow-400 border-yellow-400",
-  // },
-  // {
-  //   id: 25,
-  //   folder: "ekulo-lagos-trade-fair",
-  //   brand: "Ekulo Group of Companies",
-  //   title: "Lagos International Trade Fair",
-  //   meta: "Trade Fair Stand",
-  //   description:
-  //     "A fully branded stand and on-ground team representing the Ekulo Group of Companies portfolio at the Lagos International Trade Fair, driving product visibility and trade engagement.",
-  //   tag: "Trade Fair",
-  //   tagColor: "text-pink-400 border-pink-400",
-  // },
-  // {
-  //   id: 26,
-  //   folder: "sosaco-mobile-redemption",
-  //   brand: "Sosaco Nig. Ltd",
-  //   title: "Mobile Redemption Centre Campaign",
-  //   meta: "Roving Redemption Unit",
-  //   description:
-  //     "A branded mobile redemption centre and stage unit that travelled to communities, giving consumers an on-the-spot way to redeem rewards and engage with the Sosaco brand.",
-  //   tag: "Mobile Campaign",
-  //   tagColor: "text-cyan-400 border-cyan-400",
-  // },
-  // {
-  //   id: 27,
-  //   folder: "sosaco-trade-fair",
-  //   brand: "Sosaco",
-  //   title: "Trade Fair",
-  //   meta: "Trade Fair Stand",
-  //   description:
-  //     "A fully branded Sosaco trade fair stand featuring live performances and product showcases, drawing strong footfall and trade engagement.",
-  //   tag: "Trade Fair",
-  //   tagColor: "text-pink-400 border-pink-400",
-  // },
+  {
+    id: 22,
+    folder: "mr-chef",
+    brand: "Mr. Chef",
+    title: "Market Display and Win Activation",
+    meta: "Open-Market Merchandising",
+    description:
+      "A market-wide display-and-win activation that transformed open-market stalls into eye-catching Mr. Chef branded showcases, rewarding vendors for standout displays.",
+    tag: "Market Display",
+    tagColor: "text-purple-400 border-purple-400",
+  },
+  {
+    id: 23,
+    folder: "cowbell-chocolate-drink-rural",
+    brand: "Cowbell Chocolate Drink",
+    title: "Reward for Excellence — Rural Market Road Show",
+    meta: "2008",
+    description:
+      "A rural market roadshow and reward-for-excellence programme that took Cowbell Chocolate Drink into schools and communities with mascots, performances, and prizes.",
+    tag: "Rural Roadshow",
+    tagColor: "text-rose-400 border-rose-400",
+  },
+  {
+    id: 24,
+    folder: "onga-roadshow-cooking-contest",
+    brand: "Onga",
+    title: "Road Show / Cooking Contest",
+    meta: "Community Engagement",
+    description:
+      "A roadshow and live cooking contest that brought the Onga seasoning brand into communities, blending entertainment with hands-on culinary engagement.",
+    tag: "Cooking Contest",
+    tagColor: "text-yellow-400 border-yellow-400",
+  },
+  {
+    id: 25,
+    folder: "ekulo-lagos-trade-fair",
+    brand: "Ekulo Group of Companies",
+    title: "Lagos International Trade Fair",
+    meta: "Trade Fair Stand",
+    description:
+      "A fully branded stand and on-ground team representing the Ekulo Group of Companies portfolio at the Lagos International Trade Fair, driving product visibility and trade engagement.",
+    tag: "Trade Fair",
+    tagColor: "text-pink-400 border-pink-400",
+  },
+  {
+    id: 26,
+    folder: "sosaco-mobile-redemption",
+    brand: "Sosaco Nig. Ltd",
+    title: "Mobile Redemption Centre Campaign",
+    meta: "Roving Redemption Unit",
+    description:
+      "A branded mobile redemption centre and stage unit that travelled to communities, giving consumers an on-the-spot way to redeem rewards and engage with the Sosaco brand.",
+    tag: "Mobile Campaign",
+    tagColor: "text-cyan-400 border-cyan-400",
+  },
+  {
+    id: 27,
+    folder: "sosaco-trade-fair",
+    brand: "Sosaco",
+    title: "Trade Fair",
+    meta: "Trade Fair Stand",
+    description:
+      "A fully branded Sosaco trade fair stand featuring live performances and product showcases, drawing strong footfall and trade engagement.",
+    tag: "Trade Fair",
+    tagColor: "text-pink-400 border-pink-400",
+  },
 ];
 
 // Attach gallery + thumbnail for original activations

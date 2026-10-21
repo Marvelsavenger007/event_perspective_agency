@@ -12,7 +12,7 @@ import lushhair from "../images/lushhair.png";
 import honeywell from "../images/honeywell.png";
 import hero from "../images/hero.jpg";
 import goldenpenny from "../images/goldenpenny.jpg";
-import epa from "../images/epabackground.jpeg";
+import epa from "../images/epabackground1.jpeg";
 
 const stats = [
   { num: "100+", label: "Events Executed" },
@@ -144,16 +144,16 @@ export default function Home() {
             <img
               src={epa}
               alt="Event Perspective Agency"
-              className="h-74"
+              className="h-100"
               w-auto
-              object-contain
+              // object-contain
             />
             <div className="absolute top-5 left-5 right-[-20px] bottom-[-20px] border border-gold/20 -z-10" />
           </div>
           <div>
             <div className="eyebrow">Who We Are</div>
             <h2 className="section-title mb-6">
-              Crafting Es That People Remember for Life
+              Crafting Experiences That People Remember for Life
             </h2>
             <p className="text-navy-500 dark:text-dark-muted leading-relaxed text-base mb-8">
               We are a full-service experiential marketing agency born in Lagos,
