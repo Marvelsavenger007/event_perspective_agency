@@ -1,11 +1,10 @@
-import { loadActivationImages } from "./loadactivationimages";
-import { loadEventImages } from "./loadeventimages.js";
+import { loadMedia } from "./loadmedia";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Entries that originated in the Events page but are experiential activations
 // (not concerts/open-air music events) — moved here so they sit in the correct
 // Experientials & Activations tab on the Portfolio page.
-// Their images still load from src/images/events/<folder>/ via loadEventImages.
+// Their media still loads from src/images/events/<folder>/ via loadMedia.
 // ─────────────────────────────────────────────────────────────────────────────
 const fromEvents = [
   {
@@ -144,8 +143,10 @@ const fromEvents = [
 
 // Attach images from the events folder for migrated entries
 fromEvents.forEach((a) => {
-  a.images = loadEventImages(a.folder);
-  a.image = a.images[0];
+  const { images, videos } = loadMedia("events", a.folder);
+  a.images = images;
+  a.videos = videos;
+  a.image = images[0];
 });
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -409,8 +410,10 @@ const originalActivations = [
 
 // Attach gallery + thumbnail for original activations
 originalActivations.forEach((a) => {
-  a.images = loadActivationImages(a.folder);
-  a.image = a.images[0];
+  const { images, videos } = loadMedia("activations", a.folder);
+  a.images = images;
+  a.videos = videos;
+  a.image = images[0];
 });
 
 // ─────────────────────────────────────────────────────────────────────────────

@@ -1,8 +1,8 @@
-import { loadFabricationImages } from "./loadfabricationimages";
+import { loadMedia } from "./loadmedia";
 
 // Each entry maps to a folder under src/images/fabrications/<folder>/ —
 // drop photos (and a video if you have one) in there and they'll surface
-// automatically via loadFabricationImages(). No code changes needed later.
+// automatically via loadMedia(). No code changes needed later.
 export const fabrications = [
   {
     id: 1,
@@ -65,6 +65,8 @@ export const fabrications = [
 // dropped into src/images/fabrications/<folder>/, images will simply be an
 // empty array and the card will render a "coming soon" placeholder.
 fabrications.forEach((f) => {
-  f.images = loadFabricationImages(f.folder);
-  f.image = f.images[0]; // undefined until images exist — handled in the UI
+  const { images, videos } = loadMedia("fabrications", f.folder);
+  f.images = images;
+  f.videos = videos;
+  f.image = images[0]; // undefined until images exist — handled in the UI
 });

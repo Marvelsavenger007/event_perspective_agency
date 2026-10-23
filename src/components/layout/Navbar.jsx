@@ -8,8 +8,8 @@ const navItems = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
-  // { to: "/portfolio", label: "Portfolio" },
-  { to: "/maintenance", label: "Portfolio" },
+  { to: "/portfolio", label: "Portfolio" },
+  // { to: "/maintenance", label: "Portfolio" },
   { to: "/events", label: "Events" },
   { to: "/team", label: "Team" },
   { to: "/contact", label: "Contact" },
@@ -42,12 +42,6 @@ export default function Navbar() {
           border-b border-surface-border dark:border-gold/10`}
       >
         <NavLink to="/" className="flex flex-col ">
-          {/* <span className="font-display font-black text-xl tracking-widest text-[#4a74b3]">
-            EVENT PERSPECTIVE
-          </span>
-          <span className="font-sans text-[0.45rem] tracking-[0.35em] uppercase text-navy-600 dark:text-slate-900 mt-0.5">
-            Agency
-          </span> */}
             <img
               src={epalogo}
               width="150px"

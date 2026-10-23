@@ -16,9 +16,10 @@ function isVideo(src = "") {
 function buildMedia(item) {
   const imgs = item.images || [];
   const vids = item.videos || [];
+  // Videos first so the landscape hero in the gallery is always a video
   return [
-    ...imgs.map((src) => ({ src, type: "image" })),
     ...vids.map((src) => ({ src, type: "video" })),
+    ...imgs.map((src) => ({ src, type: "image" })),
   ];
 }
 
@@ -83,6 +84,8 @@ function Lightbox({ media, startIndex, onClose }) {
             alt=""
             className="max-h-full max-w-full object-contain rounded-sm select-none"
             draggable={false}
+            loading="lazy"
+            decoding="async"
           />
         )}
       </div>
@@ -156,6 +159,8 @@ function MediaGallery({ media, onOpenLightbox }) {
      5+      → first item hero-sized, rest in responsive masonry rows
   */
   const count = media.length;
+  // When the first item is a video, always use the landscape hero + masonry layout
+  const videoFirst = count > 1 && media[0].type === "video";
 
   if (count === 1) {
     return (
@@ -163,7 +168,7 @@ function MediaGallery({ media, onOpenLightbox }) {
     );
   }
 
-  if (count === 2) {
+  if (!videoFirst && count === 2) {
     return (
       <div className="grid grid-cols-2 gap-2">
         {media.map((m, i) => (
@@ -173,7 +178,7 @@ function MediaGallery({ media, onOpenLightbox }) {
     );
   }
 
-  if (count === 3) {
+  if (!videoFirst && count === 3) {
     return (
       <div className="grid grid-cols-2 gap-2" style={{ gridTemplateRows: "auto auto" }}>
         <div className="row-span-2">
@@ -185,7 +190,7 @@ function MediaGallery({ media, onOpenLightbox }) {
     );
   }
 
-  if (count === 4) {
+  if (!videoFirst && count === 4) {
     return (
       <div className="grid grid-cols-3 gap-2">
         <div className="col-span-2">
@@ -232,7 +237,7 @@ function SingleHero({ item, index, onOpen }) {
       onClick={() => onOpen(index)}
     >
       {item.type === "video" ? (
-        <VideoThumbnail src={item.src} />
+        <VideoThumbnail src={item.src} autoPlay />
       ) : (
         <img src={item.src} alt="" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
       )}
@@ -244,9 +249,10 @@ function SingleHero({ item, index, onOpen }) {
 }
 
 function MediaTile({ item, index, onOpen, aspectClass }) {
+  const wrapperAspect = aspectClass || (item.type === "video" ? "aspect-video" : "");
   return (
     <div
-      className={`relative overflow-hidden rounded-lg cursor-zoom-in group bg-navy-900 ${aspectClass}`}
+      className={`relative overflow-hidden rounded-lg cursor-zoom-in group bg-navy-900 ${wrapperAspect}`}
       onClick={() => onOpen(index)}
     >
       {item.type === "video" ? (
@@ -271,26 +277,52 @@ function MediaTile({ item, index, onOpen, aspectClass }) {
   );
 }
 
-function VideoThumbnail({ src }) {
+function VideoThumbnail({ src, autoPlay = false }) {
   const ref = useRef(null);
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(autoPlay);
+  const [failed, setFailed] = useState(false);
+
+  if (failed) {
+    return (
+      <div className="w-full h-full min-h-[120px] flex flex-col items-center justify-center gap-1 bg-navy-800 text-white/60 text-center px-4">
+        <Play size={22} />
+        <span className="text-[0.65rem] tracking-wide uppercase font-semibold">
+          Video format not supported by this browser
+        </span>
+        <span className="text-[0.6rem] text-white/40">Re-export as MP4 (H.264)</span>
+      </div>
+    );
+  }
 
   const toggle = (e) => {
     e.stopPropagation();
     if (!ref.current) return;
-    if (playing) { ref.current.pause(); setPlaying(false); }
-    else { ref.current.play(); setPlaying(true); }
+    if (playing) ref.current.pause();
+    else ref.current.play().catch(() => {});
   };
 
   return (
     <div className="relative w-full h-full">
-      <video ref={ref} src={src} className="w-full h-full object-cover" playsInline muted loop />
-      <div className="absolute inset-0 flex items-center justify-center">
+      <video
+        ref={ref}
+        src={src}
+        className="w-full h-full object-cover"
+        playsInline
+        muted
+        loop
+        autoPlay={autoPlay}
+        preload="metadata"
+        onError={() => setFailed(true)}
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+      />
+      <div className="absolute bottom-3 left-3">
         <button
           onClick={toggle}
-          className="w-12 h-12 rounded-full bg-black/50 backdrop-blur flex items-center justify-center text-white hover:bg-black/70 transition-all"
+          className="w-10 h-10 rounded-full bg-black/50 backdrop-blur flex items-center justify-center text-white hover:bg-black/70 transition-all"
+          aria-label={playing ? "Pause video" : "Play video"}
         >
-          {playing ? <Pause size={18} /> : <Play size={18} />}
+          {playing ? <Pause size={16} /> : <Play size={16} />}
         </button>
       </div>
     </div>
@@ -367,17 +399,28 @@ export default function WorkDetail() {
       </div>
 
       {/* ── Hero image banner ── */}
-      {item.image && (
+      {(item.image || item.videos?.[0]) && (
         <div
           className="relative w-full overflow-hidden"
           style={{ height: "clamp(220px, 38vw, 480px)" }}
         >
-          <img
-            src={item.image}
-            alt={item.title}
-            className="w-full h-full object-cover"
-            style={{ filter: "brightness(0.55)" }}
-          />
+          {item.image ? (
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full h-full object-cover"
+              style={{ filter: "brightness(0.55)" }}
+            />
+          ) : (
+            <video
+              src={`${item.videos[0]}#t=0.1`}
+              muted
+              playsInline
+              preload="metadata"
+              className="w-full h-full object-cover"
+              style={{ filter: "brightness(0.55)" }}
+            />
+          )}
           {/* gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-900/30 to-transparent" />
           {/* Tag pill */}
@@ -565,7 +608,7 @@ export default function WorkDetail() {
 ───────────────────────────────────────────────────────────────────────────── */
 function RelatedStrip({ currentId, type, allItems }) {
   const others = allItems
-    .filter((a) => String(a.id) !== String(currentId) && a.image)
+    .filter((a) => String(a.id) !== String(currentId) && (a.image || a.videos?.length))
     .slice(0, 4);
 
   if (!others.length) return null;
@@ -583,14 +626,23 @@ function RelatedStrip({ currentId, type, allItems }) {
             to={`/work/${type}/${item.id}`}
             className="group relative rounded-xl overflow-hidden aspect-[4/3] block bg-navy-800"
           >
-            {item.image && (
+            {item.image ? (
               <img
                 src={item.image}
                 alt={item.title}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 style={{ filter: "brightness(0.65)" }}
               />
-            )}
+            ) : item.videos?.[0] ? (
+              <video
+                src={`${item.videos[0]}#t=0.1`}
+                muted
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-cover"
+                style={{ filter: "brightness(0.65)" }}
+              />
+            ) : null}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-3">
               <p className="text-[0.6rem] font-bold tracking-wide uppercase text-[#7fa8e0] mb-0.5">{item.brand}</p>
               <p className="text-xs font-semibold text-white leading-snug line-clamp-2">{item.title}</p>

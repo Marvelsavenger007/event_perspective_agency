@@ -36,6 +36,7 @@ function ProjectCard({ item }) {
 /* ── Activations / Fabrications card — navigates to WorkDetail page ── */
 function WorkCard({ item, type }) {
   const hasImages = item.images && item.images.length > 0;
+  const thumbVideo = !hasImages && item.videos && item.videos.length > 0 ? item.videos[0] : null;
   const detailPath = `/work/${type}/${item.id}`;
 
   return (
@@ -50,6 +51,17 @@ function WorkCard({ item, type }) {
             src={item.image}
             alt={item.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        ) : thumbVideo ? (
+          <video
+            src={`${thumbVideo}#t=0.1`}
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onMouseEnter={(e) => e.currentTarget.play().catch(() => {})}
+            onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0.1; }}
           />
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center gap-2 text-white/30">
