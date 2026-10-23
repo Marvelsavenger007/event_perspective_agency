@@ -127,18 +127,6 @@ const fromEvents = [
     tagColor: "text-teal-400 border-teal-400",
     _imageLoader: "event",
   },
-  {
-    id: "ev-13",
-    folder: "goodmorningflakes",
-    brand: "Good Morning Corn flakes",
-    title: "GPNL Children's Kitchen",
-    meta: "Lagos",
-    description:
-      "A community-focused food e designed to engage children through cooking activities, learning, and interactive brand es — promoting food creativity, family engagement, and the Golden Penny brand.",
-    tag: "Community Activation",
-    tagColor: "text-teal-400 border-teal-400",
-    _imageLoader: "event",
-  },
 ];
 
 // Attach images from the events folder for migrated entries
@@ -210,7 +198,7 @@ const originalActivations = [
   },
   {
     id: 6,
-    folder: "golden-bite-chinchin",
+    folder: "golden-bite-redistribution",
     brand: "Golden Bite Chin-Chin",
     title: "Re-Distribution Drive",
     meta: "Nationwide Retail Outlets",
@@ -351,51 +339,51 @@ const originalActivations = [
     tag: "Market Display",
     tagColor: "text-purple-400 border-purple-400",
   },
-  {
-    id: 23,
-    folder: "cowbell-chocolate-drink-rural",
-    brand: "Cowbell Chocolate Drink",
-    title: "Reward for Excellence — Rural Market Road Show",
-    meta: "2008",
-    description:
-      "A rural market roadshow and reward-for-excellence programme that took Cowbell Chocolate Drink into schools and communities with mascots, performances, and prizes.",
-    tag: "Rural Roadshow",
-    tagColor: "text-rose-400 border-rose-400",
-  },
-  {
-    id: 24,
-    folder: "onga-roadshow-cooking-contest",
-    brand: "Onga",
-    title: "Road Show / Cooking Contest",
-    meta: "Community Engagement",
-    description:
-      "A roadshow and live cooking contest that brought the Onga seasoning brand into communities, blending entertainment with hands-on culinary engagement.",
-    tag: "Cooking Contest",
-    tagColor: "text-yellow-400 border-yellow-400",
-  },
-  {
-    id: 25,
-    folder: "ekulo-lagos-trade-fair",
-    brand: "Ekulo Group of Companies",
-    title: "Lagos International Trade Fair",
-    meta: "Trade Fair Stand",
-    description:
-      "A fully branded stand and on-ground team representing the Ekulo Group of Companies portfolio at the Lagos International Trade Fair, driving product visibility and trade engagement.",
-    tag: "Trade Fair",
-    tagColor: "text-pink-400 border-pink-400",
-  },
-  {
-    id: 26,
-    folder: "sosaco-mobile-redemption",
-    brand: "Sosaco Nig. Ltd",
-    title: "Mobile Redemption Centre Campaign",
-    meta: "Roving Redemption Unit",
-    description:
-      "A branded mobile redemption centre and stage unit that travelled to communities, giving consumers an on-the-spot way to redeem rewards and engage with the Sosaco brand.",
-    tag: "Mobile Campaign",
-    tagColor: "text-cyan-400 border-cyan-400",
-  },
-  {
+  // {
+  //   id: 23,
+  //   folder: "cowbell-chocolate-drink-rural",
+  //   brand: "Cowbell Chocolate Drink",
+  //   title: "Reward for Excellence — Rural Market Road Show",
+  //   meta: "2008",
+  //   description:
+  //     "A rural market roadshow and reward-for-excellence programme that took Cowbell Chocolate Drink into schools and communities with mascots, performances, and prizes.",
+  //   tag: "Rural Roadshow",
+  //   tagColor: "text-rose-400 border-rose-400",
+  // },
+  // {
+  //   id: 24,
+  //   folder: "onga-roadshow-cooking-contest",
+  //   brand: "Onga",
+  //   title: "Road Show / Cooking Contest",
+  //   meta: "Community Engagement",
+  //   description:
+  //     "A roadshow and live cooking contest that brought the Onga seasoning brand into communities, blending entertainment with hands-on culinary engagement.",
+  //   tag: "Cooking Contest",
+  //   tagColor: "text-yellow-400 border-yellow-400",
+  // },
+  // {
+  //   id: 25,
+  //   folder: "ekulo-lagos-trade-fair",
+  //   brand: "Ekulo Group of Companies",
+  //   title: "Lagos International Trade Fair",
+  //   meta: "Trade Fair Stand",
+  //   description:
+  //     "A fully branded stand and on-ground team representing the Ekulo Group of Companies portfolio at the Lagos International Trade Fair, driving product visibility and trade engagement.",
+  //   tag: "Trade Fair",
+  //   tagColor: "text-pink-400 border-pink-400",
+  // },
+  // {
+  //   id: 26,
+  //   folder: "sosaco-mobile-redemption",
+  //   brand: "Sosaco Nig. Ltd",
+  //   title: "Mobile Redemption Centre Campaign",
+  //   meta: "Roving Redemption Unit",
+  //   description:
+  //     "A branded mobile redemption centre and stage unit that travelled to communities, giving consumers an on-the-spot way to redeem rewards and engage with the Sosaco brand.",
+  //   tag: "Mobile Campaign",
+  //   tagColor: "text-cyan-400 border-cyan-400",
+  // },
+  // {
     id: 27,
     folder: "sosaco-trade-fair",
     brand: "Sosaco",
@@ -405,7 +393,7 @@ const originalActivations = [
       "A fully branded Sosaco trade fair stand featuring live performances and product showcases, drawing strong footfall and trade engagement.",
     tag: "Trade Fair",
     tagColor: "text-pink-400 border-pink-400",
-  },
+  // },
 ];
 
 // Attach gallery + thumbnail for original activations
