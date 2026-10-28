@@ -97,17 +97,17 @@ export const pastEvents = [
     tag: "Concert",
     tagColor: "text-rose-400 border-rose-400",
   },
-  {
-    id: "sun-up-sun-down-oweri-flying-fish-event",
-    folder: "flypool",
-    badge: null,
-    meta: "September 2020 · Nigeria",
-    title: "SUN UP SUN DOWN OWERRI FF EVENT",
-    description:
-      "The Sun Up Sun Down event, which took place in Owerri, was a key opportunity for the Flying Fish beer brand. The agency ensured optimal brand visibility and used the event to introduce the product to the eastern market. With over 1,000 attendees, the event resulted in a complete sell-out and significantly boosted the brand’s popularity in the region.",
-    tag: "Concert",
-    tagColor: "text-rose-400 border-rose-400",
-  },
+  // {
+  //   id: "sun-up-sun-down-oweri-flying-fish-event",
+  //   folder: "flypool",
+  //   badge: null,
+  //   meta: "September 2020 · Nigeria",
+  //   title: "SUN UP SUN DOWN OWERRI FF EVENT",
+  //   description:
+  //     "The Sun Up Sun Down event, which took place in Owerri, was a key opportunity for the Flying Fish beer brand. The agency ensured optimal brand visibility and used the event to introduce the product to the eastern market. With over 1,000 attendees, the event resulted in a complete sell-out and significantly boosted the brand’s popularity in the region.",
+  //   tag: "Concert",
+  //   tagColor: "text-rose-400 border-rose-400",
+  // },
 ];
 
 // Attach images + videos from src/images/events/<folder>/ and use the first

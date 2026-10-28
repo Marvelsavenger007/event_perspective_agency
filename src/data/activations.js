@@ -208,17 +208,6 @@ const originalActivations = [
     tagColor: "text-sky-400 border-sky-400",
   },
   {
-    id: "castlelite-interactive-comedy-event",
-    folder: "castlelite-comedy",
-    brand: "Castle Lite",
-    title: "Interactive Comedy Event",
-    meta: "Brand Experience Venue",
-    description:
-      "A branded comedy show designed to elevate brand awareness and recognition, extend brand longevity, and craft a distinct venue atmosphere for an unforgettable guest experience.",
-    tag: "Interactive Event",
-    tagColor: "text-fuchsia-400 border-fuchsia-400",
-  },
-  {
     id: "castle-lite-interactive-play",
     folder: "castle-lite-interactive-play",
     brand: "Castle Lite",
