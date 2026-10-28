@@ -431,12 +431,7 @@ export default function WorkDetail() {
           )}
           {/* gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-900/30 to-transparent" />
-          {/* Tag pill */}
-          {/* <div className="absolute top-10 left-6 md:left-12">
-            <span className={`text-[0.62rem] font-bold tracking-[0.18em] uppercase border px-3 py-1.5 backdrop-blur-sm bg-black/30 ${item.tagColor}`}>
-              {item.tag}
-            </span>
-          </div> */}
+        
         </div>
       )}
 
@@ -544,9 +539,9 @@ export default function WorkDetail() {
                     <dd className="text-sm text-navy-700 dark:text-slate-300">{item.meta}</dd>
                   </div>
                 )}
-                <div className="flex flex-col gap-0.5 pt-3">
-                  <dt className="text-[0.62rem] font-bold tracking-[0.14em] uppercase text-navy-400 dark:text-slate-500">Type</dt>
-                  <dd className={`text-xs font-bold tracking-wide uppercase border self-start px-2 py-0.5 ${item.tagColor}`}>
+                <div className="flex flex-col gap-0.5 pt-3 ">
+                  <dt className="text-[0.62rem] font-bold tracking-[0.14em] uppercase text-navy-400 dark:text-slate-500 pb-1">Type</dt>
+                  <dd className={`text-xs font-bold tracking-wide uppercase border self-start px-2 py-1.5 ${item.tagColor}`}>
                     {item.tag}
                   </dd>
                 </div>
