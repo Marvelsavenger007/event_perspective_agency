@@ -76,6 +76,17 @@ export const pastEvents = [
     tagColor: "text-rose-400 border-rose-400",
   },
   {
+    id: "castlelite-interactive-comedy-event",
+    folder: "castlelite-comedy",
+    badge: null,
+    title: "Interactive Comedy Event",
+    meta: "Brand Experience Venue",
+    description:
+      "A branded comedy show designed to elevate brand awareness and recognition, extend brand longevity, and craft a distinct venue atmosphere for an unforgettable guest experience.",
+    tag: "Interactive Event",
+    tagColor: "text-fuchsia-400 border-fuchsia-400",
+  },
+  {
     id: "flying-fish-fly-pool",
     folder: "flypool",
     badge: null,
@@ -107,3 +118,4 @@ pastEvents.forEach((ev) => {
   ev.videos = videos;
   ev.image = images[0];
 });
+
