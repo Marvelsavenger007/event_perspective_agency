@@ -1,17 +1,12 @@
 // src/pages/Events.jsx
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { featuredEvent, pastEvents } from "../data/events";
 import { eventPages } from "../data/eventPages";
-import ImageSlideshow from "../data/ImageSlideshow";
 import s2s from "../images/s2s/s2slogo.jpeg";
 
 export default function Events() {
-  const [activeSlideshow, setActiveSlideshow] = useState(null); // holds the event object, or null
-
   return (
     <>
-      {/* Events Hero */}
       <section className="pt-40 pb-20 px-6 md:px-12 relative overflow-hidden
                           bg-gradient-to-b from-surface to-surface-secondary dark:from-navy-900 dark:to-navy-800">
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#E87461] via-gold to-[#E87461]" />
@@ -26,8 +21,6 @@ export default function Events() {
           </p>
         </div>
       </section>
-
-      {/* Flagship Event */}
       <section className="py-20 px-6 md:px-12 bg-surface dark:bg-navy-900">
         <div className="max-w-7xl mx-auto">
           <div className="eyebrow">Flagship Event</div>
@@ -65,9 +58,7 @@ export default function Events() {
           </div>
         </div>
       </section>
-
-      {/* Awards & Recognition — driven by data/eventPages.js */}
-      {eventPages.length > 0 && (
+      {/* {eventPages.length > 0 && (
         <section className="py-20 px-6 md:px-12 bg-surface-secondary dark:bg-navy-800">
           <div className="max-w-7xl mx-auto">
             <div className="eyebrow">Awards & Recognition</div>
@@ -107,53 +98,59 @@ export default function Events() {
             </div>
           </div>
         </section>
-      )}
-
-      {/* Past Events */}
+      )} */}
       <section className="py-20 px-6 md:px-12 bg-surface dark:bg-navy-900">
         <div className="max-w-7xl mx-auto">
           <div className="eyebrow">Past Events</div>
           <h2 className="section-title mb-12">Concerts & Live Shows</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {pastEvents.map((ev) => (
-              <div
+              <Link
                 key={ev.id}
-                className="card group overflow-hidden hover:-translate-y-1.5 hover:shadow-xl dark:hover:shadow-navy-950/60 transition-all duration-300"
+                to={`/work/events/${ev.id}`}
+                className="card group block overflow-hidden hover:-translate-y-1.5 hover:shadow-xl dark:hover:shadow-navy-950/60 transition-all duration-300"
               >
-                <div
-                  className="h-48 bg-gradient-to-br from-navy-700 to-navy-800 relative flex items-center justify-center overflow-hidden cursor-pointer"
-                  onClick={() => setActiveSlideshow(ev)}
-                >
+                <div className="h-48 bg-gradient-to-br from-navy-700 to-navy-800 relative flex items-center justify-center overflow-hidden">
                   {ev.badge && (
                     <span className="absolute top-4 left-4 bg-gold text-navy-900 text-[0.6rem] font-bold tracking-[0.15em] uppercase px-3 py-1 z-10">
                       {ev.badge}
                     </span>
                   )}
-                  <img
-                    src={ev.image}
-                    alt={ev.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+                  {ev.image ? (
+                    <img
+                      src={ev.image}
+                      alt={ev.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : ev.videos?.[0] ? (
+                    <video
+                      src={`${ev.videos[0]}#t=0.1`}
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      onMouseEnter={(e) => e.currentTarget.play().catch(() => {})}
+                      onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0.1; }}
+                    />
+                  ) : null}
                 </div>
                 <div className="p-7">
                   <p className="text-[0.68rem] tracking-[0.12em] uppercase text-[#4a74b3] font-semibold mb-3">{ev.meta}</p>
                   <h3 className="font-display text-lg font-bold text-navy-900 dark:text-white mb-3 leading-snug">{ev.title}</h3>
                   <p className="text-sm text-navy-500 dark:text-dark-muted leading-relaxed mb-5">{ev.description}</p>
-                  <span className={`inline-block text-[0.62rem] tracking-[0.15em] uppercase font-semibold border px-2.5 py-1 ${ev.tagColor}`}>
-                    {ev.tag}
-                  </span>
+                  <div className="flex items-center justify-between gap-3">
+                    <span className={`inline-block text-[0.62rem] tracking-[0.15em] uppercase font-semibold border px-2.5 py-1 ${ev.tagColor}`}>
+                      {ev.tag}
+                    </span>
+                    <span className="text-[0.68rem] tracking-[0.15em] uppercase font-semibold text-[#4a74b3]">
+                      View Project →
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
-
-          {activeSlideshow && (
-            <ImageSlideshow
-              images={activeSlideshow.images || [activeSlideshow.image]}
-              title={activeSlideshow.title}
-              onClose={() => setActiveSlideshow(null)}
-            />
-          )}
         </div>
       </section>
     </>

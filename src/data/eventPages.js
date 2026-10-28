@@ -1,20 +1,3 @@
-// src/data/eventPages.js  (separate from data/events.js, which keeps featuredEvent + pastEvents)
-// ─────────────────────────────────────────────────────────────────────────────
-// One object per event. EventDetail.jsx renders any of these by `slug`.
-// To add a new event: copy an object, change the slug + content, done.
-//
-// Media: replace `src: null` with an imported file, e.g.
-//   import award1 from "../assets/events/africa-brand-awards-2026/1.jpg";
-//   { id: 1, src: award1, alt: "...", color: "from-amber-900 to-yellow-950" }
-// `color` = Tailwind gradient used for the placeholder tile.
-// IDs only need to be unique within an event.
-//
-// Optional sections (hidden automatically if missing/empty):
-//   highlight, stats, videos, reactions, quote
-// Use **double asterisks** inside story paragraphs for bold text.
-// `icon` options: "trophy" | "award" | "star"
-// ─────────────────────────────────────────────────────────────────────────────
-
 export const eventPages = [
   {
     slug: "africa-brand-awards-2026",
@@ -31,8 +14,6 @@ export const eventPages = [
     },
     intro:
       "A landmark recognition of Event Perspective Agency uncompromising commitment to speed, creativity, and results — honouring the leadership and vision that has defined our agency since day one.",
-
-    // Stats bar
     stats: [
       { num: "2026", label: "Year of Award" },
       { num: "1st", label: "Time Winning" },
@@ -40,7 +21,6 @@ export const eventPages = [
       { num: "CEO", label: "Honoured" },
     ],
 
-    // Story section
     story: {
       eyebrow: "The Story",
       title: "A Night That Defined a Legacy",
@@ -50,8 +30,7 @@ export const eventPages = [
         "For our CEO, accepting the award was not a personal moment — it was a tribute to every member of the Event Perspective Agency team who has ever worked through the night, crossed state lines, and refused to accept \"it can't be done\" as an answer. This award belongs to all of us, and to every client who trusted us with their most critical moments.",
       ],
     },
-
-    // Sticky certificate card beside the story
+    
     featureCard: {
       presentedLabel: "Presented to",
       recipient: "Event Perspective Agency",

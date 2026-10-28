@@ -1,8 +1,5 @@
 import { loadMedia } from "./loadmedia";
 
-// Each entry maps to a folder under src/images/fabrications/<folder>/ —
-// drop photos (and a video if you have one) in there and they'll surface
-// automatically via loadMedia(). No code changes needed later.
 export const fabrications = [
   {
     id: 1,
@@ -16,7 +13,7 @@ export const fabrications = [
     tagColor: "text-emerald-400 border-emerald-400",
   },
   {
-    id: 2,
+    id: "spectranet-production-and-outlet-branding",
     folder: "spectranet-brand",
     brand: "Spectranet",
     title: "Signage Production & Outlet Branding",
@@ -27,7 +24,7 @@ export const fabrications = [
     tagColor: "text-sky-400 border-sky-400",
   },
   {
-    id: 3,
+    id: "lush-hair-outlet-branding",
     folder: "lushhair-brand",
     brand: "Lush Hair",
     title: "Signage Production & Outlet Branding",
@@ -38,7 +35,7 @@ export const fabrications = [
     tagColor: "text-pink-400 border-pink-400",
   },
   {
-    id: 4,
+    id: "golden-penny-brand-pos-fabrication",
     folder: "golden-penny-brand",
     brand: "Golden Penny",
     title: "Brand's POS Fabrications",
@@ -49,7 +46,7 @@ export const fabrications = [
     tagColor: "text-emerald-400 border-emerald-400",
   },
   {
-    id: 5,
+    id: "samsung-campus-hub-and-charging-port-fabrications",
     folder: "samsung-brand",
     brand: "Samsung",
     title: "Campus Hub & Charging Port Fabrications",
@@ -61,9 +58,6 @@ export const fabrications = [
   },
 ];
 
-// Attach a gallery + card thumbnail to every entry. Until real photos are
-// dropped into src/images/fabrications/<folder>/, images will simply be an
-// empty array and the card will render a "coming soon" placeholder.
 fabrications.forEach((f) => {
   const { images, videos } = loadMedia("fabrications", f.folder);
   f.images = images;

@@ -1,4 +1,4 @@
-import { loadEventImages } from "./loadeventimages.js";
+import { loadMedia } from "./loadmedia";
 import s2s from "../images/s2s/s2slogo.jpeg";
 
 export const featuredEvent = {
@@ -19,9 +19,8 @@ export const featuredEvent = {
 
 export const pastEvents = [
   {
-    id: 1,
-    image: undefined,
-    images: loadEventImages("trophystout"),
+    id: "trophy-stout-father-son-concert",
+    folder: "trophystout",
     badge: null,
     meta: "December 2022 · Victoria Island, Lagos",
     title: "Trophy Stout Father and Son Concert",
@@ -31,8 +30,8 @@ export const pastEvents = [
     tagColor: "text-amber-400 border-amber-400",
   },
   {
-    id: 2,
-    images: loadEventImages("heroconnect"),
+    id: "hero-connect-concert",
+    folder: "heroconnect",
     badge: null,
     meta: "November 2021 · Port Harcourt",
     title: "HERO Connect Concert",
@@ -42,9 +41,8 @@ export const pastEvents = [
     tagColor: "text-rose-400 border-rose-400",
   },
   {
-    id: "3",
+    id: "hero-beer-brand-event",
     folder: "herobeer",
-    images: loadEventImages("herobeer"),
     brand: "Hero Beer",
     title: "HERO Beer Brand Event",
     meta: "June 2023 · Lagos",
@@ -55,8 +53,8 @@ export const pastEvents = [
     _imageLoader: "event",
   },
   {
-    id: "4",
-    images: loadEventImages("heroompa"),
+    id: "hero-beer-ompa-carniva",
+    folder: "heroompa",
     brand: "Hero Beer",
     title: "HERO Beer OMPA Carnival",
     meta: "June 2023 · Lagos",
@@ -67,8 +65,8 @@ export const pastEvents = [
     _imageLoader: "event",
   },
   {
-    id: 5,
-    images: loadEventImages("trophylager"),
+    id: "trophy-lager-beer-tungba-concert",
+    folder: "trophylager",
     badge: null,
     meta: "September 2020 · Nigeria",
     title: "Trophy Lager Beer Tungba Concert",
@@ -78,8 +76,8 @@ export const pastEvents = [
     tagColor: "text-rose-400 border-rose-400",
   },
   {
-    id: 6,
-    images: loadEventImages("flypool"),
+    id: "flying-fish-fly-pool",
+    folder: "flypool",
     badge: null,
     meta: "September 2020 · Nigeria",
     title: "Flying Fish Fly Pool",
@@ -89,8 +87,8 @@ export const pastEvents = [
     tagColor: "text-rose-400 border-rose-400",
   },
   {
-    id: 7,
-    images: loadEventImages("flypool"),
+    id: "sun-up-sun-down-oweri-flying-fish-event",
+    folder: "flypool",
     badge: null,
     meta: "September 2020 · Nigeria",
     title: "SUN UP SUN DOWN OWERRI FF EVENT",
@@ -101,7 +99,11 @@ export const pastEvents = [
   },
 ];
 
-// Fill in card thumbnails from each event's first image
+// Attach images + videos from src/images/events/<folder>/ and use the first
+// image as the card thumbnail (videos are shown first in the detail gallery).
 pastEvents.forEach((ev) => {
-  if (!ev.image) ev.image = ev.images[0];
+  const { images, videos } = loadMedia("events", ev.folder);
+  ev.images = images;
+  ev.videos = videos;
+  ev.image = images[0];
 });

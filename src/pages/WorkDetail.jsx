@@ -2,6 +2,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { activations } from "../data/activations";
 import { fabrications } from "../data/fabrications";
+import { pastEvents } from "../data/events";
 import { ArrowLeft, Play, Pause, X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -350,7 +351,8 @@ export default function WorkDetail() {
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
   // Resolve item from the correct data source
-  const allItems = type === "fabrications" ? fabrications : activations;
+  const sources = { activations, fabrications, events: pastEvents };
+  const allItems = sources[type] || activations;
   const item = allItems.find(
     (a) => String(a.id) === String(id)
   );
@@ -367,8 +369,14 @@ export default function WorkDetail() {
   }
 
   const media = buildMedia(item);
-  const backLabel = type === "fabrications" ? "Branding & Fabrications" : "Experientials & Activations";
-  const backTab   = type === "fabrications" ? "fabrications" : "activations";
+  const backConfig = {
+    activations:  { label: "Experientials & Activations", path: "/portfolio?tab=activations" },
+    fabrications: { label: "Branding & Fabrications",     path: "/portfolio?tab=fabrications" },
+    events:       { label: "Events",                      path: "/events" },
+  };
+  const back = backConfig[type] || backConfig.activations;
+  const backLabel = back.label;
+  const backPath  = back.path;
 
   /* Derived stats — shown when available */
   const stats = [
@@ -384,9 +392,9 @@ export default function WorkDetail() {
     <div className="bg-surface dark:bg-navy-900 min-h-screen">
 
       {/* ── Sticky back bar ── */}
-      <div className="sticky top-0 z-40 bg-white/80 dark:bg-navy-950/80 backdrop-blur border-b border-navy-100 dark:border-white/5 px-6 md:px-12 py-3 flex items-center gap-3">
+      <div className="sticky top-[7%] z-40 bg-white/80 dark:bg-navy-950/80 backdrop-blur border-b border-navy-100 dark:border-white/5 px-6 md:px-12 py-3 flex items-center gap-3" >
         <button
-          onClick={() => navigate(`/portfolio?tab=${backTab}`)}
+          onClick={() => navigate(backPath)}
           className="flex items-center gap-2 text-[0.72rem] font-bold tracking-[0.12em] uppercase text-navy-500 dark:text-slate-400 hover:text-[#4a74b3] dark:hover:text-[#4a74b3] transition-colors"
         >
           <ArrowLeft size={14} />
@@ -394,7 +402,7 @@ export default function WorkDetail() {
         </button>
         <span className="text-navy-200 dark:text-white/10 select-none">/</span>
         <span className="text-[0.72rem] font-semibold tracking-wide text-navy-700 dark:text-slate-200 truncate max-w-[260px]">
-          {item.title}
+          {item.title}    
         </span>
       </div>
 
@@ -424,11 +432,11 @@ export default function WorkDetail() {
           {/* gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-900/30 to-transparent" />
           {/* Tag pill */}
-          <div className="absolute top-5 left-6 md:left-12">
+          {/* <div className="absolute top-10 left-6 md:left-12">
             <span className={`text-[0.62rem] font-bold tracking-[0.18em] uppercase border px-3 py-1.5 backdrop-blur-sm bg-black/30 ${item.tagColor}`}>
               {item.tag}
             </span>
-          </div>
+          </div> */}
         </div>
       )}
 
@@ -437,9 +445,11 @@ export default function WorkDetail() {
 
         {/* ── Title block ── */}
         <div className="-mt-14 relative z-10 mb-10">
-          <p className="text-[0.7rem] font-bold tracking-[0.2em] uppercase text-[#4a74b3] mb-2">
-            {item.brand}
-          </p>
+          {item.brand && (
+            <p className="text-[0.7rem] font-bold tracking-[0.2em] uppercase text-[#4a74b3] mb-2">
+              {item.brand}
+            </p>
+          )}
           <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 drop-shadow-lg">
             {item.title}
           </h1>
@@ -522,10 +532,12 @@ export default function WorkDetail() {
                 Quick Facts
               </h3>
               <dl className="space-y-3 divide-y divide-navy-50 dark:divide-white/5">
-                <div className="flex flex-col gap-0.5 pt-3 first:pt-0">
-                  <dt className="text-[0.62rem] font-bold tracking-[0.14em] uppercase text-navy-400 dark:text-slate-500">Brand</dt>
-                  <dd className="text-sm font-semibold text-navy-900 dark:text-white">{item.brand}</dd>
-                </div>
+                {item.brand && (
+                  <div className="flex flex-col gap-0.5 pt-3 first:pt-0">
+                    <dt className="text-[0.62rem] font-bold tracking-[0.14em] uppercase text-navy-400 dark:text-slate-500">Brand</dt>
+                    <dd className="text-sm font-semibold text-navy-900 dark:text-white">{item.brand}</dd>
+                  </div>
+                )}
                 {item.meta && (
                   <div className="flex flex-col gap-0.5 pt-3">
                     <dt className="text-[0.62rem] font-bold tracking-[0.14em] uppercase text-navy-400 dark:text-slate-500">Location / Format</dt>
@@ -552,7 +564,7 @@ export default function WorkDetail() {
               {/* Back to portfolio CTA */}
               <div className="pt-2">
                 <button
-                  onClick={() => navigate(`/portfolio?tab=${backTab}`)}
+                  onClick={() => navigate(backPath)}
                   className="w-full text-center text-[0.68rem] font-bold tracking-[0.12em] uppercase py-3 border border-navy-200 dark:border-white/15 text-navy-600 dark:text-slate-300 hover:border-[#4a74b3] hover:text-[#4a74b3] transition-all duration-200"
                 >
                   ← All {backLabel}
@@ -644,7 +656,7 @@ function RelatedStrip({ currentId, type, allItems }) {
               />
             ) : null}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-3">
-              <p className="text-[0.6rem] font-bold tracking-wide uppercase text-[#7fa8e0] mb-0.5">{item.brand}</p>
+              <p className="text-[0.6rem] font-bold tracking-wide uppercase text-[#7fa8e0] mb-0.5">{item.brand || item.tag}</p>
               <p className="text-xs font-semibold text-white leading-snug line-clamp-2">{item.title}</p>
             </div>
           </Link>

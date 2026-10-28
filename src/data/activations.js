@@ -8,7 +8,7 @@ import { loadMedia } from "./loadmedia";
 // ─────────────────────────────────────────────────────────────────────────────
 const fromEvents = [
   {
-    id: "ev-1",
+    id: "aba-gpnl",
     folder: "abagpnl",
     brand: "Golden Penny Noodles",
     title: "Aba GPNL — Product Launch Event",
@@ -20,7 +20,7 @@ const fromEvents = [
     _imageLoader: "event",
   },
   {
-    id: "ev-4",
+    id: "trophy-stout-can-launch",
     folder: "trophycan",
     brand: "Trophy Stout",
     title: "Trophy Stout CAN Launch",
@@ -32,7 +32,7 @@ const fromEvents = [
     _imageLoader: "event",
   },
   {
-    id: "ev-5",
+    id: "trophy-stout-vibes-party",
     folder: "trophyvibes",
     brand: "Trophy Stout",
     title: "Trophy Stout Vibes Party",
@@ -44,7 +44,7 @@ const fromEvents = [
     _imageLoader: "event",
   },
   {
-    id: "ev-6",
+    id: "good-morning-cornflakes-road-show",
     folder: "cornflakes",
     brand: "Good Morning CornFlakes",
     title: "Good Morning CornFlakes Road Show",
@@ -56,19 +56,19 @@ const fromEvents = [
     _imageLoader: "event",
   },
   {
-    id: "ev-7",
+    id: "flying-fish-beer-event",
     folder: "flyingfishbeer",
     brand: "Flying Fish Beer",
     title: "Flying Fish Beer Event",
     meta: "September 2020 · Lagos",
     description:
-      "A consumer-focused event featuring entertainment, interactive es, and product engagement designed to create memorable moments and strengthen Flying Fish Beer's connection with its audience.",
+      "A consumer-focused event featuring entertainment, interactive experiencess, and product engagement designed to create memorable moments and strengthen Flying Fish Beer's connection with its audience.",
     tag: "Consumer Event",
     tagColor: "text-yellow-400 border-yellow-400",
     _imageLoader: "event",
   },
   {
-    id: "ev-8",
+    id: "dano-market-activation",
     folder: "danomilk",
     brand: "Dano Milk",
     title: "Dano Milk Market Activation",
@@ -80,7 +80,7 @@ const fromEvents = [
     _imageLoader: "event",
   },
   {
-    id: "ev-9",
+    id: "golden-bite-chin-chin-launch",
     folder: "goldenchinlaunch",
     brand: "Golden Bite Chin Chin",
     title: "Golden Bite Chin Chin Launch",
@@ -92,7 +92,7 @@ const fromEvents = [
     _imageLoader: "event",
   },
   {
-    id: "ev-10",
+    id: "honeywell-nutrition-education",
     folder: "honeywelledu",
     brand: "Honeywell",
     title: "Honeywell Nutrition Education",
@@ -104,7 +104,7 @@ const fromEvents = [
     _imageLoader: "event",
   },
   {
-    id: "ev-11",
+    id: "enugu-gpnl-brand-activation",
     folder: "enugugpnl",
     brand: "Golden Penny Noodles",
     title: "Enugu GPNL — Brand Activation",
@@ -116,13 +116,13 @@ const fromEvents = [
     _imageLoader: "event",
   },
   {
-    id: "ev-12",
+    id: "golden-penny-children-kitchen",
     folder: "gpnlkitchen",
     brand: "Golden Penny Noodles",
     title: "GPNL Children's Kitchen",
     meta: "September 2020 · Lagos",
     description:
-      "A community-focused food e designed to engage children through cooking activities, learning, and interactive brand es — promoting food creativity, family engagement, and the Golden Penny brand.",
+      "A community-focused food experience designed to engage children through cooking activities, learning, and interactive brand experiences — promoting food creativity, family engagement, and the Golden Penny brand.",
     tag: "Community Activation",
     tagColor: "text-teal-400 border-teal-400",
     _imageLoader: "event",
@@ -164,7 +164,7 @@ const originalActivations = [
     tagColor: "text-cyan-400 border-cyan-400",
   },
   {
-    id: 3,
+    id: "amaizing-day-in-store-activation",
     folder: "amaizing-day-in-store",
     brand: "Amazing Day Cereal",
     title: "Amaizing Day In-Store Activation",
@@ -175,7 +175,7 @@ const originalActivations = [
     tagColor: "text-blue-400 border-blue-400",
   },
   {
-    id: 4,
+    id: "spectranet-sales-and-reward-campaign",
     folder: "spectranet-sales",
     brand: "Spectranet",
     title: "Sales & Reward Awareness Campaign",
@@ -186,7 +186,7 @@ const originalActivations = [
     tagColor: "text-amber-400 border-amber-400",
   },
   {
-    id: 5,
+    id: "flying-fish-scan-and-win",
     folder: "flying-fish-scan-and-win",
     brand: "Flying Fish",
     title: "Scan and Win — Beer Promo",
@@ -197,7 +197,7 @@ const originalActivations = [
     tagColor: "text-yellow-400 border-yellow-400",
   },
   {
-    id: 6,
+    id: "golden-bite-redistribution",
     folder: "golden-bite-redistribution",
     brand: "Golden Bite Chin-Chin",
     title: "Re-Distribution Drive",
@@ -208,7 +208,18 @@ const originalActivations = [
     tagColor: "text-sky-400 border-sky-400",
   },
   {
-    id: 7,
+    id: "castlelite-interactive-comedy-event",
+    folder: "castlelite-comedy",
+    brand: "Castle Lite",
+    title: "Interactive Comedy Event",
+    meta: "Brand Experience Venue",
+    description:
+      "A branded comedy show designed to elevate brand awareness and recognition, extend brand longevity, and craft a distinct venue atmosphere for an unforgettable guest experience.",
+    tag: "Interactive Event",
+    tagColor: "text-fuchsia-400 border-fuchsia-400",
+  },
+  {
+    id: "castle-lite-interactive-play",
     folder: "castle-lite-interactive-play",
     brand: "Castle Lite",
     title: "Interactive Play Event",
@@ -219,29 +230,18 @@ const originalActivations = [
     tagColor: "text-fuchsia-400 border-fuchsia-400",
   },
   {
-    id: 8,
+    id: "mtv-base-flying-fish",
     folder: "mtv-base-flying-fish",
     brand: "Flying Fish × MTV Base",
     title: "MTV Base Day Sampling Event",
     meta: "Brand Partnership",
     description:
-      "Flying Fish partnered with the MTV Base team to bring an iconic sampling event to life, creating a memorable, impactful e that led to increased demand and further brand opportunities.",
+      "Flying Fish partnered with the MTV Base team to bring an iconic sampling event to life, creating a memorable, impactful experience that led to increased demand and further brand opportunities.",
     tag: "Sampling Event",
     tagColor: "text-rose-400 border-rose-400",
   },
   {
-    id: 9,
-    folder: "golden-penny-noodles-relaunch",
-    brand: "Golden Penny Noodles",
-    title: "Dealers' Re-Launch Event",
-    meta: "Dealer Engagement",
-    description:
-      "A fully managed and executed dealers' relaunch event for Golden Penny Noodles, delivering a seamless and memorable e for every participant from start to finish.",
-    tag: "Product Re-Launch",
-    tagColor: "text-sky-400 border-sky-400",
-  },
-  {
-    id: 10,
+    id: "flying-fish-afro-rave",
     folder: "flying-fish-afro-rave",
     brand: "Flying Fish",
     title: "Afro Rave Event Arena Branding",
@@ -251,41 +251,41 @@ const originalActivations = [
     tag: "Festival Branding",
     tagColor: "text-fuchsia-400 border-fuchsia-400",
   },
+  // {
+  //   id: 11,
+  //   folder: "golden-penny-semovita-horeca",
+  //   brand: "Golden Penny Semovita",
+  //   title: "HORECA Campaign",
+  //   meta: "Hotels · Restaurants · Canteens",
+  //   description:
+  //     "Outlets were required to purchase a specified volume of Golden Penny products, with sales representatives stationed on-site to drive both purchase and sell-through — delivering a remarkable sales push.",
+  //   tag: "HORECA Activation",
+  //   tagColor: "text-green-400 border-green-400",
+  // },
+  // {
+  //   id: 13,
+  //   folder: "golden-penny-semovita-merchandising",
+  //   brand: "Golden Penny Semovita",
+  //   title: "Sales & Merchandising",
+  //   meta: "Retail Point-of-Sale",
+  //   description:
+  //     "A sales and merchandising concept designed to encourage purchases, backed by a team of dedicated sales representatives driving consistent, excellent results for the brand.",
+  //   tag: "Merchandising",
+  //   tagColor: "text-green-400 border-green-400",
+  // },
+  // {
+  //   id: 14,
+  //   folder: "golden-penny-semovita-rewarding",
+  //   brand: "Golden Penny Semovita",
+  //   title: "Consumer Rewarding Scheme",
+  //   meta: "Loyalty & Redemption",
+  //   description:
+  //     "An on-ground rewarding initiative that recognised and incentivised Golden Penny Semovita shoppers, strengthening brand loyalty at the point of purchase.",
+  //   tag: "Rewarding Scheme",
+  //   tagColor: "text-green-400 border-green-400",
+  // },
   {
-    id: 11,
-    folder: "golden-penny-semovita-horeca",
-    brand: "Golden Penny Semovita",
-    title: "HORECA Campaign",
-    meta: "Hotels · Restaurants · Canteens",
-    description:
-      "Outlets were required to purchase a specified volume of Golden Penny products, with sales representatives stationed on-site to drive both purchase and sell-through — delivering a remarkable sales push.",
-    tag: "HORECA Activation",
-    tagColor: "text-green-400 border-green-400",
-  },
-  {
-    id: 13,
-    folder: "golden-penny-semovita-merchandising",
-    brand: "Golden Penny Semovita",
-    title: "Sales & Merchandising",
-    meta: "Retail Point-of-Sale",
-    description:
-      "A sales and merchandising concept designed to encourage purchases, backed by a team of dedicated sales representatives driving consistent, excellent results for the brand.",
-    tag: "Merchandising",
-    tagColor: "text-green-400 border-green-400",
-  },
-  {
-    id: 14,
-    folder: "golden-penny-semovita-rewarding",
-    brand: "Golden Penny Semovita",
-    title: "Consumer Rewarding Scheme",
-    meta: "Loyalty & Redemption",
-    description:
-      "An on-ground rewarding initiative that recognised and incentivised Golden Penny Semovita shoppers, strengthening brand loyalty at the point of purchase.",
-    tag: "Rewarding Scheme",
-    tagColor: "text-green-400 border-green-400",
-  },
-  {
-    id: 15,
+    id: "trophy-stout-in-bar",
     folder: "trophy-stout-in-bar",
     brand: "Trophy Stout",
     title: "In-Bar Activation",
@@ -296,7 +296,7 @@ const originalActivations = [
     tagColor: "text-amber-400 border-amber-400",
   },
   {
-    id: 19,
+    id: "honeywell-wheatmeal-nutrition-education",
     folder: "honeywell-wheatmeal-nutrition-education",
     brand: "Honeywell Wheat Meal",
     title: "Nutrition Education Activation",
@@ -306,19 +306,19 @@ const originalActivations = [
     tag: "Nutrition Education",
     tagColor: "text-green-400 border-green-400",
   },
+  // {
+  //   id: 20,
+  //   folder: "honeywell-wheatmeal-horeca-loyalty",
+  //   brand: "Honeywell Wheat Meal",
+  //   title: "HORECA Loyalty Scheme",
+  //   meta: "Hotels · Restaurants · Canteens",
+  //   description:
+  //     "A loyalty scheme built for Honeywell Wheat Meal's HORECA partners — rewarding hotels, restaurants, and canteens for consistent purchase and brand advocacy.",
+  //   tag: "HORECA Loyalty",
+  //   tagColor: "text-green-400 border-green-400",
+  // },
   {
-    id: 20,
-    folder: "honeywell-wheatmeal-horeca-loyalty",
-    brand: "Honeywell Wheat Meal",
-    title: "HORECA Loyalty Scheme",
-    meta: "Hotels · Restaurants · Canteens",
-    description:
-      "A loyalty scheme built for Honeywell Wheat Meal's HORECA partners — rewarding hotels, restaurants, and canteens for consistent purchase and brand advocacy.",
-    tag: "HORECA Loyalty",
-    tagColor: "text-green-400 border-green-400",
-  },
-  {
-    id: 21,
+    id: "honeywell-noodles-childrens-day",
     folder: "honeywell-noodles-childrens-day",
     brand: "Honeywell Noodles",
     title: "Children's Day Activation — \"Spoil Your Kids\"",
@@ -329,7 +329,7 @@ const originalActivations = [
     tagColor: "text-teal-400 border-teal-400",
   },
   {
-    id: 22,
+    id: "mr-chef-market-activation",
     folder: "mr-chef",
     brand: "Mr. Chef",
     title: "Market Display and Win Activation",
@@ -384,15 +384,15 @@ const originalActivations = [
   //   tagColor: "text-cyan-400 border-cyan-400",
   // },
   // {
-    id: 27,
-    folder: "sosaco-trade-fair",
-    brand: "Sosaco",
-    title: "Trade Fair",
-    meta: "Trade Fair Stand",
-    description:
-      "A fully branded Sosaco trade fair stand featuring live performances and product showcases, drawing strong footfall and trade engagement.",
-    tag: "Trade Fair",
-    tagColor: "text-pink-400 border-pink-400",
+  //   id: 27,
+  //   folder: "sosaco-trade-fair",
+  //   brand: "Sosaco",
+  //   title: "Trade Fair",
+  //   meta: "Trade Fair Stand",
+  //   description:
+  //     "A fully branded Sosaco trade fair stand featuring live performances and product showcases, drawing strong footfall and trade engagement.",
+  //   tag: "Trade Fair",
+  //   tagColor: "text-pink-400 border-pink-400",
   // },
 ];
 
