@@ -19,13 +19,35 @@ export const featuredEvent = {
 
 export const pastEvents = [
   {
+    id: "fmn-modupe-grand-opening",
+    folder: "fmnmodupe",
+    badge: null,
+    meta: "October 2026 · Apapa, Lagos",
+    title: "Mr. Modupe FMN - Grand Opening",
+    description:
+      "Event Perspective Agency successfully executed the grand opening ceremony for Mr. Modupe at Flour Mills of Nigeria (FMN). The agency managed end-to-end event logistics, VIP protocols, branding, production, and media coverage, ensuring a seamless ribbon-cutting experience and high stakeholder engagement aligned with FMN’s objectives.",
+    tag: "Grand Opening",
+    tagColor: "text-cyan-400 border-cyan-400",
+  },
+  {
+    id: "fmn-66th-Anniversary",
+    folder: "fmnparty",
+    badge: null,
+    meta: "September 2026 · Apapa, Lagos",
+    title: "Flour Mills 66th Anniversary",
+    description:
+      "Incorporated on September 29, 1960, Flour Mills of Nigeria (FMN) celebrates 66 years as Nigeria’s premier food and agribusiness pioneer. From a single milling operation in Apapa, FMN has grown into an industrial conglomerate, empowering local agriculture, driving national food security, and enriching millions of Nigerian households across generations.",
+    tag: "Anniversary",
+    tagColor: "text-cyan-400 border-cyan-400",
+  },
+  {
     id: "trophy-stout-father-son-concert",
     folder: "trophystout",
     badge: null,
     meta: "December 2022 · Victoria Island, Lagos",
     title: "Trophy Stout Father and Son Concert",
     description:
-      "A memorable branded concert e featuring live music, entertainment, and audience engagement. The event celebrated family connections while enhancing Trophy Stout's brand presence through an immersive consumer e.",
+      "A memorable branded concert e featuring live music, entertainment, and audience engagement. The event celebrated family connections while enhancing Trophy Stout's brand presence through an immersive consumer experience.",
     tag: "Concert",
     tagColor: "text-amber-400 border-amber-400",
   },
