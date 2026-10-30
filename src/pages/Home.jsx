@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom";
+import ScrollVideo from "../components/ui/ScrollVideo";
+import companyVideo from "../videos/epavideo.mp4";
 import castlelite from "../images/castlelite.jpg";
 import dano from "../images/dano.png";
 import ekulogroup from "../images/ekulogroup.jpg";
@@ -29,15 +31,16 @@ const services = [
     title: "Corporate Celebrations",
     desc: "Milestones deserve more than a venue. We create tailored celebrations that reflect your organisation's culture and ambitions.",
   },
-  { title: "Experiential Marketing", 
-    desc: "We connect brands with consumers through memorable, interactive es that inspire genuine engagement and long-term loyalt" 
+  {
+    title: "Experiential Marketing",
+    desc: "We connect brands with consumers through memorable, interactive experiences that inspire genuine engagement and long-term loyalty.",
   },
 ];
 
 const processSteps = [
   {
     title: "Discovery",
-    desc: "Deep-dive into your brand, audience, and objectives to define the e strategy.",
+    desc: "Deep-dive into your brand, audience, and objectives to define the experience strategy.",
   },
   {
     title: "Creative Design",
@@ -94,7 +97,7 @@ export default function Home() {
           <p className="text-base md:text-lg text-navy-500 dark:text-white leading-relaxed max-w-xl mb-12">
             Event Perspective Agency is where bold strategy meets flawless
             execution. From intimate brand activations to large-scale
-            spectacles, we craft es that move people and shift markets.
+            spectacles, we craft experiences that move people and shift markets.
           </p>
           <div className="flex flex-wrap gap-4 mb-16">
             <NavLink to="/portfolio" className="btn-primary">
@@ -144,9 +147,7 @@ export default function Home() {
             <img
               src={epa}
               alt="Event Perspective Agency"
-              className="h-100"
-              w-auto
-              // object-contain
+              className="h-100 w-auto"
             />
             <div className="absolute top-5 left-5 right-[-20px] bottom-[-20px] border border-gold/20 -z-10" />
           </div>
@@ -179,6 +180,16 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── COMPANY VIDEO (full width, autoplays in view, pauses out of view) ── */}
+      <ScrollVideo
+        src={companyVideo}
+        poster={epa}
+        eyebrow="Our Story"
+        title="See Event Perspective Agency in Action"
+        description="Take a closer look at who we are, how we work, and the experiences we create. From the first brief to the final applause, this is the energy, craft, and attention to detail we bring to every brand we partner with."
+      />
+
       <section className="py-24 px-6 md:px-12 bg-surface-secondary dark:bg-navy-800">
         <div className="max-w-7xl mx-auto">
           <div className="eyebrow">What We Do</div>
@@ -192,7 +203,6 @@ export default function Home() {
                 <div className="font-display text-5xl font-black text-[#4a74b3]/10 leading-none mb-5">
                   {s.n}
                 </div>
-                <div className="text-3xl mb-4">{s.icon}</div>
                 <h3 className="font-display text-lg font-bold text-navy-900 dark:text-white mb-3">
                   {s.title}
                 </h3>
