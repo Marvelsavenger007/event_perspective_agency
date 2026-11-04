@@ -251,7 +251,7 @@ export default function Home() {
             Tell us about your vision and we'll show you how Event Perspective
             Agency can bring it to life.
           </p>
-          <NavLink to="/maintenance" className="btn-primary">
+          <NavLink to="/contact" className="btn-primary">
             Start the Conversation
           </NavLink>
         </div>

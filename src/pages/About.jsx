@@ -204,9 +204,6 @@ export default function About() {
                 key={o.title}
                 className="bg-surface dark:bg-dark-card p-8 flex items-center gap-5"
               >
-                <span className="font-display text-2xl font-black text-[#4a74b3]/20 leading-none flex-shrink-0">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
                 <span className="text-xl text-[#4a74b3] flex-shrink-0">
                   {o.icon}
                 </span>

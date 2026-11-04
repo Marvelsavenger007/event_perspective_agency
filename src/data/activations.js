@@ -306,17 +306,17 @@ const originalActivations = [
   //   tag: "HORECA Loyalty",
   //   tagColor: "text-green-400 border-green-400",
   // },
-  {
-    id: "honeywell-noodles-childrens-day",
-    folder: "honeywell-noodles-childrens-day",
-    brand: "Honeywell Noodles",
-    title: "Children's Day Activation — \"Spoil Your Kids\"",
-    meta: "Nationwide Street Activation",
-    description:
-      "A colourful Children's Day street activation and TV tie-in that put smiles on thousands of children's faces while reinforcing Honeywell Noodles' family-friendly brand promise.",
-    tag: "Children's Day",
-    tagColor: "text-teal-400 border-teal-400",
-  },
+  // {
+  //   id: "honeywell-noodles-childrens-day",
+  //   folder: "honeywell-noodles-childrens-day",
+  //   brand: "Honeywell Noodles",
+  //   title: "Children's Day Activation — \"Spoil Your Kids\"",
+  //   meta: "Nationwide Street Activation",
+  //   description:
+  //     "A colourful Children's Day street activation and TV tie-in that put smiles on thousands of children's faces while reinforcing Honeywell Noodles' family-friendly brand promise.",
+  //   tag: "Children's Day",
+  //   tagColor: "text-teal-400 border-teal-400",
+  // },
   {
     id: "mr-chef-market-activation",
     folder: "mr-chef",
