@@ -106,6 +106,7 @@ export default function ImageSlideshow({ images, startIndex = 0, title, onClose 
         <img
           key={imageKey}
           src={images[current]}
+          loading="lazy" decoding="async"
           alt={`${title || "Event"} — image ${current + 1} of ${images.length}`}
           className="max-w-[75%] max-h-[80vh] object-contain shadow-2xl animate-crossfade"
         />

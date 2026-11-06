@@ -103,6 +103,7 @@ export default function About() {
             <img
               src={epa}
               alt="Event Perspective Agency office"
+              loading="lazy" decoding="async"
               className="w-full h-full object-cover"
             />
             <div className="absolute top-5 left-5 right-[-20px] bottom-[-20px] border border-gold/20 -z-10" />

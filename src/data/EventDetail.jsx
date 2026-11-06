@@ -64,7 +64,7 @@ function Lightbox({ media, Icon, initialIndex, onClose }) {
       >
         <div className={`w-full aspect-video bg-gradient-to-br ${item.color} flex items-center justify-center relative overflow-hidden`}>
           {!isVideo && item.src && (
-            <img src={item.src} alt={item.alt} className="w-full h-full object-cover" />
+            <img src={item.src} alt={item.alt} className="w-full h-full object-cover" loading="lazy" decoding="async" />
           )}
           {isVideo && item.src && (
             <video key={item.id} src={item.src} controls autoPlay className="w-full h-full object-cover" />
@@ -134,7 +134,7 @@ function Lightbox({ media, Icon, initialIndex, onClose }) {
                         ${i === current
                           ? "border-gold scale-105 shadow-[0_0_12px_rgba(201,168,76,0.3)]"
                           : "border-transparent opacity-40 hover:opacity-70"}`}>
-            {m.src && m.type !== "video" && <img src={m.src} alt="" className="w-full h-full object-cover" />}
+            {m.src && m.type !== "video" && <img src={m.src} alt="" className="w-full h-full object-cover" loading="lazy" decoding="async" />}
             {(!m.src || m.type === "video") && (
               <span className="opacity-50">
                 {m.type === "video"
@@ -163,6 +163,7 @@ function MediaCard({ item, globalIndex, onOpen, Icon }) {
       <div className={`aspect-video bg-gradient-to-br ${item.color} flex items-center justify-center relative overflow-hidden`}>
         {item.src && !isVideo && (
           <img src={item.src} alt={item.alt}
+          loading="lazy" decoding="async"
                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]" />
         )}
         {item.src && isVideo && (

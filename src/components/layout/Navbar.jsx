@@ -47,6 +47,7 @@ export default function Navbar() {
               width="150px"
               height="auto"
               alt="icon"
+              loading="lazy" decoding="async"
             />
         </NavLink>
         <ul className="hidden lg:flex items-center gap-8 list-none">
