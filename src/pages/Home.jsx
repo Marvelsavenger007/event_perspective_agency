@@ -135,6 +135,7 @@ export default function Home() {
                 key={i}
                 src={img}
                 alt={`client-${i}`}
+                loading="lazy" decoding="async"
                 className="h-44 w-46 flex-shrink-0 object-contain rounded-[20px]"
               />
             ))}
@@ -147,6 +148,7 @@ export default function Home() {
             <img
               src={epa}
               alt="Event Perspective Agency"
+              loading="lazy" decoding="async"
               className="h-100 w-auto"
             />
             <div className="absolute top-5 left-5 right-[-20px] bottom-[-20px] border border-gold/20 -z-10" />

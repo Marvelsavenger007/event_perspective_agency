@@ -12,7 +12,7 @@ function TeamCard({ member, onClick }) {
     >
       <div className="team-photo-wrap group-hover:brightness-75 transition-all duration-300 relative overflow-hidden">
         {/* <div className="team-photo-wrap group-hover:brightness-75 transition-all duration-300 relative overflow-hidden aspect-square"> */}
-        <Avatar name={member.name} image={member.image} />
+        <Avatar name={member.name} image={member.image} loading="lazy" decoding="async" />
         <div className="absolute inset-0 bg-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <span className="text-[0.7rem] tracking-[0.15em] uppercase text-black font-bold border border-black px-3 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
             Read Bio
@@ -148,6 +148,7 @@ export default function Team() {
                       src={space.image}
                       alt={space.label}
                       className="w-full h-[90%] object-cover"
+                      loading="lazy" decoding="async"
                     />
                   )}
 

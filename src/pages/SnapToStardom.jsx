@@ -51,7 +51,7 @@ function Lightbox({ images, initialIndex, onClose }) {
       >
         <div className="w-full aspect-[3/4] md:aspect-video bg-navy-900 flex items-center justify-center relative overflow-hidden">
           {item.src
-            ? <img src={item.src} alt={item.alt} className="w-full h-full object-cover" />
+            ? <img src={item.src} alt={item.alt} loading="lazy" decoding="async" className="w-full h-full object-cover" />
             : (
               <>
                 <span className="text-6xl opacity-10 select-none">📸</span>
@@ -96,6 +96,8 @@ function Lightbox({ images, initialIndex, onClose }) {
         {images.map((img, i) => (
           <button
             key={img.id}
+            loading="lazy" 
+            decoding="async"
             onClick={() => setCurrent(i)}
             aria-label={`View photo ${i + 1}`}
             className={`flex-shrink-0 w-14 h-10 overflow-hidden border-2 bg-navy-900 flex items-center justify-center  transition-all duration-200
@@ -104,7 +106,7 @@ function Lightbox({ images, initialIndex, onClose }) {
                 : "border-transparent opacity-40 hover:opacity-70"}`}
           >
             {img.src
-              ? <img src={img.src} alt="" className="w-full h-full object-cover" />
+              ? <img src={img.src} alt="" loading="lazy" decoding="async" className="w-full h-full object-cover" />
               : <span className="text-xs opacity-50 select-none">📸</span>
             }
           </button>
@@ -157,6 +159,8 @@ function GalleryThumb({ item, onClick }) {
           <img
             src={item.src}
             alt={item.alt}
+            loading="lazy" 
+            decoding="async"
             className="block w-full h-auto transition-transform duration-500
                        group-hover:scale-[1.07]"
           />
@@ -220,6 +224,7 @@ export default function SnapToStardom() {
           className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-rose-900/10 blur-3xl pointer-events-none translate-x-1/4 -translate-y-1/4" />
         {heroSrc && (
           <img src={heroSrc} alt="Snap To Stardom"
+          loading="lazy" decoding="async"
             className="absolute inset-0 w-full h-full object-cover object-top opacity-40" />
         )}
         {!heroSrc && (
@@ -267,6 +272,7 @@ export default function SnapToStardom() {
                 width="272px"
                 height="135px"
                 alt="icon"
+                loading="lazy" decoding="async"
               />
               <p className="text-sm text-navy-500 dark:text-dark-muted leading-relaxed">
                 {S2S_META.brandPurpose}
@@ -291,6 +297,7 @@ export default function SnapToStardom() {
                       alt={S2S_IMAGE[0].alt}
                       width={209}
                       height={313}
+                      loading="lazy" decoding="async"
                       className="block object-cover"
                     />
                   ) : (
@@ -306,6 +313,7 @@ export default function SnapToStardom() {
                       alt={S2S_IMAGE[1].alt}
                       width={256}
                       height={331}
+                      loading="lazy" decoding="async"
                       className="block object-cover"
                     />
                   ) : (

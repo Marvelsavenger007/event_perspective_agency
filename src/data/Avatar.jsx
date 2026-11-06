@@ -34,6 +34,7 @@ export default function Avatar({ name, image, className = "" }) {
       <img
         src={image}
         alt={name}
+        loading="lazy" decoding="async"
         className={`w-full h-full object-cover ${className}`}
       />
     );

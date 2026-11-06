@@ -44,6 +44,7 @@ function Lightbox({ media, index, onClose }) {
                 key={item.src}
                 src={item.src}
                 alt={item.caption}
+                loading="lazy" decoding="async"
                 className="absolute inset-0 w-full h-full object-contain bg-black"
               />
             )
@@ -131,7 +132,8 @@ function MediaCard({ item, index, onClick }) {
           <img
             src={item.src}
             alt={item.caption}
-            loading="lazy"
+            loading="lazy" 
+            decoding="async"
             className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
           />
         )}
@@ -221,6 +223,7 @@ export default function ProjectTemplate() {
                   src={project.image}
                   width="80px"
                   height="80px"
+                  loading="lazy" decoding="async"
                   className="mt-5 -mb-2.5 rounded-[7px]"
                   alt="icon"
                 />
@@ -357,6 +360,7 @@ export default function ProjectTemplate() {
                       width="auto"
                       height="auto"
                       alt="icon"
+                      loading="lazy" decoding="async"
                     />
                     <span className="font-display text-lg font-bold text-white text-center px-4">{p.company}</span>
                   </div>
