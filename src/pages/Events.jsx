@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { featuredEvent, pastEvents } from "../data/events";
 import { eventPages } from "../data/eventPages";
 import s2s from "../images/s2s/s2slogo.jpeg";
+import OptimizedImage from "../components/OptimizedImage";
 
 export default function Events() {
   return (
@@ -27,7 +28,7 @@ export default function Events() {
           <h2 className="section-title mb-10">Snap To Stardom — Phototainment</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 overflow-hidden border border-surface-border dark:border-dark-border">
             <div className="relative bg-slate-100 dark:bg-[#111827] flex items-center justify-center min-h-[280px] md:min-h-[420px]">
-              <img src={s2s} className="w-full h-full object-cover" loading="lazy" decoding="async" alt="Snap To Stardom" />
+              <OptimizedImage src={s2s} className="w-full h-full object-cover" loading="lazy" decoding="async" alt="Snap To Stardom" />
             </div>
             <div className="p-10 md:p-14 bg-gray-50 dark:bg-dark-card flex flex-col justify-center">
               <div className="flex flex-wrap gap-5 mb-6">
@@ -75,7 +76,7 @@ export default function Events() {
                       {e.badge}
                     </span>
                     {e.images?.[0]?.src && (
-                      <img
+                      <OptimizedImage
                         src={e.images[0].src}
                         alt={e.images[0].alt}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -117,7 +118,7 @@ export default function Events() {
                     </span>
                   )}
                   {ev.image ? (
-                    <img
+                    <OptimizedImage
                       src={ev.image}
                       loading="lazy" decoding="async"
                       alt={ev.title}

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { X } from "lucide-react";
+import OptimizedImage from "../OptimizedImage";
 
 export default function TeamModal({ member, onClose }) {
   useEffect(() => {
@@ -33,7 +34,7 @@ export default function TeamModal({ member, onClose }) {
         </button>
         <div className="grid grid-cols-[140px_1fr] md:grid-cols-[180px_1fr] min-h-[200px]">
           <div className="bg-gradient-to-b from-navy-700 to-navy-800 flex items-center justify-center">
-            <img className="text-4xl opacity-40" src={member.image} loading="lazy" decoding="async" />
+            <OptimizedImage className="text-4xl opacity-40" src={member.image} loading="lazy" decoding="async" />
           </div>
           <div className="p-6 md:p-8 bg-surface-secondary dark:bg-navy-700/40 flex flex-col justify-center">
             <h2 className="font-display text-2xl font-bold text-navy-900 dark:text-white mb-1">

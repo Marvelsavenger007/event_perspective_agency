@@ -4,6 +4,7 @@ import { activations } from "../data/activations";
 import { fabrications } from "../data/fabrications";
 import { pastEvents } from "../data/events";
 import { ArrowLeft, Play, Pause, X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import OptimizedImage from "../components/OptimizedImage";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    Helpers
@@ -80,7 +81,7 @@ function Lightbox({ media, startIndex, onClose }) {
             className="max-h-full max-w-full rounded-sm object-contain"
           />
         ) : (
-          <img
+          <OptimizedImage
             src={current.src}
             alt=""
             className="max-h-full max-w-full object-contain rounded-sm select-none"
@@ -127,7 +128,7 @@ function Lightbox({ media, startIndex, onClose }) {
                   <Play size={14} className="text-white" />
                 </div>
               ) : (
-                <img src={m.src} alt="" className="w-full h-full object-cover" loading="lazy" decoding="async" />
+                <OptimizedImage src={m.src} alt="" className="w-full h-full object-cover" loading="lazy" decoding="async" />
               )}
             </button>
           ))}
@@ -240,7 +241,7 @@ function SingleHero({ item, index, onOpen }) {
       {item.type === "video" ? (
         <VideoThumbnail src={item.src} autoPlay />
       ) : (
-        <img src={item.src} alt="" loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        <OptimizedImage src={item.src} alt="" loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
         <ZoomIn size={32} className="text-white drop-shadow-lg" />
@@ -259,7 +260,7 @@ function MediaTile({ item, index, onOpen, aspectClass }) {
       {item.type === "video" ? (
         <VideoThumbnail src={item.src} />
       ) : (
-        <img
+        <OptimizedImage
           src={item.src}
           alt=""
           loading="lazy" decoding="async"
@@ -414,7 +415,7 @@ export default function WorkDetail() {
           style={{ height: "clamp(220px, 38vw, 480px)" }}
         >
           {item.image ? (
-            <img
+            <OptimizedImage
               src={item.image}
               alt={item.title}
               loading="lazy" decoding="async"
@@ -636,7 +637,7 @@ function RelatedStrip({ currentId, type, allItems }) {
             className="group relative rounded-xl overflow-hidden aspect-[4/3] block bg-navy-800"
           >
             {item.image ? (
-              <img
+              <OptimizedImage
                 src={item.image}
                 alt={item.title}
                 loading="lazy" decoding="async"

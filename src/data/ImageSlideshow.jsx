@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import OptimizedImage from "../components/OptimizedImage";
 
 const AUTOPLAY_DELAY = 3000;
 const TRANSITION_MS = 300;
@@ -103,7 +104,7 @@ export default function ImageSlideshow({ images, startIndex = 0, title, onClose 
         }`}
         onClick={(e) => e.stopPropagation()}
       >
-        <img
+        <OptimizedImage
           key={imageKey}
           src={images[current]}
           loading="lazy" decoding="async"

@@ -5,6 +5,8 @@ import { brandData } from "../data/brandportfolio";
 import { activations } from "../data/activations";
 import { fabrications } from "../data/fabrications";
 import { ExternalLink, Camera, ArrowRight } from "lucide-react";
+import OptimizedImage from "../components/OptimizedImage";
+
 
 const tabs = [
   { key: "projects",      label: "Projects",                   data: brandData    },
@@ -17,7 +19,7 @@ function ProjectCard({ item }) {
   return (
     <Link to={`/portfolio/${item.id}`} className="portfolio-item group rounded-xl block">
       <div className="portfolio-logo-layer">
-        <img src={item.image} alt={item.company} className="portfolio-image aspect-auto" />
+        <OptimizedImage src={item.image} alt={item.company} className="portfolio-image aspect-auto" />
       </div>
       <div className={`portfolio-overlay bg-gradient-to-br ${item.gradient}`}>
         <h3 className="font-display text-xl font-bold text-white mb-2">{item.company}</h3>
@@ -47,7 +49,7 @@ function WorkCard({ item, type }) {
       {/* Thumbnail */}
       <div className="h-52 bg-gradient-to-br from-navy-700 to-navy-800 relative overflow-hidden">
         {hasImages ? (
-          <img
+          <OptimizedImage
             src={item.image}
             alt={item.title}
             loading="lazy" decoding="async"

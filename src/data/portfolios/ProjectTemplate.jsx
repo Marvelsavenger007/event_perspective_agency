@@ -2,6 +2,7 @@ import { useParams, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { ArrowLeft, Play, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { brandData, brandDetails } from "../brandportfolio";
+import OptimizedImage from "../../components/OptimizedImage";
 
 
 function Lightbox({ media, index, onClose }) {
@@ -40,7 +41,7 @@ function Lightbox({ media, index, onClose }) {
                 className="absolute inset-0 w-full h-full object-contain bg-black"
               />
             ) : (
-              <img
+              <OptimizedImage
                 key={item.src}
                 src={item.src}
                 alt={item.caption}
@@ -129,7 +130,7 @@ function MediaCard({ item, index, onClick }) {
           />
         )}
         {item.src && item.type !== "video" && (
-          <img
+          <OptimizedImage
             src={item.src}
             alt={item.caption}
             loading="lazy" 
@@ -219,7 +220,7 @@ export default function ProjectTemplate() {
                 <span className="text-[0.62rem] tracking-[0.3em] uppercase text-[#F5F1E8] font-bold">{project.tag}</span>
               </div>
               <div className="flex items-center gap-5 mb-4">
-                <img
+                <OptimizedImage
                   src={project.image}
                   width="80px"
                   height="80px"
@@ -355,7 +356,7 @@ export default function ProjectTemplate() {
                 >
                   <div className="absolute inset-0 flex flex-col items-center justify-center z-10 transition-opacity duration-300 group-hover:opacity-0">
                     {/* <span className="text-4xl mb-2 opacity-50">{p.emoji}</span> */}
-                    <img
+                    <OptimizedImage
                       src={p.image}
                       width="auto"
                       height="auto"

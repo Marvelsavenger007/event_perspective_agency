@@ -1,5 +1,6 @@
 // Generates a consistent, distinct-looking initials avatar per person
 // until a real photo is supplied. Pass a real `image` and it takes priority.
+import OptimizedImage from "../components/OptimizedImage";
 
 const PALETTE = [
   { bg: "#C9A84C", text: "#0A0F1E" }, // gold
@@ -31,7 +32,7 @@ function getInitials(name) {
 export default function Avatar({ name, image, className = "" }) {
   if (image) {
     return (
-      <img
+      <OptimizedImage
         src={image}
         alt={name}
         loading="lazy" decoding="async"

@@ -3,6 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { Menu, X as CloseIcon, Sun, Moon } from "lucide-react";
 import { useTheme } from "../../context/ThemeContext";
 import epalogo from "../../images/epalogo.png"
+import OptimizedImage from "../OptimizedImage";
 
 const navItems = [
   { to: "/", label: "Home" },
@@ -42,7 +43,7 @@ export default function Navbar() {
           border-b border-surface-border dark:border-gold/10`}
       >
         <NavLink to="/" className="flex flex-col ">
-            <img
+            <OptimizedImage
               src={epalogo}
               width="150px"
               height="auto"

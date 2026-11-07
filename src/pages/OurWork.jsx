@@ -4,6 +4,7 @@ import ImageSlideshow from "../data/ImageSlideshow";
 import { activations } from "../data/activations";
 import { fabrications } from "../data/fabrications";
 import { Camera } from "lucide-react";
+import OptimizedImage from "../components/OptimizedImage";
 
 const tabs = [
   { key: "activations", label: "Experientials & Activations", data: activations },
@@ -23,7 +24,7 @@ function WorkCard({ item, onOpen }) {
         onClick={() => hasImages && onOpen(item)}
       >
         {hasImages ? (
-          <img
+          <OptimizedImage
             src={item.image}
             alt={item.title}
             loading="lazy" decoding="async"

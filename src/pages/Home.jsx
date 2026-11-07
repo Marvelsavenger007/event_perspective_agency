@@ -15,6 +15,7 @@ import honeywell from "../images/honeywell.png";
 import hero from "../images/hero.jpg";
 import goldenpenny from "../images/goldenpenny.jpg";
 import epa from "../images/epabackground1.jpeg";
+import OptimizedImage from "../components/OptimizedImage";
 
 const stats = [
   { num: "100+", label: "Events Executed" },
@@ -131,7 +132,7 @@ export default function Home() {
         <div className="overflow-hidden w-full">
           <div className="flex w-max gap-20 animate-marquee">
             {[...marqueeClients, ...marqueeClients].map((img, i) => (
-              <img
+              <OptimizedImage
                 key={i}
                 src={img}
                 alt={`client-${i}`}
@@ -145,7 +146,7 @@ export default function Home() {
       <section className="py-24 px-6 md:px-12 bg-surface dark:bg-navy-900">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
           <div className="relative">
-            <img
+            <OptimizedImage
               src={epa}
               alt="Event Perspective Agency"
               loading="lazy" decoding="async"

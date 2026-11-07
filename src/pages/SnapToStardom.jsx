@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp, ChevronLeft, ChevronRight, X, ArrowRight } from "lucide-react";
 import { S2S_META, S2S_STAGES, S2S_FAQS, S2S_IMAGE, S2S_GALLERY } from "../data/snapToStardom.js";
 import background from "../images/s2s/s2slogo.jpeg"
+import OptimizedImage from "../components/OptimizedImage";
 
 
 function Lightbox({ images, initialIndex, onClose }) {
@@ -51,7 +52,7 @@ function Lightbox({ images, initialIndex, onClose }) {
       >
         <div className="w-full aspect-[3/4] md:aspect-video bg-navy-900 flex items-center justify-center relative overflow-hidden">
           {item.src
-            ? <img src={item.src} alt={item.alt} loading="lazy" decoding="async" className="w-full h-full object-cover" />
+            ? <OptimizedImage src={item.src} alt={item.alt} loading="lazy" decoding="async" className="w-full h-full object-cover" />
             : (
               <>
                 <span className="text-6xl opacity-10 select-none">📸</span>
@@ -106,7 +107,7 @@ function Lightbox({ images, initialIndex, onClose }) {
                 : "border-transparent opacity-40 hover:opacity-70"}`}
           >
             {img.src
-              ? <img src={img.src} alt="" loading="lazy" decoding="async" className="w-full h-full object-cover" />
+              ? <OptimizedImage src={img.src} alt="" loading="lazy" decoding="async" className="w-full h-full object-cover" />
               : <span className="text-xs opacity-50 select-none">📸</span>
             }
           </button>
@@ -156,7 +157,7 @@ function GalleryThumb({ item, onClick }) {
     >
       {item.src
         ? (
-          <img
+          <OptimizedImage
             src={item.src}
             alt={item.alt}
             loading="lazy" 
@@ -223,7 +224,7 @@ export default function SnapToStardom() {
         <div aria-hidden="true"
           className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-rose-900/10 blur-3xl pointer-events-none translate-x-1/4 -translate-y-1/4" />
         {heroSrc && (
-          <img src={heroSrc} alt="Snap To Stardom"
+          <OptimizedImage src={heroSrc} alt="Snap To Stardom"
           loading="lazy" decoding="async"
             className="absolute inset-0 w-full h-full object-cover object-top opacity-40" />
         )}
@@ -267,7 +268,7 @@ export default function SnapToStardom() {
             </div>
             <div className="hidden md:block bg-surface-border dark:bg-dark-border w-px self-stretch mx-0" />
             <div className="pl-0 mt-[-10%] md:pl-16 pt-12 md:pt-0 flex flex-col gap-5">
-              <img
+              <OptimizedImage
                 src={background}
                 width="272px"
                 height="135px"
@@ -292,7 +293,7 @@ export default function SnapToStardom() {
               <div className="relative flex justify-center lg:justify-start">
                 <div className="relative z-0 overflow-hidden">
                   {S2S_IMAGE[0]?.src ? (
-                    <img
+                    <OptimizedImage
                       src={S2S_IMAGE[0].src}
                       alt={S2S_IMAGE[0].alt}
                       width={209}
@@ -308,7 +309,7 @@ export default function SnapToStardom() {
                 </div>
                 <div className="absolute left-[160px] top-[120px] z-10 overflow-hidden">
                   {S2S_IMAGE[1]?.src ? (
-                    <img
+                    <OptimizedImage
                       src={S2S_IMAGE[1].src}
                       alt={S2S_IMAGE[1].alt}
                       width={256}

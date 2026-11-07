@@ -3,6 +3,7 @@ import { ceo, hods, clientServices, operations, admin, officeSpaces } from "../d
 import TeamModal from "../components/ui/TeamModal";
 import PageHero from "../components/ui/PageHero";
 import Avatar from "../data/Avatar";
+import OptimizedImage from "../components/OptimizedImage";
 
 function TeamCard({ member, onClick }) {
   return (
@@ -144,7 +145,7 @@ export default function Team() {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <img
+                    <OptimizedImage
                       src={space.image}
                       alt={space.label}
                       className="w-full h-[90%] object-cover"
