@@ -6,14 +6,15 @@ const OptimizedImage = ({
   src,
   alt = "",
   priority = false,
-  maxWidth,
+  maxWidth = 1600,
   loading,
   fetchPriority,
+  sizes = "100vw",
   onLoad,
   onError,
   ...imgProps
 }) => {
-  const [failedSrc, setFailedSrc] = useState(null);
+  const [failed, setFailed] = useState(false);
 
   const optimizedSrc = cloudinaryImage(src, {
     width: maxWidth,
@@ -22,21 +23,43 @@ const OptimizedImage = ({
     crop: "limit",
   });
 
-  const usingFallback = failedSrc === optimizedSrc;
-  const finalSrc = usingFallback ? src : optimizedSrc;
+  // Generate responsive image versions.
+  const widths = [
+    ...[320, 480, 640, 960, 1280, 1600].filter(
+      (width) => width < maxWidth
+    ),
+    maxWidth,
+  ];
+
+  const srcSet = !failed && optimizedSrc !== src
+    ? widths
+        .map((width) => {
+          const url = cloudinaryImage(src, {
+            width,
+            quality: "auto",
+            format: "auto",
+            crop: "limit",
+          });
+
+          return `${url} ${width}w`;
+        })
+        .join(", ")
+    : undefined;
 
   return (
     <img
       {...imgProps}
-      src={finalSrc}
+      src={failed ? src : optimizedSrc}
+      srcSet={srcSet}
+      sizes={sizes}
       alt={alt}
       loading={loading ?? (priority ? "eager" : "lazy")}
       fetchPriority={fetchPriority ?? (priority ? "high" : "auto")}
       decoding="async"
-      onLoad={(event) => onLoad?.(event)}
+      onLoad={onLoad}
       onError={(event) => {
-        if (!usingFallback && optimizedSrc !== src) {
-          setFailedSrc(optimizedSrc);
+        if (!failed && optimizedSrc !== src) {
+          setFailed(true);
         } else {
           onError?.(event);
         }
