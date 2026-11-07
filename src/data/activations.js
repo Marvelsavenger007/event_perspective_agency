@@ -240,28 +240,28 @@ const originalActivations = [
     tag: "Festival Branding",
     tagColor: "text-fuchsia-400 border-fuchsia-400",
   },
-  // {
-  //   id: 11,
-  //   folder: "golden-penny-semovita-horeca",
-  //   brand: "Golden Penny Semovita",
-  //   title: "HORECA Campaign",
-  //   meta: "Hotels · Restaurants · Canteens",
-  //   description:
-  //     "Outlets were required to purchase a specified volume of Golden Penny products, with sales representatives stationed on-site to drive both purchase and sell-through — delivering a remarkable sales push.",
-  //   tag: "HORECA Activation",
-  //   tagColor: "text-green-400 border-green-400",
-  // },
-  // {
-  //   id: 13,
-  //   folder: "golden-penny-semovita-merchandising",
-  //   brand: "Golden Penny Semovita",
-  //   title: "Sales & Merchandising",
-  //   meta: "Retail Point-of-Sale",
-  //   description:
-  //     "A sales and merchandising concept designed to encourage purchases, backed by a team of dedicated sales representatives driving consistent, excellent results for the brand.",
-  //   tag: "Merchandising",
-  //   tagColor: "text-green-400 border-green-400",
-  // },
+  {
+    id: 11,
+    folder: "golden-penny-semovita-horeca",
+    brand: "Golden Penny Semovita",
+    title: "HORECA Campaign",
+    meta: "Hotels · Restaurants · Canteens",
+    description:
+      "Outlets were required to purchase a specified volume of Golden Penny products, with sales representatives stationed on-site to drive both purchase and sell-through — delivering a remarkable sales push.",
+    tag: "HORECA Activation",
+    tagColor: "text-green-400 border-green-400",
+  },
+  {
+    id: 13,
+    folder: "golden-penny-semovita-merchandising",
+    brand: "Golden Penny Semovita",
+    title: "Sales & Merchandising",
+    meta: "Retail Point-of-Sale",
+    description:
+      "A sales and merchandising concept designed to encourage purchases, backed by a team of dedicated sales representatives driving consistent, excellent results for the brand.",
+    tag: "Merchandising",
+    tagColor: "text-green-400 border-green-400",
+  },
   // {
   //   id: 14,
   //   folder: "golden-penny-semovita-rewarding",
