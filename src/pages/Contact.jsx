@@ -1,110 +1,122 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { FaInstagram, FaTiktok, FaLinkedin } from "react-icons/fa";
 
+const WEB3FORMS_ACCESS_KEY =
+  import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "";
+
+const HCAPTCHA_SITE_KEY =
+  "50b2fe65-b00b-4b9e-ad62-3ba471098be2";
+
+const RATE_LIMIT_MS = 60_000;
+const RATE_LIMIT_STORAGE_KEY = "ep_contact_last_submit";
+
 const socialIcons = [
-  { icon: FaLinkedin, href: "https://www.linkedin.com/company/event-perspective-experiential-agency/" },
-  { icon: FaInstagram, href: "https://www.instagram.com/eventperspectiveagency/" },
-  { icon: FaTiktok, href: "https://www.tiktok.com/@event_perspective_agency" },
+  {
+    icon: FaLinkedin,
+    href: "https://www.linkedin.com/company/event-perspective-experiential-agency/",
+    label: "LinkedIn",
+  },
+  {
+    icon: FaInstagram,
+    href: "https://www.instagram.com/eventperspectiveagency/",
+    label: "Instagram",
+  },
+  {
+    icon: FaTiktok,
+    href: "https://www.tiktok.com/@event_perspective_agency",
+    label: "TikTok",
+  },
 ];
 
 const contactDetails = [
   {
-    icon: MapPin,
-    label: "Our Office",
-    value: "1 Asenuga Street, Ikeja, Lagos, Nigeria",
+    icon: MapPin, label: "Our Office", value: "1 Asenuga Street, Ikeja, Lagos, Nigeria",
   },
-  { icon: Phone, label: "Phone", value: "+234 915 264 2452" },
-  { icon: Mail, label: "Mail", value: "info@eventsperspectve.com" },
   {
-    icon: Clock,
-    label: "Business Hours",
-    value: "Mon - Fri: 9:00 AM - 5:00 PM WAT",
+    icon: Phone, label: "Phone", value: "+234 915 264 2452",
+  },
+  {
+    icon: Mail, label: "Mail", value: "info@eventsperspectve.com",
+  },
+  {
+    icon: Clock, label: "Business Hours", value: "Mon - Fri: 9:00 AM - 5:00 PM WAT",
   },
 ];
 
-const serviceTypes = ["Brand Activation", "Pan-Nigerian Activation", "Event", "Other"];
-
-// ── Spam / abuse controls ──────────────────────────────────────────
-// 1) WEB3FORMS_ACCESS_KEY: get a free key at https://web3forms.com
-//    (just enter your inbox email, no account/password needed).
-//    Submissions are emailed straight to that inbox — no backend required.
-// 2) RATE_LIMIT_MS: minimum time a visitor must wait between submissions
-//    from the same browser, tracked via localStorage.
-const WEB3FORMS_ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY_HERE";
-const RATE_LIMIT_MS = 60_000; // 60 seconds
-const RATE_LIMIT_STORAGE_KEY = "ep_contact_last_submit";
-
-// 3) hCaptcha: blocks automated bot submissions with a challenge widget.
-//    - Get a free site key + secret key at https://www.hcaptcha.com
-//    - Paste the SITE key below
-//    - Paste the SECRET key into your Web3Forms dashboard (Settings → Captcha)
-//      so Web3Forms actually verifies the token server-side before emailing you.
-const HCAPTCHA_SITE_KEY = "YOUR_HCAPTCHA_SITE_KEY_HERE";
-
+const serviceTypes = [
+  "Brand Activation",
+  "Pan-Nigerian Activation",
+  "Event",
+  "Other",
+];
 export default function Contact() {
-  const [status, setStatus] = useState("idle"); // idle | sending | submitted | error | rate-limited
+  const [status, setStatus] = useState("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [captchaToken, setCaptchaToken] = useState("");
+
   const captchaRef = useRef(null);
-  const widgetIdRef = useRef(null);
-
-  // Load the hCaptcha script once, then render the widget into captchaRef.
-  useEffect(() => {
-    function renderWidget() {
-      if (window.hcaptcha && captchaRef.current && widgetIdRef.current === null) {
-        widgetIdRef.current = window.hcaptcha.render(captchaRef.current, {
-          sitekey: HCAPTCHA_SITE_KEY,
-          callback: (token) => setCaptchaToken(token),
-          "expired-callback": () => setCaptchaToken(""),
-          "error-callback": () => setCaptchaToken(""),
-        });
-      }
-    }
-
-    if (window.hcaptcha) {
-      renderWidget();
-    } else {
-      const script = document.createElement("script");
-      script.src = "https://js.hcaptcha.com/1/api.js";
-      script.async = true;
-      script.defer = true;
-      script.onload = renderWidget;
-      document.body.appendChild(script);
-    }
-  }, []);
 
   function getSecondsRemaining() {
-    const last = Number(localStorage.getItem(RATE_LIMIT_STORAGE_KEY) || 0);
-    const elapsed = Date.now() - last;
-    return elapsed >= RATE_LIMIT_MS ? 0 : Math.ceil((RATE_LIMIT_MS - elapsed) / 1000);
+    try {
+      const last = Number(
+        localStorage.getItem(RATE_LIMIT_STORAGE_KEY) || 0
+      );
+      const elapsed = Date.now() - last;
+      return elapsed >= RATE_LIMIT_MS
+        ? 0
+        : Math.ceil((RATE_LIMIT_MS - elapsed) / 1000);
+    } catch {
+      return 0;
+    }
+  }
+
+  function saveSubmissionTime() {
+    try {
+      localStorage.setItem(
+        RATE_LIMIT_STORAGE_KEY,
+        String(Date.now())
+      );
+    } catch {
+    }
+  }
+
+  function resetCaptcha() {
+    setCaptchaToken("");
+    captchaRef.current?.resetCaptcha();
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const form = e.target;
-
-    // Honeypot check: real visitors never see or fill this field.
-    // Bots that auto-fill every input will trip it, and we quietly drop the request.
-    if (form.botcheck.value !== "") {
+    const form = e.currentTarget;
+    if (status === "sending") return;
+    if (!WEB3FORMS_ACCESS_KEY) {
+      setStatus("error");
+      setErrorMessage(
+        "The contact form is not configured yet. Please contact us directly by email."
+      );
+      return;
+    }
+    const honeypot = form.elements.namedItem("website_url");
+    if (honeypot?.value) {
       form.reset();
       return;
     }
-
-    // Client-side rate limit: stops rapid repeat submissions from one browser.
     const secondsRemaining = getSecondsRemaining();
     if (secondsRemaining > 0) {
       setStatus("rate-limited");
       setErrorMessage(
-        `Please wait ${secondsRemaining}s before sending another message.`
+        `Please wait ${secondsRemaining} seconds before sending another message.`
       );
       return;
     }
 
-    // Require a completed hCaptcha challenge before sending.
     if (!captchaToken) {
       setStatus("error");
-      setErrorMessage("Please complete the captcha before sending your message.");
+      setErrorMessage(
+        "Please complete the security verification before sending your message."
+      );
       return;
     }
 
@@ -112,66 +124,76 @@ export default function Contact() {
     setErrorMessage("");
 
     const formData = new FormData(form);
-    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
-    formData.append("subject", "New enquiry from website contact form");
-    formData.append("h-captcha-response", captchaToken);
-    formData.delete("botcheck");
+    formData.set("access_key", WEB3FORMS_ACCESS_KEY);
+    formData.set(
+      "subject",
+      "New enquiry from Event Perspective website"
+    );
+    formData.set(
+      "from_name",
+      "Event Perspective Website"
+    );
+    formData.set("h-captcha-response", captchaToken);
+    formData.delete("website_url");
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body: formData,
-      });
+      const response = await fetch(
+        "https://api.web3forms.com/submit",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+          },
+          body: formData,
+        }
+      );
+
       const result = await response.json();
 
-      if (result.success) {
-        localStorage.setItem(RATE_LIMIT_STORAGE_KEY, String(Date.now()));
-        setStatus("submitted");
-        form.reset();
-        setCaptchaToken("");
-        if (window.hcaptcha && widgetIdRef.current !== null) {
-          window.hcaptcha.reset(widgetIdRef.current);
-        }
-        setTimeout(() => setStatus("idle"), 5000);
-      } else {
-        throw new Error(result.message || "Submission failed");
+      if (!response.ok || !result.success) {
+        throw new Error(
+          result.message || "Unable to submit your enquiry."
+        );
       }
-    } catch (err) {
+
+      saveSubmissionTime();
+      setStatus("submitted");
+      form.reset();
+      resetCaptcha();
+
+    } catch (error) {
+      console.error("Contact form submission error:", error);
       setStatus("error");
       setErrorMessage(
-        "Something went wrong sending your message. Please try again, or email us directly."
+        "Something went wrong while sending your message. Please try again or email us directly."
       );
-      if (window.hcaptcha && widgetIdRef.current !== null) {
-        window.hcaptcha.reset(widgetIdRef.current);
-        setCaptchaToken("");
-      }
+      resetCaptcha();
     }
   }
 
   return (
     <section className="min-h-screen pt-36 pb-24 px-6 md:px-12 bg-surface dark:bg-navy-900">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24 items-start">
-        {/* ── Left: Info ── */}
         <div>
-          <div className="eyebrow">Get in Touch</div>
+          <div className="eyebrow">
+            Get in Touch
+          </div>
           <h1 className="font-display text-4xl md:text-5xl xl:text-6xl font-black text-navy-900 dark:text-white leading-tight mb-7">
             Let's Create Something{" "}
-            <em className="text-[#4a74b3] not-italic">Extraordinary</em>
+            <em className="text-[#4a74b3] not-italic">
+              Extraordinary
+            </em>
           </h1>
           <p className="text-base text-navy-500 dark:text-dark-muted leading-relaxed mb-12">
-            Whether you have a fully formed brief or just a bold ambition, we'd
-            love to hear from you. One of our strategists will be in touch
-            within 24 hours.
+            Whether you have a fully formed brief or just a bold ambition, we'd love to hear from you. One of our strategists will be in touch within 24 hours.
           </p>
-
           <div className="space-y-7 mb-12">
             {contactDetails.map(({ icon: Icon, label, value }) => (
-              <div key={label} className="flex gap-5 items-start">
-                <div
-                  className="w-11 h-11 flex-shrink-0 flex items-center justify-center
-                                bg-gold/10 border border-gold/20 text-[#4a74b3]"
-                >
+              <div
+                key={label}
+                className="flex gap-5 items-start"
+              >
+                <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center bg-gold/10 border border-gold/20 text-[#4a74b3]">
                   <Icon size={18} />
                 </div>
                 <div>
@@ -185,21 +207,21 @@ export default function Contact() {
               </div>
             ))}
           </div>
-
           <div>
             <p className="text-[0.62rem] tracking-[0.25em] uppercase text-[#4a74b3] font-bold mb-4">
               Follow Us
             </p>
             <div className="flex gap-3">
-              {socialIcons.map(({ icon: Icon, href }, i) => (
+              {socialIcons.map(({ icon: Icon, href, label }) => (
                 <a
-                  key={i}
+                  key={label}
                   href={href}
-                  className="w-9 h-9 border border-surface-border dark:border-white/10
-                 flex items-center justify-center
-                 text-navy-400 dark:text-dark-muted
-                 hover:border-gold hover:text-[#4a74b3]
-                 transition-all duration-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="w-9 h-9 border border-surface-border dark:border-white/10 flex items-center justify-center text-navy-400 dark:text-dark-muted
+                  hover:border-gold hover:text-[#4a74b3]
+                  transition-all duration-200"
                 >
                   <Icon className="text-lg" />
                 </a>
@@ -212,96 +234,147 @@ export default function Contact() {
             Send Us a Message
           </h3>
           <form onSubmit={handleSubmit} className="space-y-5">
-            {/* Honeypot field — hidden from real visitors via CSS, bots fill it in */}
             <input
-              type="text"
-              name="botcheck"
-              tabIndex={-1}
-              autoComplete="off"
-              className="absolute -left-[9999px] w-px h-px opacity-0"
-              aria-hidden="true"
+              type="text" name="website_url" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] w-px h-px opacity-0"
             />
-
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label className="form-label">First Name</label>
-                <input
-                  type="text"
-                  name="first_name"
-                  className="form-input"
-                  placeholder="First Name"
-                  required
-                />
+                <label htmlFor="first_name" className="form-label" >
+                  First Name
+                </label>
+                <input id="first_name" type="text" name="first_name" className="form-input" placeholder="First Name" autoComplete="given-name" maxLength={80} required />
               </div>
               <div>
-                <label className="form-label">Last Name</label>
-                <input
-                  type="text"
-                  name="last_name"
-                  className="form-input"
-                  placeholder="Last Name"
-                  required
-                />
+                <label htmlFor="last_name" className="form-label" >
+                  Last Name
+                </label>
+                <input id="last_name" type="text" name="last_name" className="form-input" placeholder="Last Name" autoComplete="family-name" maxLength={80} required />
               </div>
             </div>
             <div>
-              <label className="form-label">Email Address</label>
+              <label htmlFor="email" className="form-label" >
+                Email Address
+              </label>
               <input
+                id="email"
                 type="email"
                 name="email"
                 className="form-input"
                 placeholder="email@yourcompany.com"
+                autoComplete="email"
+                maxLength={254}
                 required
               />
             </div>
             <div>
-              <label className="form-label">Company / Organisation</label>
+              <label
+                htmlFor="company"
+                className="form-label"
+              >
+                Company / Organisation
+              </label>
               <input
+                id="company"
                 type="text"
                 name="company"
                 className="form-input"
                 placeholder="Your company name"
+                autoComplete="organization"
+                maxLength={150}
               />
             </div>
             <div>
-              <label className="form-label">Type of Project</label>
-              <select name="service_type" className="form-input" required defaultValue="">
+              <label
+                htmlFor="service_type"
+                className="form-label"
+              >
+                Type of Project
+              </label>
+
+              <select
+                id="service_type"
+                name="service_type"
+                className="form-input"
+                required
+                defaultValue=""
+              >
                 <option value="" disabled>
                   Select a service
                 </option>
-                {serviceTypes.map((s) => (
-                  <option key={s} value={s}>
-                    {s}
+
+                {serviceTypes.map((service) => (
+                  <option
+                    key={service}
+                    value={service}
+                  >
+                    {service}
                   </option>
                 ))}
               </select>
             </div>
             <div>
-              <label className="form-label">Tell Us About Your Vision</label>
+              <label
+                htmlFor="message"
+                className="form-label"
+              >
+                Tell Us About Your Vision
+              </label>
               <textarea
+                id="message"
                 name="message"
                 className="form-input min-h-[120px] resize-y"
                 placeholder="Describe your brand, timeline, and any details you'd like us to know..."
+                maxLength={5000}
                 required
               />
             </div>
-            <div ref={captchaRef} />
-
+            <div className="flex justify-center">
+              <HCaptcha
+                ref={captchaRef}
+                sitekey={HCAPTCHA_SITE_KEY}
+                reCaptchaCompat={false}
+                onVerify={(token) => {
+                  setCaptchaToken(token);
+                  setErrorMessage("");
+                  if (status === "error") setStatus("idle");
+                }}
+                onExpire={() => {
+                  setCaptchaToken("");
+                }}
+                onError={() => {
+                  setCaptchaToken("");
+                  setErrorMessage(
+                    "Security verification failed. Please try again."
+                  );
+                }}
+              />
+            </div>
             <button
               type="submit"
               disabled={status === "sending"}
               className="btn-primary w-full py-4 text-sm disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              {status === "sending" ? "Sending..." : "Send Message"}
+              {status === "sending"
+                ? "Sending..."
+                : status === "submitted"
+                  ? "Message Sent!"
+                  : "Send Message"}
             </button>
-
             {status === "submitted" && (
-              <div className="bg-gold/10 border border-gold px-4 py-3 text-center text-[#4a74b3] text-sm animate-[fadeUp_0.4s_ease_forwards]">
-                ✦ Thank you! We'll be in touch within 24 hours.
+              <div
+                role="status"
+                aria-live="polite"
+                className="bg-gold/10 border border-gold px-4 py-3 text-center text-[#4a74b3] text-sm animate-[fadeUp_0.4s_ease_forwards]"
+              >
+                ✦ Thank you! Your enquiry has been received.
+                We'll be in touch within 24 hours.
               </div>
             )}
             {(status === "error" || status === "rate-limited") && (
-              <div className="bg-red-500/10 border border-red-500/40 px-4 py-3 text-center text-red-600 dark:text-red-400 text-sm">
+              <div
+                role="alert"
+                className="bg-red-500/10 border border-red-500/40 px-4 py-3 text-center text-red-600 dark:text-red-400 text-sm"
+              >
                 {errorMessage}
               </div>
             )}
