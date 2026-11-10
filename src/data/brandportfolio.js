@@ -1,13 +1,5 @@
 import adc from "../images/portfolio/adc/adc.jpg";
 import goldenpenny from "../images/portfolio/fmnportfolio/gpnlogo.jpg";
-import dano from "../images/dano.png";
-import ekulo from "../images/ekulogroup.jpg";
-import flyingfish from "../images/flyingfish.jpg";
-// import goldenpenny from "../images/goldenpenny.png";
-import smirnoff from "../images/smirnoff.webp";
-import samsung from "../images/samsung.png";
-import honeywell from "../images/honeywell.png";
-import hero from "../images/hero.jpg";
 import image2 from "../images/portfolio/fmnportfolio/image2.jpg";
 import image5 from "../images/portfolio/fmnportfolio/image5.jpg";
 import image1 from "../images/portfolio/fmnportfolio/image1.jpg";

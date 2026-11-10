@@ -1,3 +1,23 @@
+import award1 from "../images/events/awardnight/award1.webp"
+import award2 from "../images/events/awardnight/award2.webp"
+import award3 from "../images/events/awardnight/award3.webp"
+import award4 from "../images/events/awardnight/award4.webp"
+import award5 from "../images/events/awardnight/award5.webp"
+import award6 from "../images/events/awardnight/award6.webp"
+import award7 from "../images/events/awardnight/award7.webp"
+import award8 from "../images/events/awardnight/award8.webp"
+import award9 from "../images/events/awardnight/award9.webp"
+import award16 from "../images/events/awardnight/award16.webp"
+import award11 from "../images/events/awardnight/award11.webp"
+import award12 from "../images/events/awardnight/award12.webp"
+import award13 from "../images/events/awardnight/award13.webp"
+import award14 from "../images/events/awardnight/award14.webp"
+import award15 from "../images/events/awardnight/award15.webp"
+import awardvid1 from "../images/events/awardnight/awardvid1.mp4"
+import awardvid2 from "../images/events/awardnight/awardvid2.mp4"
+import awardvid3 from "../images/events/awardnight/awardvid3.mp4"
+
+
 export const eventPages = [
   {
     slug: "africa-brand-awards-2026",
@@ -48,14 +68,21 @@ export const eventPages = [
         "From the red carpet to the podium — every defining moment of our biggest night, captured frame by frame. Click any image to view the full gallery.",
     },
     images: [
-      { id: 1, src: null, alt: "CEO receiving the Africa Brand Awards 2026 trophy on stage", color: "from-amber-900 to-yellow-950" },
-      { id: 2, src: null, alt: "Award citation being read by the MC at the ceremony", color: "from-yellow-900 to-amber-950" },
-      { id: 3, src: null, alt: "CEO with the award plaque — close-up portrait", color: "from-amber-950 to-orange-900" },
-      { id: 4, src: null, alt: "Event Perspective Agency team celebrating at the gala table", color: "from-orange-900 to-amber-950" },
-      { id: 5, src: null, alt: "CEO shaking hands with the Africa Brand Awards chairman", color: "from-amber-900 to-yellow-900" },
-      { id: 6, src: null, alt: "Group photo — Event Perspective Agency team at the awards night", color: "from-yellow-950 to-amber-900" },
-      { id: 7, src: null, alt: "The award trophy displayed on stage under the event spotlight", color: "from-amber-950 to-yellow-900" },
-      { id: 8, src: null, alt: "CEO's acceptance speech at the podium", color: "from-orange-950 to-amber-900" },
+      { id: 1, src: award1, },
+      { id: 2, src: award2, },
+      { id: 3, src: award3, },
+      { id: 4, src: award4, },
+      { id: 5, src: award5, },
+      { id: 6, src: award6, },
+      { id: 7, src: award7, },
+      { id: 8, src: award8, },
+      { id: 9, src: award9, },
+      { id: 16, src: award16, },
+      { id: 11, src: award11, },
+      { id: 12, src: award12, },
+      { id: 13, src: award13, },
+      { id: 14, src: award14, },
+      { id: 15, src: award15, },
     ],
 
     // Video
@@ -65,32 +92,11 @@ export const eventPages = [
       description: "The announcement, the speech, the celebration — all on film. Click any clip to watch in full.",
     },
     videos: [
-      { id: 9, src: null, alt: "Award ceremony highlight reel — the winning announcement", color: "from-amber-900 to-orange-950" },
-      { id: 10, src: null, alt: "CEO acceptance speech — full recording", color: "from-yellow-900 to-amber-950" },
-      { id: 11, src: null, alt: "Backstage celebrations — Event Perspective Agency team reactions", color: "from-orange-900 to-yellow-950" },
+      { id: 17, src: awardvid1, },
+      { id: 18, src: awardvid2, },
+      { id: 19, src: awardvid3, },
     ],
 
-    // Reactions  (type: "press" | "industry" | "social")
-    // reactionsSection: { eyebrow: "The Response", title: "What Africa Is Saying" },
-    // reactions: [
-    //   {
-    //     type: "press",
-    //     quote: "Event Perspective Agency has consistently set the benchmark for speed and creativity in brand activation. This recognition is long overdue.",
-    //     source: "Marketing Edge Africa",
-    //   },
-    //   {
-    //     type: "industry",
-    //     quote: "In an industry where response time determines everything, Vantage have built a reputation for being first — and being flawless. This award captures exactly that.",
-    //     source: "Nigeria Brand Convention",
-    //   },
-    //   {
-    //     type: "social",
-    //     quote: "Congratulations to the entire @VantageXperience team. You have shown that Nigerian agencies can and do compete with the best on the continent. Proud.",
-    //     source: "Industry Leader, Twitter/X",
-    //   },
-    // ],
-
-    // Big pull quote
     quote: {
       text: "This award is a testament to every team member who has delivered under pressure, every client who trusted us with their brand, and every Nigerian who believed that world-class experiential marketing could be built right here at home. We are just getting started.",
       author: "Event Perspective Agency CEO",
