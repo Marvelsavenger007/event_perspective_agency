@@ -59,7 +59,7 @@ export default function Events() {
           </div>
         </div>
       </section>
-      {/* {eventPages.length > 0 && (
+       {eventPages.length > 0 && (
         <section className="py-20 px-6 md:px-12 bg-surface-secondary dark:bg-navy-800">
           <div className="max-w-7xl mx-auto">
             <div className="eyebrow">Awards & Recognition</div>
@@ -99,7 +99,7 @@ export default function Events() {
             </div>
           </div>
         </section>
-      )} */}
+      )} 
       <section className="py-20 px-6 md:px-12 bg-surface dark:bg-navy-900">
         <div className="max-w-7xl mx-auto">
           <div className="eyebrow">Past Events</div>

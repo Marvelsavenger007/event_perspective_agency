@@ -617,18 +617,27 @@ export default function WorkDetail() {
    Related projects strip
 ───────────────────────────────────────────────────────────────────────────── */
 function RelatedStrip({ currentId, type, allItems }) {
-  const others = allItems
-    .filter((a) => String(a.id) !== String(currentId) && (a.image || a.videos?.length))
+  const others = [...allItems]
+    .filter(
+      (a) =>
+        String(a.id) !== String(currentId) &&
+        (a.image || a.videos?.length)
+    )
+    .sort(() => Math.random() - 0.5)
     .slice(0, 4);
 
   if (!others.length) return null;
 
   return (
     <section className="mt-20 pt-10 border-t border-navy-100 dark:border-white/5">
-      <p className="text-[0.65rem] font-bold tracking-[0.22em] uppercase text-[#4a74b3] mb-1">More Work</p>
+      <p className="text-[0.65rem] font-bold tracking-[0.22em] uppercase text-[#4a74b3] mb-1">
+        More Work
+      </p>
+
       <h3 className="font-display text-xl font-bold text-navy-900 dark:text-white mb-6">
         Other Projects
       </h3>
+
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {others.map((item) => (
           <Link
@@ -640,7 +649,8 @@ function RelatedStrip({ currentId, type, allItems }) {
               <OptimizedImage
                 src={item.image}
                 alt={item.title}
-                loading="lazy" decoding="async"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 style={{ filter: "brightness(0.65)" }}
               />
@@ -654,9 +664,15 @@ function RelatedStrip({ currentId, type, allItems }) {
                 style={{ filter: "brightness(0.65)" }}
               />
             ) : null}
+
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-3">
-              <p className="text-[0.6rem] font-bold tracking-wide uppercase text-[#7fa8e0] mb-0.5">{item.brand || item.tag}</p>
-              <p className="text-xs font-semibold text-white leading-snug line-clamp-2">{item.title}</p>
+              <p className="text-[0.6rem] font-bold tracking-wide uppercase text-[#7fa8e0] mb-0.5">
+                {item.brand || item.tag}
+              </p>
+
+              <p className="text-xs font-semibold text-white leading-snug line-clamp-2">
+                {item.title}
+              </p>
             </div>
           </Link>
         ))}
